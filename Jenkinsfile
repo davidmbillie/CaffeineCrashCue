@@ -4,7 +4,7 @@ pipeline {
     stages {
 
         stage("Build") {
-            container("builder") {
+            steps {
                 sh 'dotnet build --configuration Release'
             }
         }
