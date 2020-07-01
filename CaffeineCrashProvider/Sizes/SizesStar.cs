@@ -7,6 +7,7 @@ namespace CaffeineCrashProvider.Sizes
     {
         //Espresso shots are 75 mg
         //https://globalassets.starbucks.com/assets/94fbcc2ab1e24359850fa1870fc988bc.pdf
+
         public static readonly Dictionary<string, Beverage> Dark = new Dictionary<string, Beverage>()
         {
             {"Short", new Beverage(8, 130)},
@@ -59,7 +60,7 @@ namespace CaffeineCrashProvider.Sizes
         {
             {"Small", new Beverage(12, 75)},
             {"Medium", new Beverage(16, 150)},
-            {"Large", new Beverage(24, 150) }
+            {"Large", new Beverage(24, 225) }
         };
 
         public static readonly Dictionary<string, Beverage> ChaiTea = new Dictionary<string, Beverage>()
