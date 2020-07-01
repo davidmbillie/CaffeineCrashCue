@@ -9,7 +9,8 @@ namespace CaffeineCrashProvider.Sizes
         {
             {"Black", new Beverage(8, 140)},
             {"ColdBrew", new Beverage(10, 155)},
-            {"Doubleshot", new Beverage(7, 145)},
+            {"Doubleshot", new Beverage(7, 110)},
+            {"DoubleshotEnergy", new Beverage(7, 145)},
             {"Tripleshot", new Beverage(15, 225)}
         };
 
