@@ -75,7 +75,7 @@ namespace CaffeineCrashProvider.Sizes
         {
             {"Small", new Beverage(8, 70)},
             {"Medium", new Beverage(12, 95)},
-            {"Large", new Beverage(16, 145)},
+            {"Large", new Beverage(16, 145)}
         };
 
         //works for both hot and iced
@@ -91,28 +91,28 @@ namespace CaffeineCrashProvider.Sizes
         {
             {"Small", new Beverage(8, 70)},
             {"Medium", new Beverage(12, 100)},
-            {"Large", new Beverage(16, 130)},
+            {"Large", new Beverage(16, 130)}
         };
 
         public static readonly Dictionary<string, Beverage> EspressoFrap = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(8, 130)},
             {"Medium", new Beverage(12, 165)},
-            {"Large", new Beverage(16, 185)},
+            {"Large", new Beverage(16, 185)}
         };
 
         public static readonly Dictionary<string, Beverage> FrappLite = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(8, 70)},
             {"Medium", new Beverage(12, 95)},
-            {"Large", new Beverage(16, 120)},
+            {"Large", new Beverage(16, 120)}
         };
 
         public static readonly Dictionary<string, Beverage> GreenTeaFrapp = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(8, 50)},
             {"Medium", new Beverage(12, 70)},
-            {"Large", new Beverage(16, 95)},
+            {"Large", new Beverage(16, 95)}
         };
     }
 }

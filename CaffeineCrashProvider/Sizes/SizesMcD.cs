@@ -11,7 +11,7 @@ namespace CaffeineCrashProvider.Sizes
         {
             {"Small", new Beverage(12, 109)},
             {"Medium", new Beverage(16, 145)},
-            {"Large", new Beverage(21, 185)},
+            {"Large", new Beverage(21, 185)}
         };
 
         //same as iced sizes
@@ -19,14 +19,14 @@ namespace CaffeineCrashProvider.Sizes
         {
             {"Small", new Beverage(12, 71)},
             {"Medium", new Beverage(16, 142)},
-            {"Large", new Beverage(21, 178)},
+            {"Large", new Beverage(21, 178)}
         };
 
         public static readonly Dictionary<string, Beverage> Iced = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(16, 133)},
             {"Medium", new Beverage(21, 200)},
-            {"Large", new Beverage(32, 320)},
+            {"Large", new Beverage(32, 320)}
         };
     }
 }
