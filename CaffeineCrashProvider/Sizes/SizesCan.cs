@@ -31,3 +31,4 @@ namespace CaffeineCrashProvider.Sizes
             {"Regular", new Beverage(8, 80)}
         };
     }
+}
