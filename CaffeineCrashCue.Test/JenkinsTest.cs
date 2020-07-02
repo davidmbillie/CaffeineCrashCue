@@ -7,7 +7,7 @@ namespace CaffeineCrashCue.Jenkins
     {
         [Theory]
         [InlineData(2, 4, 16)]
-        public void Raise_Base_To_Power(double x, double y, double expected)
+        public void DoesJenkinsAggregateMetrics(double x, double y, double expected)
         {
             JenkinsPower resultTest = new JenkinsPower();
 
