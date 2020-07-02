@@ -31,5 +31,10 @@ namespace CaffeineCrashProvider.Sizes
         {
             {"Regular", new Beverage(8, 80)}
         };
+
+        public static readonly Dictionary<string, Beverage> WorkoutEnergyDrink = new Dictionary<string, Beverage>()
+        {
+            {"Regular", new Beverage(16, 300)}
+        };
     }
 }
