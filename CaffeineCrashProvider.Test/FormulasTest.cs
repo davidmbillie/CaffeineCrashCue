@@ -29,14 +29,14 @@ namespace CaffeineCrashProvider
         [Fact]
         public void CalculateCrash_ReturnsMax6()
         {
-            double result = Formulas.CalculateCrash(2, 160);
+            double result = Formulas.CalculateCrash(8, 480);
             Assert.Equal(6, result);
         }
 
         [Fact]
         public void CalculateCrash_ReturnsMin3()
         {
-            double result = Formulas.CalculateCrash(0.5, 40);
+            double result = Formulas.CalculateCrash(0.25, 16);
             Assert.Equal(3, result);
         }
 
