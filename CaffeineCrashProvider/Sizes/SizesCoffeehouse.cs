@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CaffeineCrashProvider.Sizes
 {
-    public static class SizesStar
+    public static class SizesCoffeehouse
     {
         //Espresso shots are 75 mg
         //https://globalassets.starbucks.com/assets/94fbcc2ab1e24359850fa1870fc988bc.pdf
