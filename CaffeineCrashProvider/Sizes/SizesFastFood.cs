@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace CaffeineCrashProvider.Sizes
 {
-    public class SizesMcD
+    public class SizesFastFood
     {
         //Espresso shots are 71 mg
 
