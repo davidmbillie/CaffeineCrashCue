@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaffeineCrashProvider.Test"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaffeineCrashCue.Test", "CaffeineCrashCue.Test\CaffeineCrashCue.Test.csproj", "{52F59429-217E-4DC0-8AC6-9E085E6F7E47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaffeineCrashCueMk1.Android", "CaffeineCrashCueMk1\CaffeineCrashCueMk1.Android\CaffeineCrashCueMk1.Android.csproj", "{307D1A49-D911-410D-86F1-E1F2008E52AB}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
