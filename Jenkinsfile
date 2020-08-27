@@ -20,6 +20,7 @@ pipeline {
 	    always {
 	        junit '**/test/results/*.xml'
             cobertura coberturaReportFile: '**/test/coverage/*.xml'
+            //Codometer 'teamName', 'projectName'
 	    }
 	}
 }
