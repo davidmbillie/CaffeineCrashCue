@@ -20,7 +20,8 @@ pipeline {
 	    always {
 	        junit '**/test/results/*.xml'
             cobertura coberturaReportFile: '**/test/coverage/*.xml'
-            codometer 'teamName', 'projectName'
+            //codometer 'teamName', 'projectName'
+            step([$class: 'CodometerBuilder', teamName: 'team', projectName: 'project'])
 	    }
 	}
 }
