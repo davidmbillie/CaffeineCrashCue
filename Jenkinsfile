@@ -21,7 +21,7 @@ pipeline {
 	        junit '**/test/results/*.xml'
             cobertura coberturaReportFile: '**/test/coverage/*.xml'
             //codometer 'teamName', 'projectName'
-            step([$class: 'CodometerBuildStep', teamName: 'team', projectName: 'project'])
+            step([$class: 'CodometerBuildStep', teamName: 'team', projectName: 'project', programName: 'program', branchName: env.BRANCH_NAME])
 	    }
 	}
 }
