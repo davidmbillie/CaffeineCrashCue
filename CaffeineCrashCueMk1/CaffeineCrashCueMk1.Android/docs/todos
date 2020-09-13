@@ -1,0 +1,16 @@
+Todos
+-Pass what type of source is being consumed to quantity page
+-Central quantity page for drinks: dynamically load choices from passed in info
+-Different one for manual input
+
+-set alarm or notification (choice)
+-config page with custom info
+
+Links
+https://appsandbiscuits.com/moving-between-activities-with-intents-android-8-697b3b70fdfd
+
+https://stackoverflow.com/questions/2091465/how-do-i-pass-data-between-activities-in-android-application
+https://stackoverflow.com/questions/19286970/using-intents-to-pass-data-between-activities
+
+https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/services/creating-a-service/intent-services
+https://developer.android.com/reference/android/app/Activity
