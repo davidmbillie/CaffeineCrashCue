@@ -71,10 +71,12 @@
         <BoxView Grid.Row="2"
                  Grid.Column="2"
                  Color="BlueViolet" />
-        <Label Grid.Row="2"
+        <Button Grid.Row="2"
                Grid.Column="2"
                Text="Lower right"
-               HorizontalOptions="End"
-               VerticalOptions="End" />
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"
+               BackgroundColor="Transparent"
+               Clicked="Lower_Right_Clicked"/>
     </Grid>
 </ContentPage>
