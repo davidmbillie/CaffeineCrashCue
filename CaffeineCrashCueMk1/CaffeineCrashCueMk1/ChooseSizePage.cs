@@ -18,6 +18,7 @@ namespace CaffeineCrashCueMk1
 			Content = new StackLayout();
 
 			StackLayout stackContent = (StackLayout)Content;
+
 			HashSet<Button> sizeButtons = new HashSet<Button>();
 			FieldInfo sizeInfo = caffeineType.GetField(source);
 			Dictionary<string, Beverage> sizePairs = (Dictionary<string, Beverage>)sizeInfo.GetValue(sizes);
