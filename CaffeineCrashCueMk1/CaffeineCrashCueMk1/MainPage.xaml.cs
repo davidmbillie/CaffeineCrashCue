@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CaffeineCrashProvider.Sizes;
 using Xamarin.Forms;
 
 namespace CaffeineCrashCueMk1
@@ -14,9 +15,9 @@ namespace CaffeineCrashCueMk1
             InitializeComponent();
         }
 
-        private void Lower_Right_Clicked(object sender, EventArgs e)
+        private async void Lower_Right_Clicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new Page1());
+            await Navigation.PushAsync(new NavigationPage(new ChooseTypePage(new SizesFastFood())));
         }
     }
 }
