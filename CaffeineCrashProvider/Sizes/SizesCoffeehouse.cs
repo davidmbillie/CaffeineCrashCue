@@ -3,10 +3,19 @@ using System.Collections.Generic;
 
 namespace CaffeineCrashProvider.Sizes
 {
-    public static class SizesCoffeehouse
+    public class SizesCoffeehouse : SizesSet
     {
         //Espresso shots are 75 mg
         //https://globalassets.starbucks.com/assets/94fbcc2ab1e24359850fa1870fc988bc.pdf
+
+        public override string[] Sources
+        {
+            get
+            {
+                return new string[] { "Regular", "Medium", "Light", "Iced", "ColdBrew", "EspressoMilk", "IcedEspressoMilk",
+                "ChaiTea", "IcedChaiTea", "GreenTeaLatte", "CoffeeFrap", "EspressoFrap", "FrappLite", "GreenTeaFrapp"};
+            }
+        }
 
         public static readonly Dictionary<string, Beverage> Dark = new Dictionary<string, Beverage>()
         {

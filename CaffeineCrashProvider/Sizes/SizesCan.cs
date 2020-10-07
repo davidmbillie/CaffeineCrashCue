@@ -3,8 +3,16 @@ using System.Collections.Generic;
 
 namespace CaffeineCrashProvider.Sizes
 {
-    public static class SizesCan
+    public class SizesCan : SizesSet
     {
+        public override string[] Sources
+        {
+            get
+            {
+                return new string[] { "Coffee", "EnergyDrinkSmall", "EnergyDrink", "FruitVegEnergyDrink", "WorkoutEnergyDrink"};
+            }
+        }
+
         public static readonly Dictionary<string, Beverage> Coffee = new Dictionary<string, Beverage>()
         {
             {"Black", new Beverage(8, 140)},

@@ -3,9 +3,17 @@ using System.Collections.Generic;
 
 namespace CaffeineCrashProvider.Sizes
 {
-    public static class SizesDonut
+    public class SizesDonut : SizesSet
     {
         //Espresso shots are 118 mg
+        public override string[] Sources
+        {
+            get
+            {
+                return new string[] { "Regular", "Dark", "Americano", "Macchiato", "Iced", "IcedDark", "Frozen",
+                "IcedTea", "IcedGreenTea", "HotTea", "ChaiTea", "GreenTea", "ColdBrew", "EnergyColdBrew", "EspressoMilk", "IcedEspressoMilk"};
+            }
+        }
 
         public static readonly Dictionary<string, Beverage> Regular = new Dictionary<string, Beverage>()
         {
