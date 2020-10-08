@@ -12,7 +12,7 @@ namespace CaffeineCrashProvider.Sizes
         {
             get
             {
-                return new string[] { "Regular", "Medium", "Light", "Iced", "ColdBrew", "EspressoMilk", "IcedEspressoMilk",
+                return new string[] { "Dark", "Medium", "Light", "Iced", "ColdBrew", "EspressoMilk", "IcedEspressoMilk",
                 "ChaiTea", "IcedChaiTea", "GreenTeaLatte", "CoffeeFrap", "EspressoFrap", "FrappLite", "GreenTeaFrapp"};
             }
         }
