@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CaffeineCrashCueMk1.TimePage"
+             Title="Crash Time">
+    <FlexLayout Direction="Column"
+                AlignItems="Center"
+                JustifyContent="SpaceEvenly">
+
+        <Label Text="Your estimated crash time is: "
+               FontSize="Large" />
+
+        <Button Text="Set Notification" />
+
+        <Button Text="Set Alarm" />
+    </FlexLayout>
+</ContentPage>
