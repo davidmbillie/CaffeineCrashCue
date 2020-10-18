@@ -7,8 +7,10 @@
                 AlignItems="Center"
                 JustifyContent="SpaceEvenly">
 
-        <Label Text="Your estimated crash time is: "
-               FontSize="Large" />
+        <Label x:Name="CrashLabel"
+               Text="Your estimated crash time is: "
+               FontSize="Large"
+               ClassId="derp"/>
 
         <Button Text="Set Notification" />
 
