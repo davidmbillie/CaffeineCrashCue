@@ -44,7 +44,7 @@ namespace CaffeineCrashProvider
         public void CalculateCoeff_ReturnsIntuitiveValueFromAllConstants()
         {
             double result = Formulas.CalculateCoefficient(CoefficientConstants.alcohol,
-            CoefficientConstants.birthControl, CoefficientConstants.exercized,
+            CoefficientConstants.birthControl, CoefficientConstants.exercise,
             CoefficientConstants.grapefruitJuice, CoefficientConstants.pregnant,
             CoefficientConstants.smoker, CoefficientConstants.vegetableAndGrilledChickenDiet);
 
@@ -52,23 +52,23 @@ namespace CaffeineCrashProvider
         }
 
         [Fact]
-        public void WeightSubCoeff_ReturnsBaseline()
+        public void WeightFactor_ReturnsBaseline()
         {
-            double result = Formulas.WeightSubCoeff(150);
+            double result = Formulas.WeightFactor(150);
             Assert.Equal(1, result);
         }
 
         [Fact]
-        public void WeightSubCoeff_Above150ReturnsIntuitiveValue()
+        public void WeightFactor_Above150ReturnsIntuitiveValue()
         {
-            double result = Formulas.WeightSubCoeff(250);
+            double result = Formulas.WeightFactor(250);
             Assert.Equal(1.34, Math.Round(result, 2));
         }
 
         [Fact]
-        public void WeightSubCoeff_Below150ReturnsIntuitiveValue()
+        public void WeightFactor_Below150ReturnsIntuitiveValue()
         {
-            double result = Formulas.WeightSubCoeff(90);
+            double result = Formulas.WeightFactor(90);
             Assert.Equal(0.79, Math.Round(result, 2));
         }
     }

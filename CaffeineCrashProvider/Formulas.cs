@@ -31,7 +31,7 @@ namespace CaffeineCrashProvider
             return coeff;
         }
 
-        public static double WeightSubCoeff(double weight)
+        public static double WeightFactor(double weight)
         {
             double weightfactor = weight - 150;
             return 1 + (0.003434307937522 * weightfactor);
