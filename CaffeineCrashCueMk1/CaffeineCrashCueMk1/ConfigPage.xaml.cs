@@ -108,7 +108,7 @@ namespace CaffeineCrashCueMk1
 
 		private async void SaveClicked(object sender, EventArgs e)
 		{
-			F_weight = Formulas.WeightFactor(Convert.ToDouble(weightText.Text));
+			F_weight = Formulas.WeightFactor(weightText.Text.StandardizeWeight());
 			double coeff = F_alc * F_bc * F_ex * F_gjf * F_preg * F_smoke * F_vgc * F_weight;
 			await Navigation.PushAsync(new NavigationPage(new MainPage(coeff)));
 		}
