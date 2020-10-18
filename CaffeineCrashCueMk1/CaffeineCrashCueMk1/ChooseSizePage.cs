@@ -12,7 +12,7 @@ namespace CaffeineCrashCueMk1
 {
 	public class ChooseSizePage : ContentPage
 	{
-		public ChooseSizePage(SizesSet sizes, string source, Type caffeineType)
+		public ChooseSizePage(SizesSet sizes, string source, Type caffeineType, double coeff)
 		{
 			Title = "Choose Size";
 			Content = new StackLayout();

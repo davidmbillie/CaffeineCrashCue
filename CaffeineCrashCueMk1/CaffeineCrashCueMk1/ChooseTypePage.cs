@@ -13,7 +13,7 @@ namespace CaffeineCrashCueMk1
 {
 	public class ChooseTypePage : ContentPage
 	{
-		public ChooseTypePage(SizesSet sizesSet)
+		public ChooseTypePage(SizesSet sizesSet, double coeff)
 		{
 			Title = "Choose Type";
 			Content = new StackLayout();
@@ -29,7 +29,7 @@ namespace CaffeineCrashCueMk1
 			{
 				button.Clicked += async (sender, e) =>
 				{
-					await Navigation.PushAsync(new ChooseSizePage(sizesSet, button.Text, sizesSet.GetType()));
+					await Navigation.PushAsync(new ChooseSizePage(sizesSet, button.Text, sizesSet.GetType(), coeff));
 				};
 				stackContent.Children.Add(button);
 			}
