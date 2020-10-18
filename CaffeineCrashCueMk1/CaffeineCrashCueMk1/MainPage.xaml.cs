@@ -10,10 +10,16 @@ namespace CaffeineCrashCueMk1
 {
     public partial class MainPage : ContentPage
     {
+        private static double coeff = 1;
         public MainPage()
         {
             InitializeComponent();
         }
+
+        public MainPage(double config_coeff)
+		{
+            coeff = config_coeff;
+		}
 
         private async void FastFoodClicked(object sender, EventArgs e)
 		{
