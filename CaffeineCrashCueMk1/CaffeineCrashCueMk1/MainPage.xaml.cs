@@ -15,7 +15,9 @@ namespace CaffeineCrashCueMk1
         public MainPage(double config_coeff)
 		{
             coeff = config_coeff;
-		}
+
+            InitializeComponent();
+        }
 
         private async void FastFoodClicked(object sender, EventArgs e)
 		{

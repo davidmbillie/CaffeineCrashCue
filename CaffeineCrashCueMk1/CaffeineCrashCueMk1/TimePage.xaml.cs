@@ -19,8 +19,10 @@ namespace CaffeineCrashCueMk1
 			double crash = Formulas.CalculateCrash(coeff, amount);
 			DateTime crashTime = DateTime.Now.AddHours(crash);
 			string crashTimeText = crashTime.ToShortTimeString();
-			CrashLabel.Text = crashTimeDescriptor + crashTimeText;
+
 			InitializeComponent();
+
+			CrashLabel.Text = crashTimeDescriptor + crashTimeText;
 		}
 	}
 }
