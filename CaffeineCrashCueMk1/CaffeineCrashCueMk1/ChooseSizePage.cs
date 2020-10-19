@@ -2,9 +2,7 @@
 using CaffeineCrashProvider.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
 
 using Xamarin.Forms;
 
@@ -12,8 +10,11 @@ namespace CaffeineCrashCueMk1
 {
 	public class ChooseSizePage : ContentPage
 	{
+		private static Dictionary<string, Beverage> beverageMappings;
 		public ChooseSizePage(SizesSet sizes, string source, Type caffeineType, double coeff)
 		{
+			beverageMappings = new Dictionary<string, Beverage>();
+
 			Title = "Choose Size";
 			Content = new StackLayout();
 
@@ -24,10 +25,17 @@ namespace CaffeineCrashCueMk1
 			Dictionary<string, Beverage> sizePairs = (Dictionary<string, Beverage>)sizeInfo.GetValue(sizes);
 			foreach (KeyValuePair<string, Beverage> sizePair in sizePairs)
 			{
-				sizeButtons.Add(new Button { Text = sizePair.Key + ": " + sizePair.Value.Oz });
+				string btnText = sizePair.Key + ": " + sizePair.Value.Oz;
+				sizeButtons.Add(new Button { Text = btnText });
+				beverageMappings.Add(btnText, sizePair.Value);
 			}
 			foreach (Button button in sizeButtons)
 			{
+				button.Clicked += async (sender, e) =>
+				{
+					double caffeineAmount = Convert.ToDouble(beverageMappings[button.Text].Caffeine);
+					await Navigation.PushAsync(new TimePage(coeff, caffeineAmount));
+				};
 				stackContent.Children.Add(button);
 			}
 		}
