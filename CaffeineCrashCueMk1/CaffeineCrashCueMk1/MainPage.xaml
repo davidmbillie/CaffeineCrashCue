@@ -6,9 +6,10 @@
     <Grid RowSpacing="0"
           ColumnSpacing="0">
         <Grid.RowDefinitions>
-            <RowDefinition />
-            <RowDefinition />
-            <RowDefinition />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -88,5 +89,15 @@
                VerticalOptions="Fill"
                BackgroundColor="Transparent"
                Clicked="Lower_Right_Clicked"/>
+        <BoxView Grid.Row="3"
+                 Grid.ColumnSpan="3"
+                 Color="PaleGoldenrod" />
+        <Button Grid.Row="3"
+               Grid.ColumnSpan="3"
+               Text="Customize"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"
+               BackgroundColor="Transparent"
+               Clicked="Customize_Clicked"/>
     </Grid>
 </ContentPage>
