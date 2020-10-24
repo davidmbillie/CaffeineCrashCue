@@ -19,7 +19,7 @@ namespace CaffeineCrashCueMk1.Droid
 {
 	public class AndroidCrashAlarm : ICrashAlarm
 	{
-		public void SetAlarm(long crashMillis)
+		public void SetAlarm(long crashCueMillis)
 		{
 			Context context = Android.App.Application.Context;
 
@@ -38,12 +38,12 @@ namespace CaffeineCrashCueMk1.Droid
 				alarmManager.Cancel(pendingIntent);
 			}
 
-			alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, crashMillis, pendingIntent);
+			alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
 		}
 
-		public long GenerateCrashCueMillis(double crashTime)
+		public long GenerateCrashCueMillis(double crashTimeMillis)
 		{
-			long crashLong = Convert.ToInt64(crashTime);
+			long crashLong = Convert.ToInt64(crashTimeMillis);
 			long cueTimeMillis = 60000 * AndroidConstants.cueTime;
 			return Java.Lang.JavaSystem.CurrentTimeMillis() + crashLong - cueTimeMillis;
 		}
