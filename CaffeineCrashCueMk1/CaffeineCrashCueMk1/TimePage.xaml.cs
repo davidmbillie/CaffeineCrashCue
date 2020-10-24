@@ -15,7 +15,8 @@ namespace CaffeineCrashCueMk1
 		{
 			//default ctor for testing
 			InitializeComponent();
-			crashTime = 60000;
+			//current test default is 11 minutes because of the current cue constant of 10 minutes 
+			crashTime = 660000;
 		}
 
 		public TimePage(double coeff, double amount)
@@ -27,13 +28,14 @@ namespace CaffeineCrashCueMk1
 			InitializeComponent();
 
 			CrashLabel.Text = crashTimeDescriptor + crashTimeText;
-			long crashMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashMillis(crashTime);
-			DependencyService.Get<ICrashAlarm>().SetAlarm(crashMillis);
+			double crashTimeMillis = crashTime * 3600000;
+			long crashCueMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashCueMillis(crashTimeMillis);
+			DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis);
 		}
 
 		private void Notification_Clicked(object o, EventArgs e)
 		{
-			long crashMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashMillis(crashTime);
+			long crashMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashCueMillis(crashTime);
 			DependencyService.Get<ICrashAlarm>().SetAlarm(crashMillis);
 		}
 	}

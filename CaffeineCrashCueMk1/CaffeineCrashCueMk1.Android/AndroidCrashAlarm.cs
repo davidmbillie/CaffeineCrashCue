@@ -41,10 +41,11 @@ namespace CaffeineCrashCueMk1.Droid
 			alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, crashMillis, pendingIntent);
 		}
 
-		public long GenerateCrashMillis(double crashTime)
+		public long GenerateCrashCueMillis(double crashTime)
 		{
 			long crashLong = Convert.ToInt64(crashTime);
-			return Java.Lang.JavaSystem.CurrentTimeMillis() + crashLong;
+			long cueTimeMillis = 60000 * AndroidConstants.cueTime;
+			return Java.Lang.JavaSystem.CurrentTimeMillis() + crashLong - cueTimeMillis;
 		}
 	}
 }
