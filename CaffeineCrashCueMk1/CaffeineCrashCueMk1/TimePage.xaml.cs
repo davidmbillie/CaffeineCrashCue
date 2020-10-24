@@ -8,31 +8,32 @@ namespace CaffeineCrashCueMk1
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TimePage : ContentPage
 	{
-		private long crashMillis = 0;
 		private const string crashTimeDescriptor = "Your estimated crash time is: ";
+		private double crashTime = 0;
 
 		public TimePage()
 		{
 			//default ctor for testing
 			InitializeComponent();
-			crashMillis = 30000;
+			crashTime = 60000;
 		}
 
 		public TimePage(double coeff, double amount)
 		{
-			double crash = Formulas.CalculateCrash(coeff, amount);
-			DateTime crashTime = DateTime.Now.AddHours(crash);
-			string crashTimeText = crashTime.ToShortTimeString();
+			crashTime = Formulas.CalculateCrash(coeff, amount);
+			DateTime crashDateTime = DateTime.Now.AddHours(crashTime);
+			string crashTimeText = crashDateTime.ToShortTimeString();
 
 			InitializeComponent();
 
 			CrashLabel.Text = crashTimeDescriptor + crashTimeText;
-
-			crashMillis = Convert.ToInt64(crash) * 3600000;
+			long crashMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashMillis(crashTime);
+			DependencyService.Get<ICrashAlarm>().SetAlarm(crashMillis);
 		}
 
 		private void Notification_Clicked(object o, EventArgs e)
 		{
+			long crashMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashMillis(crashTime);
 			DependencyService.Get<ICrashAlarm>().SetAlarm(crashMillis);
 		}
 	}

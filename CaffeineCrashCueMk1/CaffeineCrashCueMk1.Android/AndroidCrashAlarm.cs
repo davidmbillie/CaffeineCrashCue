@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Icu.Util;
 using Android.OS;
 using Android.Provider;
 using Android.Runtime;
@@ -27,10 +28,23 @@ namespace CaffeineCrashCueMk1.Droid
 			alarmIntent.PutExtra("message", AndroidConstants.Message);
 			alarmIntent.PutExtra("Id", AndroidConstants.uniqueId);
 
+			bool alreadyExists = (PendingIntent.GetBroadcast(context, AndroidConstants.uniqueId, alarmIntent, PendingIntentFlags.NoCreate) != null);
+
 			PendingIntent pendingIntent = PendingIntent.GetBroadcast(context, AndroidConstants.uniqueId, alarmIntent, PendingIntentFlags.UpdateCurrent);
 			AlarmManager alarmManager = (AlarmManager)context.GetSystemService(Context.AlarmService);
 
-			alarmManager.SetExact(AlarmType.RtcWakeup, crashMillis, pendingIntent);
+			if (alreadyExists)
+			{
+				alarmManager.Cancel(pendingIntent);
+			}
+
+			alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, crashMillis, pendingIntent);
+		}
+
+		public long GenerateCrashMillis(double crashTime)
+		{
+			long crashLong = Convert.ToInt64(crashTime);
+			return Java.Lang.JavaSystem.CurrentTimeMillis() + crashLong;
 		}
 	}
 }
