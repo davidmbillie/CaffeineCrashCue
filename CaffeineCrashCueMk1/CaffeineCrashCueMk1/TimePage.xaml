@@ -8,11 +8,9 @@
 
         <Label x:Name="CrashLabel"
                Text="Your estimated crash time is: "
-               FontSize="Large"
-               ClassId="derp"/>
+               FontSize="Large"/>
 
-        <Button Text="Set Notification" />
-
-        <Button Text="Set Alarm" />
+        <Button Text="Set Notification"
+                Clicked="Notification_Clicked"/>
     </FlexLayout>
 </ContentPage>

@@ -8,10 +8,14 @@ namespace CaffeineCrashCueMk1
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TimePage : ContentPage
 	{
+		private long crashMillis = 0;
 		private const string crashTimeDescriptor = "Your estimated crash time is: ";
+
 		public TimePage()
 		{
+			//default ctor for testing
 			InitializeComponent();
+			crashMillis = 30000;
 		}
 
 		public TimePage(double coeff, double amount)
@@ -23,6 +27,13 @@ namespace CaffeineCrashCueMk1
 			InitializeComponent();
 
 			CrashLabel.Text = crashTimeDescriptor + crashTimeText;
+
+			crashMillis = Convert.ToInt64(crash) * 3600000;
+		}
+
+		private void Notification_Clicked(object o, EventArgs e)
+		{
+			DependencyService.Get<ICrashAlarm>().SetAlarm(crashMillis);
 		}
 	}
 }

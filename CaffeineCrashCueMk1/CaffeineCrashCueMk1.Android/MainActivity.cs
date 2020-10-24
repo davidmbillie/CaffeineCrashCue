@@ -14,12 +14,33 @@ namespace CaffeineCrashCueMk1.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
+            //commented out for now because of a wonky exception that doesn't overtly affect runtime
+            //TabLayoutResource = Resource.Layout.Tabbar;
+            //ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+            CreateNotificationChannel();
         }
-    }
+
+		private void CreateNotificationChannel()
+		{
+			if (Build.VERSION.SdkInt < BuildVersionCodes.O)
+			{
+				// Notification channels are new in API 26 (and not a part of the
+				// support library). There is no need to create a notification
+				// channel on older versions of Android.
+				return;
+			}
+
+			var channel = new NotificationChannel(AndroidConstants.Id, AndroidConstants.Id, NotificationImportance.Default)
+			{
+				Description = AndroidConstants.Description
+			};
+
+			var notificationManager = (NotificationManager)GetSystemService(NotificationService);
+			notificationManager.CreateNotificationChannel(channel);
+		}
+	}
 }

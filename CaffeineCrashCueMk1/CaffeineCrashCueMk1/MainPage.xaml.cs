@@ -46,7 +46,7 @@ namespace CaffeineCrashCueMk1
 
         private async void Lower_Right_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NavigationPage(new ChooseTypePage(new SizesFastFood(), coeff)));
+            await Navigation.PushAsync(new NavigationPage(new TimePage()));
         }
 
         private async void Customize_Clicked(object sender, EventArgs e)
