@@ -38,7 +38,21 @@ namespace CaffeineCrashCueMk1.Droid
 				alarmManager.Cancel(pendingIntent);
 			}
 
-			alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
+			if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.M)
+			{
+				if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Kitkat)
+				{
+					alarmManager.SetExact(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
+				}
+				else
+				{
+					alarmManager.Set(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
+				}
+			}
+			else
+			{
+				alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
+			}
 		}
 
 		public long GenerateCrashCueMillis(double crashTimeMillis)
