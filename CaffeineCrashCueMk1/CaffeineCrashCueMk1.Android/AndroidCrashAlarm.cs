@@ -24,13 +24,13 @@ namespace CaffeineCrashCueMk1.Droid
 			Context context = Android.App.Application.Context;
 
 			Intent alarmIntent = new Intent(context, typeof(CrashAlarmReceiver));
-			alarmIntent.PutExtra("title", AndroidConstants.Title);
-			alarmIntent.PutExtra("message", AndroidConstants.Message);
-			alarmIntent.PutExtra("Id", AndroidConstants.uniqueId);
+			alarmIntent.PutExtra("title", CueConstants.Title);
+			alarmIntent.PutExtra("message", CueConstants.Message);
+			alarmIntent.PutExtra("Id", CueConstants.uniqueId);
 
-			bool alreadyExists = (PendingIntent.GetBroadcast(context, AndroidConstants.uniqueId, alarmIntent, PendingIntentFlags.NoCreate) != null);
+			bool alreadyExists = (PendingIntent.GetBroadcast(context, CueConstants.uniqueId, alarmIntent, PendingIntentFlags.NoCreate) != null);
 
-			PendingIntent pendingIntent = PendingIntent.GetBroadcast(context, AndroidConstants.uniqueId, alarmIntent, PendingIntentFlags.UpdateCurrent);
+			PendingIntent pendingIntent = PendingIntent.GetBroadcast(context, CueConstants.uniqueId, alarmIntent, PendingIntentFlags.UpdateCurrent);
 			AlarmManager alarmManager = (AlarmManager)context.GetSystemService(Context.AlarmService);
 
 			if (alreadyExists)
@@ -58,7 +58,7 @@ namespace CaffeineCrashCueMk1.Droid
 		public long GenerateCrashCueMillis(double crashTimeMillis)
 		{
 			long crashLong = Convert.ToInt64(crashTimeMillis);
-			long cueTimeMillis = 60000 * AndroidConstants.cueTime;
+			long cueTimeMillis = 60000 * CueConstants.cueTime;
 			return Java.Lang.JavaSystem.CurrentTimeMillis() + crashLong - cueTimeMillis;
 		}
 	}

@@ -21,10 +21,10 @@ namespace CaffeineCrashCueMk1.Droid
             var title = intent.GetStringExtra("title");
 
             var resultIntent = new Intent(context, typeof(CrashAlarmReceiver));
-            var pending = PendingIntent.GetActivity(context, AndroidConstants.uniqueId, resultIntent, PendingIntentFlags.CancelCurrent);
+            var pending = PendingIntent.GetActivity(context, CueConstants.uniqueId, resultIntent, PendingIntentFlags.CancelCurrent);
             resultIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
 
-            var builder = new Notification.Builder(context, AndroidConstants.Id)
+            var builder = new Notification.Builder(context, CueConstants.Id)
                 .SetContentIntent(pending)
                 .SetContentTitle(title)
                 .SetSmallIcon(Resource.Drawable.notify_panel_notification_icon_bg)
@@ -35,7 +35,7 @@ namespace CaffeineCrashCueMk1.Droid
             builder.SetContentIntent(pending);
             var notification = builder.Build();
             var manager = NotificationManager.FromContext(context);
-            manager.Notify(AndroidConstants.uniqueId, notification);
+            manager.Notify(CueConstants.uniqueId, notification);
         }
     }
 }

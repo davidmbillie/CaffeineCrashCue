@@ -1,9 +1,9 @@
-﻿namespace CaffeineCrashCueMk1.Droid
+﻿namespace CaffeineCrashCueMk1
 {
-	public static class AndroidConstants
+	public static class CueConstants
 	{
 		//amount of minutes to warn before the crash happens
-		public const int cueTime = 10;
+		public const int cueTime = 20;
 		public const string Description = "Caffeine Crash Cue channel";
 		public const string Id = "CaffeineCrash";
 		public static readonly string Message = $"Your caffeine crash will occur in about {cueTime} minutes";

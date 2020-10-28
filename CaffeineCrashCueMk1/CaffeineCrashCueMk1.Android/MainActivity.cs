@@ -34,9 +34,9 @@ namespace CaffeineCrashCueMk1.Droid
 				return;
 			}
 
-			var channel = new NotificationChannel(AndroidConstants.Id, AndroidConstants.Id, NotificationImportance.Default)
+			var channel = new NotificationChannel(CueConstants.Id, CueConstants.Id, NotificationImportance.Default)
 			{
-				Description = AndroidConstants.Description
+				Description = CueConstants.Description
 			};
 
 			var notificationManager = (NotificationManager)GetSystemService(NotificationService);

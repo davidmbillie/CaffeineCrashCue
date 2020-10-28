@@ -15,8 +15,7 @@ namespace CaffeineCrashCueMk1
 		{
 			//default ctor for testing
 			InitializeComponent();
-			//current test default is 11 minutes because of the current cue constant of 10 minutes 
-			crashTimeMillis = 660000;
+			crashTimeMillis = (CueConstants.cueTime + 1) * 60000;
 		}
 
 		public TimePage(double coeff, double amount)
