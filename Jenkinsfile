@@ -18,8 +18,8 @@ pipeline {
 	}
 	post {
 	    always {
-	        junit '**/test/results/*.xml'
-            cobertura coberturaReportFile: '**/test/coverage/*.xml'
+	        //junit '**/test/results/*.xml'
+            //cobertura coberturaReportFile: '**/test/coverage/*.xml'
             //codometer 'teamName', 'projectName'
             step([$class: 'CodometerBuildStep', programName: 'program', projectName: 'project', teamName: 'team'])
 	    }
