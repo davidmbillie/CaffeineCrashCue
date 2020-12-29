@@ -19,14 +19,14 @@ namespace CaffeineCrashCueMk1
             InitializeComponent();
         }
 
+        private async void CoffeeClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ChooseTypePage(new SizesCoffeehouse(), coeff));
+        }
+
         private async void FastFoodClicked(object sender, EventArgs e)
 		{
             await Navigation.PushAsync(new ChooseTypePage(new SizesFastFood(), coeff));
-        }
-
-        private async void CoffeeHouseClicked(object sender, EventArgs e)
-		{
-            await Navigation.PushAsync(new ChooseTypePage(new SizesCoffeehouse(), coeff));
         }
 
         private async void DonutClicked(object sender, EventArgs e)

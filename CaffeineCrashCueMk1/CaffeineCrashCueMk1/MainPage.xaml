@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CaffeineCrashCueMk1"
-             x:Class="CaffeineCrashCueMk1.MainPage">
+             x:Class="CaffeineCrashCueMk1.MainPage"
+             Title="Choose Source">
     <Grid RowSpacing="0"
           ColumnSpacing="0">
         <Grid.RowDefinitions>
@@ -18,23 +19,23 @@
         </Grid.ColumnDefinitions>
 
         <BoxView Color="AliceBlue" />
-        <Button Text="Fast Food"
+        <Button Text="Coffee"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                 BackgroundColor="Transparent"
-                Clicked="FastFoodClicked"/>
+                Clicked="CoffeeClicked"/>
         <BoxView Grid.Column="1"
                  Color="LightSkyBlue" />
         <Button Grid.Column="1"
-               Text="Coffee House"
+               Text="Fast Food Coffee"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                BackgroundColor="Transparent"
-               Clicked="CoffeeHouseClicked"/>
+               Clicked="FastFoodClicked"/>
         <BoxView Grid.Column="2"
                  Color="CadetBlue" />
         <Button Grid.Column="2"
-               Text="Donut Chain"
+               Text="Donut Coffee"
                HorizontalOptions="Fill"
                VerticalOptions="Fill" 
                BackgroundColor="Transparent"
