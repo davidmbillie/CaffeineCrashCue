@@ -21,37 +21,37 @@ namespace CaffeineCrashCueMk1
 
         private async void FastFoodClicked(object sender, EventArgs e)
 		{
-            await Navigation.PushAsync(new NavigationPage(new ChooseTypePage(new SizesFastFood(), coeff)));
+            await Navigation.PushAsync(new ChooseTypePage(new SizesFastFood(), coeff));
         }
 
         private async void CoffeeHouseClicked(object sender, EventArgs e)
 		{
-            await Navigation.PushAsync(new NavigationPage(new ChooseTypePage(new SizesCoffeehouse(), coeff)));
+            await Navigation.PushAsync(new ChooseTypePage(new SizesCoffeehouse(), coeff));
         }
 
         private async void DonutClicked(object sender, EventArgs e)
 		{
-            await Navigation.PushAsync(new NavigationPage(new ChooseTypePage(new SizesDonut(), coeff)));
+            await Navigation.PushAsync(new ChooseTypePage(new SizesDonut(), coeff));
         }
 
         private async void BottleClicked(object sender, EventArgs e)
 		{
-            await Navigation.PushAsync(new NavigationPage(new ChooseTypePage(new SizesBottle(), coeff)));
+            await Navigation.PushAsync(new ChooseTypePage(new SizesBottle(), coeff));
         }
 
         private async void CanClicked(object sender, EventArgs e)
 		{
-            await Navigation.PushAsync(new NavigationPage(new ChooseTypePage(new SizesCan(), coeff)));
+            await Navigation.PushAsync(new ChooseTypePage(new SizesCan(), coeff));
         }
 
         private async void Lower_Right_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new NavigationPage(new TimePage()));
+            await Navigation.PushAsync(new TimePage());
         }
 
         private async void Customize_Clicked(object sender, EventArgs e)
 		{
-            await Navigation.PushAsync(new NavigationPage(new ConfigPage()));
+            await Navigation.PushAsync(new ConfigPage());
 		}
     }
 }
