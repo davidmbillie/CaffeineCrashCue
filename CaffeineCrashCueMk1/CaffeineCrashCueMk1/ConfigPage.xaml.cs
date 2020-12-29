@@ -1,5 +1,6 @@
 ﻿using CaffeineCrashProvider;
 using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace CaffeineCrashCueMk1
 		private static double F_alc = 1;
 		private static double F_bc = 1;
 		private static double F_ex = 1;
-		private static double F_gjf = 1;
+		private static double F_gfj = 1;
 		private static double F_preg = 1;
 		private static double F_smoke = 1;
 		private static double F_vgc = 1;
@@ -20,6 +21,14 @@ namespace CaffeineCrashCueMk1
 		public ConfigPage()
 		{
 			InitializeComponent();
+			alcoholSwitch.IsToggled = Preferences.Get("F_alc", false);
+			birthControlSwitch.IsToggled = Preferences.Get("F_bc", false);
+			exerciseSwitch.IsToggled = Preferences.Get("F_ex", false);
+			grapefruitSwitch.IsToggled = Preferences.Get("F_gfj", false);
+			pregnantSwitch.IsToggled = Preferences.Get("F_preg", false);
+			smokerSwitch.IsToggled = Preferences.Get("F_smoke", false);
+			vegAndGrilledSwitch.IsToggled = Preferences.Get("F_vgc", false);
+			weightText.Text = Preferences.Get("F_weight", "150");
 		}
 
 		private void Alc_Toggled(object sender, ToggledEventArgs e)
@@ -32,6 +41,7 @@ namespace CaffeineCrashCueMk1
 			{
 				F_alc = 1;
 			}
+			Preferences.Set("F_alc", e.Value);
 		}
 
 		private void BC_Toggled(object sender, ToggledEventArgs e)
@@ -44,6 +54,7 @@ namespace CaffeineCrashCueMk1
 			{
 				F_bc = 1;
 			}
+			Preferences.Set("F_bc", e.Value);
 		}
 
 		private void Ex_Toggled(object sender, ToggledEventArgs e)
@@ -56,18 +67,21 @@ namespace CaffeineCrashCueMk1
 			{
 				F_ex = 1;
 			}
+			Preferences.Set("F_ex", e.Value);
 		}
 
 		private void GFJ_Toggled(object sender, ToggledEventArgs e)
 		{
 			if (e.Value == true)
 			{
-				F_gjf = CoefficientConstants.grapefruitJuice;
+				F_gfj = CoefficientConstants.grapefruitJuice;
 			}
 			else
 			{
-				F_gjf = 1;
+				F_gfj = 1;
 			}
+			Preferences.Set("F_gfj", e.Value);
+
 		}
 
 		private void Preg_Toggled(object sender, ToggledEventArgs e)
@@ -80,6 +94,7 @@ namespace CaffeineCrashCueMk1
 			{
 				F_preg = 1;
 			}
+			Preferences.Set("F_preg", e.Value);
 		}
 
 		private void Smoke_Toggled(object sender, ToggledEventArgs e)
@@ -92,6 +107,7 @@ namespace CaffeineCrashCueMk1
 			{
 				F_smoke = 1;
 			}
+			Preferences.Set("F_smoke", e.Value);
 		}
 
 		private void VGC_Toggled(object sender, ToggledEventArgs e)
@@ -104,12 +120,14 @@ namespace CaffeineCrashCueMk1
 			{
 				F_vgc = 1;
 			}
+			Preferences.Set("F_vgc", e.Value);
 		}
 
 		private async void SaveClicked(object sender, EventArgs e)
 		{
+			Preferences.Set("F_weight", weightText.Text);
 			F_weight = Formulas.WeightFactor(weightText.Text.StandardizeWeight());
-			double coeff = F_alc * F_bc * F_ex * F_gjf * F_preg * F_smoke * F_vgc * F_weight;
+			double coeff = F_alc * F_bc * F_ex * F_gfj * F_preg * F_smoke * F_vgc * F_weight;
 			await Navigation.PushAsync(new MainPage(coeff));
 		}
 	}
