@@ -9,7 +9,7 @@ namespace CaffeineCrashProvider.Sizes
         {
             get
             {
-                return new string[] { "Coffee", "EnergyDrinkSmall", "EnergyDrink", "FruitVegEnergyDrink", "WorkoutEnergyDrink"};
+                return new string[] { "Coffee", "RedOxEnergyDrink", "EnergyDrink", "FruitVegEnergyDrink", "WorkoutEnergyDrink"};
             }
         }
 
@@ -22,7 +22,7 @@ namespace CaffeineCrashProvider.Sizes
             {"Tripleshot", new Beverage(15, 225)}
         };
 
-        public static readonly Dictionary<string, Beverage> EnergyDrinkSmall = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> RedOxEnergyDrink = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(8, 77)},
             {"Regular", new Beverage(12, 111)},

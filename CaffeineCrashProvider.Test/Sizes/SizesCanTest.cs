@@ -47,9 +47,9 @@ namespace CaffeineCrashProvider.Sizes
         }
 
         [Fact]
-        public void EnergyDrinkSmallSizes_CreateReasonableTimes()
+        public void RedOxEnergyDrinkSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesCan.EnergyDrinkSmall)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesCan.RedOxEnergyDrink)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
