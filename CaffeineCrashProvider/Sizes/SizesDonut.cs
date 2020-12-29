@@ -10,8 +10,8 @@ namespace CaffeineCrashProvider.Sizes
         {
             get
             {
-                return new string[] { "Regular", "Dark", "Americano", "Macchiato", "Iced", "IcedDark", "Frozen",
-                "IcedTea", "IcedGreenTea", "HotTea", "ChaiTea", "GreenTea", "ColdBrew", "EnergyColdBrew", "EspressoMilk", "IcedEspressoMilk"};
+                return new string[] { "Regular", "Dark", "Americano", "Macchiato", "Iced", "Iced_Dark", "Frozen",
+                "Iced_Tea", "Iced_Green_Tea", "Hot_Tea", "Chai_Tea", "Green_Tea", "Cold_Brew", "Energy_Cold_Brew", "Espresso_Drink", "Iced_Espresso_Drink"};
             }
         }
 
@@ -53,7 +53,7 @@ namespace CaffeineCrashProvider.Sizes
             {"Large", new Beverage(32, 396) }
         };
 
-        public static readonly Dictionary<string, Beverage> IcedDark = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Iced_Dark = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(16, 124)},
             {"Medium", new Beverage(24, 186)},
@@ -67,63 +67,63 @@ namespace CaffeineCrashProvider.Sizes
             {"Large", new Beverage(32, 393) }
         };
 
-        public static readonly Dictionary<string, Beverage> IcedTea = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Iced_Tea = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(16, 45)},
             {"Medium", new Beverage(24, 67)},
             {"Large", new Beverage(32, 90) }
         };
 
-        public static readonly Dictionary<string, Beverage> IcedGreenTea = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Iced_Green_Tea = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(16, 45)},
             {"Medium", new Beverage(24, 67)},
             {"Large", new Beverage(32, 91) }
         };
 
-        public static readonly Dictionary<string, Beverage> HotTea = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Hot_Tea = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(10, 90)},
             {"Medium", new Beverage(14, 90)},
             {"Large", new Beverage(20, 180)}
         };
 
-        public static readonly Dictionary<string, Beverage> ChaiTea = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Chai_Tea = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(10, 54)},
             {"Medium", new Beverage(14, 80)},
             {"Large", new Beverage(20, 107)}
         };
 
-        public static readonly Dictionary<string, Beverage> GreenTea = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Green_Tea = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(10, 70)},
             {"Medium", new Beverage(14, 70)},
             {"Large", new Beverage(20, 140)}
         };
 
-        public static readonly Dictionary<string, Beverage> ColdBrew = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Cold_Brew = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(10, 174)},
             {"Medium", new Beverage(14, 260)},
             {"Large", new Beverage(20, 347) }
         };
 
-        public static readonly Dictionary<string, Beverage> EnergyColdBrew = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Energy_Cold_Brew = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(10, 292)},
             {"Medium", new Beverage(14, 378)},
             {"Large", new Beverage(20, 465) }
         };
 
-        public static readonly Dictionary<string, Beverage> EspressoMilk = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Espresso_Drink = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(10, 118)},
             {"Medium", new Beverage(14, 166)},
             {"Large", new Beverage(20, 252)}
         };
 
-        public static readonly Dictionary<string, Beverage> IcedEspressoMilk = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Iced_Espresso_Drink = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(16, 118)},
             {"Medium", new Beverage(24, 166)},

@@ -49,7 +49,7 @@ namespace CaffeineCrashProvider.Sizes
         [Fact]
         public void RedOxEnergyDrinkSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesCan.RedOxEnergyDrink)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesCan.Red_Ox_Energy_Drink)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
@@ -60,7 +60,7 @@ namespace CaffeineCrashProvider.Sizes
         [Fact]
         public void EnergyDrinkSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesCan.EnergyDrink)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesCan.Energy_Drink)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
@@ -71,7 +71,7 @@ namespace CaffeineCrashProvider.Sizes
         [Fact]
         public void FruitVegEnergyDrinkSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesCan.FruitVegEnergyDrink)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesCan.Fruit_And_Veg_Energy_Drink)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
@@ -82,7 +82,7 @@ namespace CaffeineCrashProvider.Sizes
         [Fact]
         public void WorkoutEnergyDrinkSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesCan.WorkoutEnergyDrink)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesCan.Workout_Energy_Drink)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());

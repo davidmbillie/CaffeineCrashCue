@@ -17,13 +17,13 @@ namespace CaffeineCrashCueMk1
 			HashSet<Button> buttonHash = new HashSet<Button>();
 			foreach (string source in sizesSet.Sources)
 			{
-				buttonHash.Add(new Button { Text = source });
+				buttonHash.Add(new Button { Text = source.Replace('_', ' ') });
 			}
 			foreach (Button button in buttonHash)
 			{
 				button.Clicked += async (sender, e) =>
 				{
-					await Navigation.PushAsync(new ChooseSizePage(sizesSet, button.Text, sizesSet.GetType(), coeff));
+					await Navigation.PushAsync(new ChooseSizePage(sizesSet, button.Text.Replace(' ', '_'), sizesSet.GetType(), coeff));
 				};
 				stackContent.Children.Add(button);
 			}

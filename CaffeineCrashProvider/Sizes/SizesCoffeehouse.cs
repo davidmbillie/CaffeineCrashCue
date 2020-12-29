@@ -12,8 +12,8 @@ namespace CaffeineCrashProvider.Sizes
         {
             get
             {
-                return new string[] { "Dark", "Medium", "Light", "Iced", "ColdBrew", "EspressoMilk", "IcedEspressoMilk",
-                "ChaiTea", "IcedChaiTea", "GreenTeaLatte", "CoffeeFrap", "EspressoFrap", "FrappLite", "GreenTeaFrapp"};
+                return new string[] { "Dark", "Medium", "Light", "Iced", "Cold_Brew", "Espresso_Drink", "Iced_Espresso_Drink",
+                "Chai_Tea", "Iced_Chai_Tea", "Green_Tea_Latte", "Coffee_Frappucino", "Espresso_Frappucino", "Frappucino_Lite", "Green_Tea_Frappucino"};
             }
         }
 
@@ -49,7 +49,7 @@ namespace CaffeineCrashProvider.Sizes
             {"ExtraLarge", new Beverage(31, 280) }
         };
 
-        public static readonly Dictionary<string, Beverage> ColdBrew = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Cold_Brew = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(12, 150)},
             {"Medium", new Beverage(16, 200)},
@@ -57,7 +57,7 @@ namespace CaffeineCrashProvider.Sizes
             {"ExtraLarge", new Beverage(31, 330) }
         };
 
-        public static readonly Dictionary<string, Beverage> EspressoMilk = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Espresso_Drink = new Dictionary<string, Beverage>()
         {
             {"Short", new Beverage(8, 75)},
             {"Small", new Beverage(12, 75)},
@@ -65,14 +65,14 @@ namespace CaffeineCrashProvider.Sizes
             {"Large", new Beverage(24, 150) }
         };
 
-        public static readonly Dictionary<string, Beverage> IcedEspressoMilk = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Iced_Espresso_Drink = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(12, 75)},
             {"Medium", new Beverage(16, 150)},
             {"Large", new Beverage(24, 225) }
         };
 
-        public static readonly Dictionary<string, Beverage> ChaiTea = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Chai_Tea = new Dictionary<string, Beverage>()
         {
             {"Short", new Beverage(8, 50)},
             {"Small", new Beverage(12, 70)},
@@ -80,7 +80,7 @@ namespace CaffeineCrashProvider.Sizes
             {"Large", new Beverage(24, 120) }
         };
 
-        public static readonly Dictionary<string, Beverage> IcedChaiTea = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Iced_Chai_Tea = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(8, 70)},
             {"Medium", new Beverage(12, 95)},
@@ -88,7 +88,7 @@ namespace CaffeineCrashProvider.Sizes
         };
 
         //works for both hot and iced
-        public static readonly Dictionary<string, Beverage> GreenTeaLatte = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Green_Tea_Latte = new Dictionary<string, Beverage>()
         {
             {"Short", new Beverage(8, 30)},
             {"Small", new Beverage(12, 55)},
@@ -96,28 +96,28 @@ namespace CaffeineCrashProvider.Sizes
             {"Large", new Beverage(24, 110) }
         };
 
-        public static readonly Dictionary<string, Beverage> CoffeeFrap = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Coffee_Frappucino = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(8, 70)},
             {"Medium", new Beverage(12, 100)},
             {"Large", new Beverage(16, 130)}
         };
 
-        public static readonly Dictionary<string, Beverage> EspressoFrap = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Espresso_Frappucino = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(8, 130)},
             {"Medium", new Beverage(12, 165)},
             {"Large", new Beverage(16, 185)}
         };
 
-        public static readonly Dictionary<string, Beverage> FrappLite = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Frappucino_Lite = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(8, 70)},
             {"Medium", new Beverage(12, 95)},
             {"Large", new Beverage(16, 120)}
         };
 
-        public static readonly Dictionary<string, Beverage> GreenTeaFrapp = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Green_Tea_Frappucino = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(8, 50)},
             {"Medium", new Beverage(12, 70)},

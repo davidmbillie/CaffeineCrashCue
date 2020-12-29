@@ -26,6 +26,7 @@ namespace CaffeineCrashCueMk1
 			foreach (KeyValuePair<string, Beverage> sizePair in sizePairs)
 			{
 				string btnText = sizePair.Key + ": " + sizePair.Value.Oz;
+				btnText = btnText.Replace('_', ' ');
 				sizeButtons.Add(new Button { Text = btnText });
 				beverageMappings.Add(btnText, sizePair.Value);
 			}
