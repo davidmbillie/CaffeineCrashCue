@@ -10,9 +10,10 @@ namespace CaffeineCrashCueMk1
 		public ChooseTypePage(SizesSet sizesSet, double coeff)
 		{
 			Title = "Choose Type";
-			Content = new StackLayout();
+			Content = new ScrollView();
+			ScrollView scrollView = (ScrollView)Content;
 
-			StackLayout stackContent = (StackLayout)Content;
+			StackLayout stackContent = new StackLayout();
 
 			HashSet<Button> buttonHash = new HashSet<Button>();
 			foreach (string source in sizesSet.Sources)
@@ -27,6 +28,8 @@ namespace CaffeineCrashCueMk1
 				};
 				stackContent.Children.Add(button);
 			}
+
+			scrollView.Content = stackContent;
 		}
 	}
 }
