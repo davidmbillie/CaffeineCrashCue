@@ -1,21 +1,16 @@
 ﻿using System;
 using CaffeineCrashProvider.Sizes;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace CaffeineCrashCueMk1
 {
     public partial class MainPage : ContentPage
     {
-        private static double coeff = 1;
+        private static double coeff = 1.0;
         public MainPage()
         {
-            InitializeComponent();
-        }
-
-        public MainPage(double config_coeff)
-		{
-            coeff = config_coeff;
-
+            coeff = Preferences.Get("F_coeff", 1.0);
             InitializeComponent();
         }
 
