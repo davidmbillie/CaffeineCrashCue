@@ -11,9 +11,11 @@ namespace CaffeineCrashCueMk1
 	{
 		private const string crashTimeDescriptor = "Your estimated crash time is: ";
 		private double crashTimeMillis = 0;
+		private static string crashTimeText = "";
 
 		public TimePage()
 		{
+			BackgroundImageSource = CueConstants.BackgroundImage;
 			//default ctor for testing
 			InitializeComponent();
 			crashTimeMillis = (CueConstants.cueTime + 1) * 60000;
@@ -21,21 +23,24 @@ namespace CaffeineCrashCueMk1
 
 		public TimePage(double coeff, double amount)
 		{
+			BackgroundImageSource = CueConstants.BackgroundImage;
+
 			InitializeComponent();
 
 			double crashTime = Formulas.CalculateCrash(coeff, amount);
 			crashTimeMillis = crashTime * 3600000;
 
 			DateTime crashDateTime = DateTime.Now.AddHours(crashTime);
-			string crashTimeText = crashDateTime.ToShortTimeString();
+			crashTimeText = crashDateTime.ToShortTimeString();
 			CrashLabel.Text = crashTimeDescriptor + crashTimeText;
 			Preferences.Set(CueConstants.CrashTimePrefKey, crashTimeText);
 		}
 
-		private void Notification_Clicked(object o, EventArgs e)
+		private async void Notification_Clicked(object o, EventArgs e)
 		{
 			long crashCueMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashCueMillis(crashTimeMillis);
 			DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis);
+			await DisplayAlert("Crash Cue", "Notification set for " + crashTimeText, "OK");
 		}
 	}
 }
