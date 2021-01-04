@@ -9,6 +9,8 @@ namespace CaffeineCrashCueMk1
 	{
 		public ChooseTypePage(SizesSet sizesSet, double coeff)
 		{
+			BackgroundImageSource = "drawable/caffBack.png";
+
 			Title = "Choose Type";
 			Content = new ScrollView();
 			ScrollView scrollView = (ScrollView)Content;

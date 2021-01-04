@@ -13,6 +13,8 @@ namespace CaffeineCrashCueMk1
 		private static Dictionary<string, Beverage> beverageMappings;
 		public ChooseSizePage(SizesSet sizes, string source, Type caffeineType, double coeff)
 		{
+			BackgroundImageSource = "drawable/caffBack.png";
+
 			beverageMappings = new Dictionary<string, Beverage>();
 
 			Title = "Choose Size";
@@ -35,7 +37,7 @@ namespace CaffeineCrashCueMk1
 				button.Clicked += async (sender, e) =>
 				{
 					double caffeineAmount = Convert.ToDouble(beverageMappings[button.Text].Caffeine);
-					await Navigation.PushAsync(new TimePage(coeff, caffeineAmount));
+					await Navigation.PushAsync(new QuantityPage(coeff, caffeineAmount));
 				};
 				stackContent.Children.Add(button);
 			}
