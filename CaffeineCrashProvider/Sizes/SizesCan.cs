@@ -5,6 +5,15 @@ namespace CaffeineCrashProvider.Sizes
 {
     public class SizesCan : SizesSet
     {
+        public override Dictionary<string, double> QuantOnly
+        {
+            get
+            {
+                return new Dictionary<string, double>()
+                {
+                };
+            }
+        }
         public override string[] Sources
         {
             get

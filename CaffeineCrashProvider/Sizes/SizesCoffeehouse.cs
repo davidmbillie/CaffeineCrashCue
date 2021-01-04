@@ -5,8 +5,18 @@ namespace CaffeineCrashProvider.Sizes
 {
     public class SizesCoffeehouse : SizesSet
     {
-        //Espresso shots are 75 mg
         //https://globalassets.starbucks.com/assets/94fbcc2ab1e24359850fa1870fc988bc.pdf
+
+        public override Dictionary<string, double> QuantOnly
+        {
+            get
+			{
+                return new Dictionary<string, double>()
+                {
+                    {SizeConstants.EspressoShot, 75.0 }
+                };
+			}
+		}
 
         public override string[] Sources
         {

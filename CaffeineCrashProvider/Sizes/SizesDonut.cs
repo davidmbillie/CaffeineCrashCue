@@ -5,7 +5,16 @@ namespace CaffeineCrashProvider.Sizes
 {
     public class SizesDonut : SizesSet
     {
-        //Espresso shots are 118 mg
+        public override Dictionary<string, double> QuantOnly
+        {
+            get
+            {
+                return new Dictionary<string, double>()
+                {
+                    {SizeConstants.EspressoShot, 118.0 }
+                };
+            }
+        }
         public override string[] Sources
         {
             get

@@ -31,6 +31,19 @@ namespace CaffeineCrashCueMk1
 				stackContent.Children.Add(button);
 			}
 
+			if (sizesSet.QuantOnly.ContainsKey(CueConstants.EspressoShot))
+			{
+				Button espressoButton = new Button
+				{
+					Text = "Espresso Shot"
+				};
+				espressoButton.Clicked += async (sender, e) =>
+				{
+					await Navigation.PushAsync(new QuantityPage(coeff, sizesSet.QuantOnly[CueConstants.EspressoShot]));
+				};
+				stackContent.Children.Add(espressoButton);
+			}
+
 			scrollView.Content = stackContent;
 		}
 	}

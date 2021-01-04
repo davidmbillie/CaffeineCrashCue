@@ -6,6 +6,7 @@ namespace CaffeineCrashProvider.Sizes
 {
 	public abstract class SizesSet
 	{
+		public abstract Dictionary<string, double> QuantOnly { get; }
 		public abstract string[] Sources { get; }
 	}
 }
