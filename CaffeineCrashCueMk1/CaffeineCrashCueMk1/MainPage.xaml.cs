@@ -50,14 +50,19 @@ namespace CaffeineCrashCueMk1
             await Navigation.PushAsync(new CustomAmountPage(coeff));
 		}
 
-        private async void Test_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new TimePage());
-        }
+        private async void LatestTimeClicked(object sender, EventArgs e)
+		{
+            await Navigation.PushAsync(new LatestCrashTime());
+		}
 
         private async void Personalize_Clicked(object sender, EventArgs e)
 		{
             await Navigation.PushAsync(new ConfigPage());
 		}
+
+        private async void Test_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TimePage());
+        }
     }
 }

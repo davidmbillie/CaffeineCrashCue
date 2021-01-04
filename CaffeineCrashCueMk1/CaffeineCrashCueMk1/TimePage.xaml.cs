@@ -1,5 +1,6 @@
 ﻿using CaffeineCrashProvider;
 using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,6 +29,7 @@ namespace CaffeineCrashCueMk1
 			DateTime crashDateTime = DateTime.Now.AddHours(crashTime);
 			string crashTimeText = crashDateTime.ToShortTimeString();
 			CrashLabel.Text = crashTimeDescriptor + crashTimeText;
+			Preferences.Set(CueConstants.CrashTimePrefKey, crashTimeText);
 		}
 
 		private void Notification_Clicked(object o, EventArgs e)

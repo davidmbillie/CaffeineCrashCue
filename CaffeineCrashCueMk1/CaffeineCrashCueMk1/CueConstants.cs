@@ -10,5 +10,6 @@
 		public const string Title = "Caffeine Crash Cue";
 		public const int uniqueId = 196418;
 		public const string EspressoShot = "EspressoShot";
+		public const string CrashTimePrefKey = "L_crashTime";
 	}
 }
