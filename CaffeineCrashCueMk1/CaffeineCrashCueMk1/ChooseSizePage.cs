@@ -13,7 +13,7 @@ namespace CaffeineCrashCueMk1
 		private static Dictionary<string, Beverage> beverageMappings;
 		public ChooseSizePage(SizesSet sizes, string source, Type caffeineType, double coeff)
 		{
-			BackgroundImageSource = "drawable/caffBack.png";
+			BackgroundImageSource = CueConstants.BackgroundImage;
 
 			beverageMappings = new Dictionary<string, Beverage>();
 

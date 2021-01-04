@@ -7,6 +7,8 @@ namespace CaffeineCrashCueMk1
 	{
 		public LatestCrashTime()
 		{
+			BackgroundImageSource = CueConstants.BackgroundImage;
+
 			Title = "Latest Crash Time";
 			Content = new FlexLayout
 			{

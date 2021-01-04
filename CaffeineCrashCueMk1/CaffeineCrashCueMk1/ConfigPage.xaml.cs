@@ -138,7 +138,7 @@ namespace CaffeineCrashCueMk1
 			Preferences.Set("F_weight", weightText);
 			F_weight = Formulas.WeightFactor(Convert.ToDouble(weightText));
 			double coeff = F_alc * F_bc * F_ex * F_gfj * F_preg * F_smoke * F_vgc * F_weight;
-			Preferences.Set("F_coeff", coeff);
+			Preferences.Set(CueConstants.CoeffPrefKey, coeff);
 			await Navigation.PushAsync(new MainPage());
 		}
 	}

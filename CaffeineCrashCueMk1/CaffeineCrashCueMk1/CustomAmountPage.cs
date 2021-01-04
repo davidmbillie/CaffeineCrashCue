@@ -9,6 +9,8 @@ namespace CaffeineCrashCueMk1
 		private const string defaultAmount = "100";
 		public CustomAmountPage(double coeff)
 		{
+			BackgroundImageSource = CueConstants.BackgroundImage;
+
 			Title = "Enter Custom Amount (mg)";
 			Content = new FlexLayout()
 			{

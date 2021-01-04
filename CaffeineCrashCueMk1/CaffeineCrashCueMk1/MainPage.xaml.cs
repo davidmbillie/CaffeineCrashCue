@@ -11,7 +11,7 @@ namespace CaffeineCrashCueMk1
         public MainPage()
         {
             //BackgroundColor = Color.Beige;
-            coeff = Preferences.Get("F_coeff", 1.0);
+            coeff = Preferences.Get(CueConstants.CoeffPrefKey, 1.0);
             InitializeComponent();
         }
 

@@ -6,6 +6,8 @@ namespace CaffeineCrashCueMk1
 	{
 		public QuantityPage(double coeff, double caffeineAmount)
 		{
+			BackgroundImageSource = CueConstants.BackgroundImage;
+
 			Content = new FlexLayout
 			{
 				Direction = FlexDirection.Column,
