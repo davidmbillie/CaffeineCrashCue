@@ -46,7 +46,7 @@ namespace CaffeineCrashProvider.Sizes
             {"Small", new Beverage(12, 120)},
             {"Medium", new Beverage(16, 165)},
             {"Large", new Beverage(24, 235)},
-            {"ExtraLarge", new Beverage(31, 280) }
+            {"Extra_Large", new Beverage(31, 280) }
         };
 
         public static readonly Dictionary<string, Beverage> Cold_Brew = new Dictionary<string, Beverage>()
@@ -54,7 +54,7 @@ namespace CaffeineCrashProvider.Sizes
             {"Small", new Beverage(12, 150)},
             {"Medium", new Beverage(16, 200)},
             {"Large", new Beverage(24, 300)},
-            {"ExtraLarge", new Beverage(31, 330) }
+            {"Extra_Large", new Beverage(31, 330) }
         };
 
         public static readonly Dictionary<string, Beverage> Espresso_Drink = new Dictionary<string, Beverage>()
