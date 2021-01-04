@@ -61,11 +61,13 @@
         <BoxView Grid.Row="1"
                  Grid.Column="2"
                  Color="DarkSlateBlue" />
-        <Label Grid.Row="1"
+        <Button Grid.Row="1"
                Grid.Column="2"
-               Text="Center right"
-               HorizontalOptions="End"
-               VerticalOptions="Center" />
+               Text="Instant Coffee"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"
+               BackgroundColor="Transparent"
+               Clicked="InstantClicked"/>
         <BoxView Grid.Row="2"
                  Color="SteelBlue" />
         <Label Grid.Row="2"

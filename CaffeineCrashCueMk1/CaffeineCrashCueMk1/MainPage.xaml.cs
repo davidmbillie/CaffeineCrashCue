@@ -10,6 +10,7 @@ namespace CaffeineCrashCueMk1
         private static double coeff = 1.0;
         public MainPage()
         {
+            //BackgroundColor = Color.Beige;
             coeff = Preferences.Get("F_coeff", 1.0);
             InitializeComponent();
         }
@@ -38,6 +39,11 @@ namespace CaffeineCrashCueMk1
 		{
             await Navigation.PushAsync(new ChooseTypePage(new SizesCan(), coeff));
         }
+
+        private async void InstantClicked(object sender, EventArgs e)
+		{
+            await Navigation.PushAsync(new QuantityPage(coeff, 65.0));
+		}
 
         private async void Lower_Right_Clicked(object sender, EventArgs e)
         {
