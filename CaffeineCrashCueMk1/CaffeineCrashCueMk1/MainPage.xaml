@@ -70,11 +70,13 @@
                Clicked="InstantClicked"/>
         <BoxView Grid.Row="2"
                  Color="SteelBlue" />
-        <Label Grid.Row="2"
-               Text="Lower left"
-               HorizontalOptions="Start"
-               VerticalOptions="End" />
-        <BoxView Grid.Row="2"
+        <Button Grid.Row="2"
+               Text="Custom Amount"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill" 
+               BackgroundColor="Transparent"
+               Clicked="CustomAmountClicked"/>
+        <!--<BoxView Grid.Row="2"
                  Grid.Column="1"
                  Color="LightBlue" />
         <Label Grid.Row="2"
@@ -91,16 +93,16 @@
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                BackgroundColor="Transparent"
-               Clicked="Lower_Right_Clicked"/>
+               Clicked="Test_Clicked"/>-->
         <BoxView Grid.Row="3"
                  Grid.ColumnSpan="3"
                  Color="PaleGoldenrod" />
         <Button Grid.Row="3"
                Grid.ColumnSpan="3"
-               Text="Customize"
+               Text="Personalize"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                BackgroundColor="Transparent"
-               Clicked="Customize_Clicked"/>
+               Clicked="Personalize_Clicked"/>
     </Grid>
 </ContentPage>

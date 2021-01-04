@@ -28,7 +28,7 @@ namespace CaffeineCrashCueMk1
 			pregnantSwitch.IsToggled = Preferences.Get("F_preg", false);
 			smokerSwitch.IsToggled = Preferences.Get("F_smoke", false);
 			vegAndGrilledSwitch.IsToggled = Preferences.Get("F_vgc", false);
-			weightText.Text = Preferences.Get("F_weight", "150");
+			weightEntry.Text = Preferences.Get("F_weight", "150");
 		}
 
 		private void Alc_Toggled(object sender, ToggledEventArgs e)
@@ -123,10 +123,20 @@ namespace CaffeineCrashCueMk1
 			Preferences.Set("F_vgc", e.Value);
 		}
 
+		private void Weight_Changed(object sender, ToggledEventArgs e)
+		{
+			weightEntry.Text = weightEntry.Text.ToNumericString();
+		}
+
 		private async void SaveClicked(object sender, EventArgs e)
 		{
-			Preferences.Set("F_weight", weightText.Text);
-			F_weight = Formulas.WeightFactor(weightText.Text.StandardizeWeight());
+			string weightText = weightEntry.Text;
+			if (string.IsNullOrWhiteSpace(weightText))
+			{
+				weightText = Preferences.Get("F_weight", "150");
+			}
+			Preferences.Set("F_weight", weightText);
+			F_weight = Formulas.WeightFactor(Convert.ToDouble(weightText));
 			double coeff = F_alc * F_bc * F_ex * F_gfj * F_preg * F_smoke * F_vgc * F_weight;
 			Preferences.Set("F_coeff", coeff);
 			await Navigation.PushAsync(new MainPage());

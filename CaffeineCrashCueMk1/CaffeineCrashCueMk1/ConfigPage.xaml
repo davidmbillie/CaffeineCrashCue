@@ -68,14 +68,15 @@
         <Label Text="Weight (lbs)"
                    Grid.Row="7"
                    VerticalOptions="Center" />
-        <Entry x:Name="weightText"
+        <Entry x:Name="weightEntry"
                     IsPassword="True"
                     Text="150"
                     Grid.Row="7"
                     Grid.Column="1"
                     Keyboard="Numeric"
                     MaxLength="3"
-                    VerticalOptions="Center" />
+                    VerticalOptions="Center"
+                    TextChanged="Weight_Changed"/>
         <Button x:Name="saveButton"
                     Text="Save"
                     Grid.Row="8"

@@ -45,12 +45,17 @@ namespace CaffeineCrashCueMk1
             await Navigation.PushAsync(new QuantityPage(coeff, 65.0));
 		}
 
-        private async void Lower_Right_Clicked(object sender, EventArgs e)
+        private async void CustomAmountClicked(object sender, EventArgs e)
+		{
+            await Navigation.PushAsync(new CustomAmountPage(coeff));
+		}
+
+        private async void Test_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new TimePage());
         }
 
-        private async void Customize_Clicked(object sender, EventArgs e)
+        private async void Personalize_Clicked(object sender, EventArgs e)
 		{
             await Navigation.PushAsync(new ConfigPage());
 		}
