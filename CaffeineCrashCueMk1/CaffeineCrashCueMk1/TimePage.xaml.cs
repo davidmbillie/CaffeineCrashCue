@@ -33,13 +33,14 @@ namespace CaffeineCrashCueMk1
 			DateTime crashDateTime = DateTime.Now.AddHours(crashTime);
 			crashTimeText = crashDateTime.ToShortTimeString();
 			CrashLabel.Text = crashTimeDescriptor + crashTimeText;
-			Preferences.Set(CueConstants.CrashTimePrefKey, crashTimeText);
+			CrashLabel.HorizontalTextAlignment = TextAlignment.Center;
 		}
 
 		private async void Notification_Clicked(object o, EventArgs e)
 		{
 			long crashCueMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashCueMillis(crashTimeMillis);
 			DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis);
+			Preferences.Set(CueConstants.CrashTimePrefKey, crashTimeText);
 			await DisplayAlert("Crash Cue", "Notification set for " + crashTimeText, "OK");
 		}
 	}
