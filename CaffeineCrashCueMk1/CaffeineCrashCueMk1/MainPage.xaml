@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
 
         <BoxView Color="AliceBlue" />
-        <Button Text="Coffee"
+        <Button Text="Coffee/Tea Drinks"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                 BackgroundColor="Transparent"
@@ -35,7 +35,7 @@
         <BoxView Grid.Column="2"
                  Color="CadetBlue" />
         <Button Grid.Column="2"
-               Text="Donut Coffee"
+               Text="Donut Coffee/Tea Drinks"
                HorizontalOptions="Fill"
                VerticalOptions="Fill" 
                BackgroundColor="Transparent"
@@ -43,7 +43,7 @@
         <BoxView Grid.Row="1"
                  Color="CornflowerBlue" />
         <Button Grid.Row="1"
-               Text="Bottled Drink"
+               Text="Bottled Drinks"
                HorizontalOptions="Fill"
                VerticalOptions="Fill" 
                BackgroundColor="Transparent"
@@ -53,7 +53,7 @@
                  Color="DodgerBlue" />
         <Button Grid.Row="1"
                Grid.Column="1"
-               Text="Canned Drink"
+               Text="Canned Drinks"
                HorizontalOptions="Fill"
                VerticalOptions="Fill" 
                BackgroundColor="Transparent"
