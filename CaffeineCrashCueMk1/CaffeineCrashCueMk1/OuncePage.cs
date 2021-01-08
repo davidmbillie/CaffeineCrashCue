@@ -8,7 +8,7 @@ namespace CaffeineCrashCueMk1
 {
 	public class OuncePage : ContentPage
 	{
-		private static string defaultOz = Preferences.Get("a_defaultOz", "006");
+		private static string defaultOz = Preferences.Get("a_defaultOz", "6");
 		public OuncePage(double coeff, double amount)
 		{
 			BackgroundImageSource = CueConstants.BackgroundImage;
@@ -27,7 +27,9 @@ namespace CaffeineCrashCueMk1
 				Text = defaultOz,
 				Keyboard = Keyboard.Numeric,
 				MaxLength = 3,
-				FontSize = 48
+				FontSize = 48,
+				HorizontalTextAlignment = TextAlignment.Center,
+				WidthRequest = 100
 			};
 
 			ounceEntry.TextChanged += (sender, e) =>
