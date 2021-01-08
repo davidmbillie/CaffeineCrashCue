@@ -11,7 +11,10 @@ namespace CaffeineCrashCueMk1
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainPage())
+            {
+                BarBackgroundColor = Color.Brown
+            };
         }
 
         protected override void OnStart()
