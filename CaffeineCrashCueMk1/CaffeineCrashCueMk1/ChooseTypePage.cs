@@ -24,8 +24,15 @@ namespace CaffeineCrashCueMk1
 			}
 			foreach (Button button in buttonHash)
 			{
+				if (button.Text.Contains("Tea") || button.Text.Contains("Energy"))
+				{
+					button.TextColor = Color.ForestGreen;
+				}
+				else
+				{
+					button.TextColor = Color.SaddleBrown;
+				}
 				button.BackgroundColor = Color.FloralWhite;
-				button.TextColor = Color.SaddleBrown;
 				button.Clicked += async (sender, e) =>
 				{
 					await Navigation.PushAsync(new ChooseSizePage(sizesSet, button.Text.Replace(' ', '_'), sizesSet.GetType(), coeff));
