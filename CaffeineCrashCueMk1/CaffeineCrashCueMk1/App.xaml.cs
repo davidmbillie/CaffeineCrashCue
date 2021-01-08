@@ -13,7 +13,8 @@ namespace CaffeineCrashCueMk1
 
             MainPage = new NavigationPage(new MainPage())
             {
-                BarBackgroundColor = Color.Brown
+                BarBackgroundColor = Color.SaddleBrown,
+                BarBackground = Brush.Transparent
             };
         }
 
