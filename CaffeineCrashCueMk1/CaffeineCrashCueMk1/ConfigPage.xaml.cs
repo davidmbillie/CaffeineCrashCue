@@ -20,7 +20,11 @@ namespace CaffeineCrashCueMk1
 
 		public ConfigPage()
 		{
+			BackgroundImageSource = CueConstants.BackgroundImage;
+			Title = "Personalize";
+
 			InitializeComponent();
+
 			alcoholSwitch.IsToggled = Preferences.Get("F_alc", false);
 			birthControlSwitch.IsToggled = Preferences.Get("F_bc", false);
 			exerciseSwitch.IsToggled = Preferences.Get("F_ex", false);
