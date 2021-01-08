@@ -9,7 +9,7 @@ namespace CaffeineCrashCueMk1
 	{
 		public ChooseTypePage(SizesSet sizesSet, double coeff)
 		{
-			BackgroundImageSource = "drawable/caffBack.png";
+			BackgroundImageSource = CueConstants.BackgroundImage;
 
 			Title = "Choose Type";
 			Content = new ScrollView();
@@ -24,6 +24,8 @@ namespace CaffeineCrashCueMk1
 			}
 			foreach (Button button in buttonHash)
 			{
+				button.BackgroundColor = Color.FloralWhite;
+				button.TextColor = Color.SaddleBrown;
 				button.Clicked += async (sender, e) =>
 				{
 					await Navigation.PushAsync(new ChooseSizePage(sizesSet, button.Text.Replace(' ', '_'), sizesSet.GetType(), coeff));
@@ -35,6 +37,8 @@ namespace CaffeineCrashCueMk1
 			{
 				Button espressoButton = new Button
 				{
+					BackgroundColor = Color.FloralWhite,
+					TextColor = Color.SaddleBrown,
 					Text = "Espresso Shot"
 				};
 				espressoButton.Clicked += async (sender, e) =>

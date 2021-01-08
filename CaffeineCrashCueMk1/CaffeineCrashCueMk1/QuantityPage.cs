@@ -16,8 +16,6 @@ namespace CaffeineCrashCueMk1
 			};
 			FlexLayout flexContent = (FlexLayout)Content;
 
-			BackgroundImageSource = "drawable/caffBack.png";
-
 			Title = "Quantity";
 
 			Stepper quantStepper = new Stepper
