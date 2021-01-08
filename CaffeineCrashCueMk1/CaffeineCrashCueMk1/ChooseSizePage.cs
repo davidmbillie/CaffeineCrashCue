@@ -34,6 +34,8 @@ namespace CaffeineCrashCueMk1
 			}
 			foreach (Button button in sizeButtons)
 			{
+				button.BackgroundColor = Color.FloralWhite;
+				button.TextColor = Color.SaddleBrown;
 				button.Clicked += async (sender, e) =>
 				{
 					double caffeineAmount = Convert.ToDouble(beverageMappings[button.Text].Caffeine);
