@@ -23,7 +23,8 @@ namespace CaffeineCrashCueMk1
 				Value = 1.0,
 				Maximum = 8.0,
 				Minimum = 0.5,
-				Increment = 0.5
+				Increment = 0.5,
+				BackgroundColor = Color.FloralWhite
 			};
 
 			Label quantLabel = new Label
@@ -40,7 +41,9 @@ namespace CaffeineCrashCueMk1
 
 			Button calcButton = new Button
 			{
-				Text = "Calculate Crash Time"
+				Text = "Calculate Crash Time",
+				BackgroundColor = Color.FloralWhite,
+				TextColor = Color.SaddleBrown
 			};
 			calcButton.Clicked += async (sender, e) =>
 			{

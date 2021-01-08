@@ -16,6 +16,7 @@
         <Switch x:Name="alcoholSwitch"
                     Grid.Column="1"
                     VerticalOptions="Center"
+                    ThumbColor="SaddleBrown"
                     Toggled="Alc_Toggled"/>
         <Label Text="Birth Control"
                    Grid.Row="1"
@@ -24,6 +25,7 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     VerticalOptions="Center"
+                    ThumbColor="SaddleBrown"
                     Toggled="BC_Toggled"/>
         <Label Text="Exercise"
                    Grid.Row="2"
@@ -32,6 +34,7 @@
                     Grid.Row="2"
                     Grid.Column="1"
                     VerticalOptions="Center"
+                    ThumbColor="SaddleBrown"
                     Toggled="Ex_Toggled"/>
         <Label Text="Grapefruit"
                    Grid.Row="3"
@@ -40,6 +43,7 @@
                     Grid.Row="3"
                     Grid.Column="1"
                     VerticalOptions="Center"
+                    ThumbColor="SaddleBrown"
                     Toggled="GFJ_Toggled"/>
         <Label Text="Pregnant"
                    Grid.Row="4"
@@ -48,6 +52,7 @@
                     Grid.Row="4"
                     Grid.Column="1"
                     VerticalOptions="Center"
+                    ThumbColor="SaddleBrown"
                     Toggled="Preg_Toggled"/>
         <Label Text="Smoker"
                    Grid.Row="5"
@@ -56,6 +61,7 @@
                     Grid.Row="5"
                     Grid.Column="1"
                     VerticalOptions="Center"
+                    ThumbColor="SaddleBrown"
                     Toggled="Smoke_Toggled"/>
         <Label Text="Vegetables and Grilled Chicken Diet"
                    Grid.Row="6"
@@ -64,6 +70,7 @@
                     Grid.Row="6"
                     Grid.Column="1"
                     VerticalOptions="Center"
+                    ThumbColor="SaddleBrown"
                     Toggled="VGC_Toggled"/>
         <Label Text="Weight (lbs)"
                    Grid.Row="7"

@@ -33,6 +33,9 @@ namespace CaffeineCrashCueMk1
 			smokerSwitch.IsToggled = Preferences.Get("F_smoke", false);
 			vegAndGrilledSwitch.IsToggled = Preferences.Get("F_vgc", false);
 			weightEntry.Text = Preferences.Get("F_weight", "150");
+
+			saveButton.BackgroundColor = Color.FloralWhite;
+			saveButton.TextColor = Color.SaddleBrown;
 		}
 
 		private void Alc_Toggled(object sender, ToggledEventArgs e)
