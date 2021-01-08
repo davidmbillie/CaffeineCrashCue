@@ -33,6 +33,25 @@ namespace CaffeineCrashCueMk1
 				amountEntry.Text = amountEntry.Text.ToNumericString();
 			};
 
+			Label extendedLabel = new Label()
+			{
+				Text = "Extended Release",
+				FontSize = 16,
+				VerticalTextAlignment = TextAlignment.Center
+			};
+
+			CheckBox extendedCheck = new CheckBox();
+
+			StackLayout extendedLayout = new StackLayout()
+			{
+				Orientation = StackOrientation.Horizontal,
+				Children =
+				{
+					extendedLabel,
+					extendedCheck
+				}
+			};
+
 			Button amountButton = new Button()
 			{
 				Text = "Calculate Crash Time"
@@ -53,11 +72,16 @@ namespace CaffeineCrashCueMk1
 				}
 				else
 				{
+					if (extendedCheck.IsChecked == true)
+					{
+						amount = amount * 2;
+					}
 					await Navigation.PushAsync(new TimePage(coeff, amount));
 				}
 			};
 
 			flexLayout.Children.Add(amountEntry);
+			flexLayout.Children.Add(extendedLayout);
 			flexLayout.Children.Add(amountButton);
 		}
 	}
