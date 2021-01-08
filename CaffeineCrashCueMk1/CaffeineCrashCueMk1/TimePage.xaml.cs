@@ -15,7 +15,6 @@ namespace CaffeineCrashCueMk1
 
 		public TimePage()
 		{
-			BackgroundImageSource = CueConstants.BackgroundImage;
 			//default ctor for testing
 			InitializeComponent();
 			crashTimeMillis = (CueConstants.cueTime + 1) * 60000;
@@ -23,6 +22,7 @@ namespace CaffeineCrashCueMk1
 
 		public TimePage(double coeff, double amount)
 		{
+			Title = "Crash Cue";
 			BackgroundImageSource = CueConstants.BackgroundImage;
 
 			InitializeComponent();
@@ -41,7 +41,7 @@ namespace CaffeineCrashCueMk1
 			long crashCueMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashCueMillis(crashTimeMillis);
 			DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis);
 			Preferences.Set(CueConstants.CrashTimePrefKey, crashTimeText);
-			await DisplayAlert("Crash Cue", "Notification set for " + crashTimeText, "OK");
+			await DisplayAlert("Crash Cue", "Notification set " + CueConstants.cueTime.ToString() + " minutes before " + crashTimeText, "OK");
 		}
 	}
 }
