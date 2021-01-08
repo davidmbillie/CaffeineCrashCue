@@ -26,15 +26,19 @@ namespace CaffeineCrashCueMk1
 			{
 				Text = defaultOz,
 				Keyboard = Keyboard.Numeric,
-				MaxLength = 3,
+				MaxLength = 4,
 				FontSize = 48,
 				HorizontalTextAlignment = TextAlignment.Center,
-				WidthRequest = 100
+				WidthRequest = 120
 			};
 
 			ounceEntry.TextChanged += (sender, e) =>
 			{
-				ounceEntry.Text = ounceEntry.Text.ToNumericString();
+				if (e.NewTextValue.IndexOf('.') != e.NewTextValue.LastIndexOf('.'))
+				{
+					ounceEntry.Text = e.OldTextValue;
+				}
+				ounceEntry.Text = e.NewTextValue.ToNumericString();
 			};
 
 			Button ounceButton = new Button()

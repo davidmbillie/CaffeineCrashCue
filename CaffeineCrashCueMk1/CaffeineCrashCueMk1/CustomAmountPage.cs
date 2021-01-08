@@ -26,15 +26,19 @@ namespace CaffeineCrashCueMk1
 			{
 				Text = defaultAmount,
 				Keyboard = Keyboard.Numeric,
-				MaxLength = 3,
+				MaxLength = 4,
 				FontSize = 48,
 				HorizontalTextAlignment = TextAlignment.Center,
-				WidthRequest = 100
+				WidthRequest = 120
 			};
 
 			amountEntry.TextChanged += (sender, e) =>
 			{
-				amountEntry.Text = amountEntry.Text.ToNumericString();
+				if (e.NewTextValue.IndexOf('.') != e.NewTextValue.LastIndexOf('.'))
+				{
+					amountEntry.Text = e.OldTextValue;
+				}
+				amountEntry.Text = e.NewTextValue.ToNumericString();
 			};
 
 			Label extendedLabel = new Label()
@@ -75,6 +79,7 @@ namespace CaffeineCrashCueMk1
 					amountText = defaultAmount;
 				}
 				Preferences.Set("a_CustomAmount", amountText);
+				Preferences.Set("a_Extended", extendedCheck.IsChecked);
 				double amount = Convert.ToDouble(amountText);
 				if (amountText == "4")
 				{
@@ -107,6 +112,7 @@ namespace CaffeineCrashCueMk1
 					amountText = defaultAmount;
 				}
 				Preferences.Set("a_CustomAmount", amountText);
+				Preferences.Set("a_Extended", extendedCheck.IsChecked);
 				double amount = Convert.ToDouble(amountText);
 				if (extendedCheck.IsChecked == true)
 				{

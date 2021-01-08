@@ -4,16 +4,27 @@ namespace CaffeineCrashProvider
 {
 	public class ProviderExtensionsTest
 	{
-		private const double defaultWeight = 150;
+		private const double defaultWeight = 150.0;
+		private const double defaultWeightNoDecimals = 150;
 
 		[Fact]
-		public void ToNumericString_ReturnsOnlyNumbers()
+		public void ToNumericString_ReturnsOnlyNumbersAndDecimals()
 		{
-			string inputText = "150.a";
+			string inputText = "150,a.0";
 
 			string result = inputText.ToNumericString();
 
 			Assert.Equal(defaultWeight.ToString(), result);
+		}
+
+		[Fact]
+		public void ToNaturalNumericString_ReturnsOnlyNumbers()
+		{
+			string inputText = "150,a.";
+
+			string result = inputText.ToNaturalNumericString();
+
+			Assert.Equal(defaultWeightNoDecimals.ToString(), result);
 		}
 
 		//[Fact]
