@@ -46,9 +46,9 @@ namespace CaffeineCrashCueMk1
 					amountText = defaultAmount;
 				}
 				double amount = Convert.ToDouble(amountText);
-				if (amountText == "999")
+				if (amountText == "4")
 				{
-					//using "999" for notification testing
+					//using "4" for notification testing
 					await Navigation.PushAsync(new TimePage());
 				}
 				else
