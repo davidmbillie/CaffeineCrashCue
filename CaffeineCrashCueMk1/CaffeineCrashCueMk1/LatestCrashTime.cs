@@ -18,6 +18,7 @@ namespace CaffeineCrashCueMk1
 				Children = {
 					new Label {
 						Text = Preferences.Get(CueConstants.CrashTimePrefKey, "No recent crash times"),
+						HorizontalTextAlignment = TextAlignment.Center,
 						FontSize = 48
 					}
 				}
