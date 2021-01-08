@@ -41,7 +41,7 @@ namespace CaffeineCrashCueMk1
 
         private async void InstantClicked(object sender, EventArgs e)
 		{
-            await Navigation.PushAsync(new QuantityPage(coeff, 65.0));
+            await Navigation.PushAsync(new OuncePage(coeff, 11.0));
 		}
 
         private async void CustomAmountClicked(object sender, EventArgs e)

@@ -1,12 +1,14 @@
 ﻿using CaffeineCrashProvider;
 using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace CaffeineCrashCueMk1
 {
 	public class CustomAmountPage : ContentPage
 	{
-		private const string defaultAmount = "100";
+		private static string defaultAmount = Preferences.Get("a_CustomAmount", "100");
+		private static bool defaultExtended = Preferences.Get("a_Extended", false);
 		public CustomAmountPage(double coeff)
 		{
 			BackgroundImageSource = CueConstants.BackgroundImage;
@@ -40,7 +42,11 @@ namespace CaffeineCrashCueMk1
 				VerticalTextAlignment = TextAlignment.Center
 			};
 
-			CheckBox extendedCheck = new CheckBox();
+			CheckBox extendedCheck = new CheckBox()
+			{
+				Color = Color.SaddleBrown,
+				IsChecked = Preferences.Get("a_Extended", false)
+			};
 
 			StackLayout extendedLayout = new StackLayout()
 			{
@@ -54,7 +60,9 @@ namespace CaffeineCrashCueMk1
 
 			Button amountButton = new Button()
 			{
-				Text = "Calculate Crash Time"
+				Text = "Total",
+				BackgroundColor = Color.FloralWhite,
+				TextColor = Color.SaddleBrown
 			};
 
 			amountButton.Clicked += async (sender, e) =>
@@ -64,6 +72,7 @@ namespace CaffeineCrashCueMk1
 				{
 					amountText = defaultAmount;
 				}
+				Preferences.Set("a_CustomAmount", amountText);
 				double amount = Convert.ToDouble(amountText);
 				if (amountText == "4")
 				{
@@ -80,9 +89,59 @@ namespace CaffeineCrashCueMk1
 				}
 			};
 
+			Button perOunceButton = new Button()
+			{
+				Text = "Per Ounce",
+				BackgroundColor = Color.FloralWhite,
+				TextColor = Color.SaddleBrown
+			};
+
+
+			perOunceButton.Clicked += async (sender, e) =>
+			{
+				string amountText = amountEntry.Text;
+				if (string.IsNullOrWhiteSpace(amountText))
+				{
+					amountText = defaultAmount;
+				}
+				Preferences.Set("a_CustomAmount", amountText);
+				double amount = Convert.ToDouble(amountText);
+				if (extendedCheck.IsChecked == true)
+				{
+					amount = amount * 2;
+				}
+				await Navigation.PushAsync(new OuncePage(coeff, amount));
+			};
+
+			Button perServingButton = new Button()
+			{
+				Text = "Per Serving",
+				BackgroundColor = Color.FloralWhite,
+				TextColor = Color.SaddleBrown
+			};
+
+			perServingButton.Clicked += async (sender, e) =>
+			{
+				string amountText = amountEntry.Text;
+				if (string.IsNullOrWhiteSpace(amountText))
+				{
+					amountText = defaultAmount;
+				}
+				Preferences.Set("a_CustomAmount", amountText);
+				Preferences.Set("a_Extended", extendedCheck.IsChecked);
+				double amount = Convert.ToDouble(amountText);
+				if (extendedCheck.IsChecked == true)
+				{
+					amount = amount * 2;
+				}
+				await Navigation.PushAsync(new QuantityPage(coeff, amount));
+			};
+
 			flexLayout.Children.Add(amountEntry);
 			flexLayout.Children.Add(extendedLayout);
 			flexLayout.Children.Add(amountButton);
+			flexLayout.Children.Add(perOunceButton);
+			flexLayout.Children.Add(perServingButton);
 		}
 	}
 }
