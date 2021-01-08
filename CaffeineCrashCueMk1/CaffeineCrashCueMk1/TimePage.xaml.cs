@@ -20,14 +20,29 @@ namespace CaffeineCrashCueMk1
 			crashTimeMillis = (CueConstants.cueTime + 1) * 60000;
 		}
 
+		public TimePage(double crashTime)
+		{
+			//for the 'Hour Energy' grid buttom
+			BackgroundImageSource = CueConstants.BackgroundImage;
+
+			InitializeComponent();
+
+			SetCrashLabel(crashTime);
+		}
+
 		public TimePage(double coeff, double amount)
 		{
-			Title = "Crash Cue";
 			BackgroundImageSource = CueConstants.BackgroundImage;
 
 			InitializeComponent();
 
 			double crashTime = Formulas.CalculateCrash(coeff, amount);
+
+			SetCrashLabel(crashTime);
+		}
+
+		private void SetCrashLabel(double crashTime)
+		{
 			crashTimeMillis = crashTime * 3600000;
 
 			DateTime crashDateTime = DateTime.Now.AddHours(crashTime);

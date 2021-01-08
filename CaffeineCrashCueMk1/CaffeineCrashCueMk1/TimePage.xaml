@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CaffeineCrashCueMk1.TimePage">
+             x:Class="CaffeineCrashCueMk1.TimePage"
+             Title="Crash Cue">
     <FlexLayout Direction="Column"
                 AlignItems="Center"
                 JustifyContent="SpaceEvenly">
@@ -11,6 +12,8 @@
                FontSize="Large"/>
 
         <Button Text="Set Notification"
+                BackgroundColor="FloralWhite"
+                TextColor="SaddleBrown"
                 Clicked="Notification_Clicked"/>
     </FlexLayout>
 </ContentPage>

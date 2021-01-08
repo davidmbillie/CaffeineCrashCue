@@ -10,7 +10,6 @@ namespace CaffeineCrashCueMk1
         private static double coeff = 1.0;
         public MainPage()
         {
-            //BackgroundColor = Color.Beige;
             coeff = Preferences.Get(CueConstants.CoeffPrefKey, 1.0);
             InitializeComponent();
         }
@@ -50,17 +49,22 @@ namespace CaffeineCrashCueMk1
             await Navigation.PushAsync(new CustomAmountPage(coeff));
 		}
 
+        private async void HourEnergyClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HourEnergyPage());
+        }
+
         private async void LatestTimeClicked(object sender, EventArgs e)
 		{
             await Navigation.PushAsync(new LatestCrashTime());
 		}
 
-        private async void Personalize_Clicked(object sender, EventArgs e)
+        private async void PersonalizeClicked(object sender, EventArgs e)
 		{
             await Navigation.PushAsync(new ConfigPage());
 		}
 
-        private async void Test_Clicked(object sender, EventArgs e)
+        private async void TestClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new TimePage());
         }

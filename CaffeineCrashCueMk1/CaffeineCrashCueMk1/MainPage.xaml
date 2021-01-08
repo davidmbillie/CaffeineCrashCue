@@ -77,6 +77,16 @@
                BackgroundColor="Transparent"
                Clicked="CustomAmountClicked"/>
         <BoxView Grid.Row="2"
+                 Grid.Column="1"
+                 Color="MintCream" />
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                Text="Hour Energy"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                BackgroundColor="Transparent"
+                Clicked="HourEnergyClicked"/>
+        <BoxView Grid.Row="2"
                  Grid.Column="2"
                  Color="Red" />
         <Button Grid.Row="2"
@@ -95,6 +105,6 @@
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                BackgroundColor="Transparent"
-               Clicked="Personalize_Clicked"/>
+               Clicked="PersonalizeClicked"/>
     </Grid>
 </ContentPage>
