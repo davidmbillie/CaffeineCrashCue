@@ -26,10 +26,10 @@ namespace CaffeineCrashCueMk1
 			{
 				Text = defaultAmount,
 				Keyboard = Keyboard.Numeric,
-				MaxLength = 4,
+				MaxLength = 5,
 				FontSize = 48,
 				HorizontalTextAlignment = TextAlignment.Center,
-				WidthRequest = 120
+				WidthRequest = 140
 			};
 
 			amountEntry.TextChanged += (sender, e) =>
