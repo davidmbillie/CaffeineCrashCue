@@ -29,7 +29,7 @@ namespace CaffeineCrashCueMk1
 			FieldInfo sizeInfo = caffeineType.GetField(source);
 			Dictionary<string, Beverage> sizePairs = (Dictionary<string, Beverage>)sizeInfo.GetValue(sizes);
 			Beverage firstBev = sizePairs.ElementAt(0).Value;
-			perOz = firstBev.Caffeine / Convert.ToInt32(firstBev.Oz.ToNumericString());
+			perOz = firstBev.Caffeine / Convert.ToInt32(firstBev.Oz.ToNaturalNumericString());
 
 			foreach (KeyValuePair<string, Beverage> sizePair in sizePairs)
 			{

@@ -130,9 +130,9 @@ namespace CaffeineCrashCueMk1
 			Preferences.Set("F_vgc", e.Value);
 		}
 
-		private void Weight_Changed(object sender, ToggledEventArgs e)
+		private void Weight_Changed(object sender, EventArgs e)
 		{
-			weightEntry.Text = weightEntry.Text.ToNumericString();
+			weightEntry.Text = weightEntry.Text.ToNaturalNumericString();
 		}
 
 		private async void SaveClicked(object sender, EventArgs e)
