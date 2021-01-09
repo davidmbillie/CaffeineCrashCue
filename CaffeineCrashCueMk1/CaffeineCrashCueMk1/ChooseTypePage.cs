@@ -17,6 +17,21 @@ namespace CaffeineCrashCueMk1
 
 			StackLayout stackContent = new StackLayout();
 
+			if (sizesSet.QuantOnly.ContainsKey(CueConstants.EspressoShot))
+			{
+				Button espressoButton = new Button
+				{
+					BackgroundColor = Color.FloralWhite,
+					TextColor = Color.SaddleBrown,
+					Text = "Espresso Shot"
+				};
+				espressoButton.Clicked += async (sender, e) =>
+				{
+					await Navigation.PushAsync(new QuantityPage(coeff, sizesSet.QuantOnly[CueConstants.EspressoShot]));
+				};
+				stackContent.Children.Add(espressoButton);
+			}
+
 			HashSet<Button> buttonHash = new HashSet<Button>();
 			foreach (string source in sizesSet.Sources)
 			{
@@ -38,21 +53,6 @@ namespace CaffeineCrashCueMk1
 					await Navigation.PushAsync(new ChooseSizePage(sizesSet, button.Text.Replace(' ', '_'), sizesSet.GetType(), coeff));
 				};
 				stackContent.Children.Add(button);
-			}
-
-			if (sizesSet.QuantOnly.ContainsKey(CueConstants.EspressoShot))
-			{
-				Button espressoButton = new Button
-				{
-					BackgroundColor = Color.FloralWhite,
-					TextColor = Color.SaddleBrown,
-					Text = "Espresso Shot"
-				};
-				espressoButton.Clicked += async (sender, e) =>
-				{
-					await Navigation.PushAsync(new QuantityPage(coeff, sizesSet.QuantOnly[CueConstants.EspressoShot]));
-				};
-				stackContent.Children.Add(espressoButton);
 			}
 
 			scrollView.Content = stackContent;
