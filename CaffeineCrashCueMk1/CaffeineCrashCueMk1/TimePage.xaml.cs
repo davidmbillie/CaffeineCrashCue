@@ -58,5 +58,10 @@ namespace CaffeineCrashCueMk1
 			Preferences.Set(CueConstants.CrashTimePrefKey, crashTimeText);
 			await DisplayAlert("Crash Cue", "Notification set " + CueConstants.cueTime.ToString() + " minutes before " + crashTimeText, "OK");
 		}
+
+		private async void Home_Clicked(object o, EventArgs e)
+		{
+			await Navigation.PushAsync(new MainPage());
+		}
 	}
 }

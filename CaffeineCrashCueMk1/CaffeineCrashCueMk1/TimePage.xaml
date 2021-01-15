@@ -15,5 +15,11 @@
                 BackgroundColor="FloralWhite"
                 TextColor="SaddleBrown"
                 Clicked="Notification_Clicked"/>
+
+        <Button Text="Home"
+                BackgroundColor="FloralWhite"
+                TextColor="SaddleBrown"
+                Clicked="Home_Clicked"/>
+        
     </FlexLayout>
 </ContentPage>

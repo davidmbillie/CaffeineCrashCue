@@ -23,6 +23,21 @@ namespace CaffeineCrashCueMk1
 					}
 				}
 			};
+
+			Button homeButton = new Button
+			{
+				Text = "Home",
+				BackgroundColor = Color.FloralWhite,
+				TextColor = Color.SaddleBrown
+			};
+
+			homeButton.Clicked += async (sender, e) =>
+			{
+				await Navigation.PushAsync(new MainPage());
+			};
+
+			FlexLayout flexContent = Content as FlexLayout;
+			flexContent.Children.Add(homeButton);
 		}
 	}
 }
