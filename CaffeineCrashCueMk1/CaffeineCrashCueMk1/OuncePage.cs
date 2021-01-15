@@ -32,6 +32,23 @@ namespace CaffeineCrashCueMk1
 				WidthRequest = 140
 			};
 
+			Label ounceLabel = new Label()
+			{
+				Text = "oz.",
+				FontSize = 48,
+				VerticalTextAlignment = TextAlignment.Center
+			};
+
+			StackLayout ounceLayout = new StackLayout
+			{
+				Orientation = StackOrientation.Horizontal,
+				Children =
+				{
+					ounceEntry,
+					ounceLabel
+				}
+			};
+;
 			ounceEntry.TextChanged += (sender, e) =>
 			{
 				if (e.NewTextValue.IndexOf('.') != e.NewTextValue.LastIndexOf('.'))
@@ -61,7 +78,7 @@ namespace CaffeineCrashCueMk1
 				await Navigation.PushAsync(new TimePage(coeff, totalAmount));
 			};
 
-			flexLayout.Children.Add(ounceEntry);
+			flexLayout.Children.Add(ounceLayout);
 			flexLayout.Children.Add(ounceButton);
 		}
 	}
