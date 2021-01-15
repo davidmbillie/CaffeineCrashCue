@@ -20,7 +20,7 @@ namespace CaffeineCrashProvider.Sizes
             get
             {
                 return new string[] { "Regular", "Extra_Charged", "Dark", "Americano", "Macchiato", "Iced", "Iced_Dark", "Frozen",
-                "Iced_Tea", "Iced_Green_Tea", "Hot_Tea", "Chai_Tea", "Green_Tea", "Cold_Brew", "Energy_Cold_Brew", "Espresso_Drink", "Iced_Espresso_Drink"};
+                "Iced_Tea", "Iced_Green_Tea", "Hot_Tea", "Chai_Tea", "Green_Tea", "Cold_Brew", "Energy_Cold_Brew", "Mocha_Latte_Cappuccino_Etc", "Iced_Mocha_Latte_Cappuccino_Etc"};
             }
         }
 
@@ -133,14 +133,14 @@ namespace CaffeineCrashProvider.Sizes
             {"Large", new Beverage(20, 465) }
         };
 
-        public static readonly Dictionary<string, Beverage> Espresso_Drink = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Mocha_Latte_Cappuccino_Etc = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(10, 118)},
             {"Medium", new Beverage(14, 166)},
             {"Large", new Beverage(20, 252)}
         };
 
-        public static readonly Dictionary<string, Beverage> Iced_Espresso_Drink = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Iced_Mocha_Latte_Cappuccino_Etc = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(16, 118)},
             {"Medium", new Beverage(24, 166)},

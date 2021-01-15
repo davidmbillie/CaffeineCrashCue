@@ -47,9 +47,9 @@ namespace CaffeineCrashProvider.Sizes
         }
 
         [Fact]
-        public void Espresso_DrinkSizes_CreateReasonableTimes()
+        public void Mocha_Latte_Capp_EtcSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesFastFood.Espresso_Drink)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesFastFood.Mocha_Latte_Capp_Etc)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());

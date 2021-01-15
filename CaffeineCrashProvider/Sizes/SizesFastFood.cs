@@ -18,7 +18,7 @@ namespace CaffeineCrashProvider.Sizes
         public override string[] Sources {
             get
 			{
-                return new string[]{ "Regular", "Iced", "Espresso_Drink", "Iced_Espresso_Drink", "Caramel_Frappe", "Mocha_Frappe" };
+                return new string[]{ "Regular", "Iced", "Mocha_Latte_Cappuccino_Etc", "Iced_Mocha_Latte_Cappuccino_Etc", "Caramel_Frappe", "Mocha_Frappe" };
             }
         }
 
@@ -36,14 +36,14 @@ namespace CaffeineCrashProvider.Sizes
             {"Large", new Beverage(32, 320)}
         };
 
-        public static readonly Dictionary<string, Beverage> Espresso_Drink = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Mocha_Latte_Cappuccino_Etc = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(12, 71)},
             {"Medium", new Beverage(16, 142)},
             {"Large", new Beverage(21, 178)}
         };
 
-        public static readonly Dictionary<string, Beverage> Iced_Espresso_Drink = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Iced_Mocha_Latte_Cappuccino_Etc = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(12, 71)},
             {"Medium", new Beverage(16, 142)},

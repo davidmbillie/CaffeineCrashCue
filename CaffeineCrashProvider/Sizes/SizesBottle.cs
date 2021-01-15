@@ -31,7 +31,7 @@ namespace CaffeineCrashProvider.Sizes
             {"Cold_Brew", new Beverage(11, 175)},
             {"Nitro_Cold_Brew", new Beverage(11, 235)},
             {"Espresso", new Beverage(12, 125)},
-            {"Espresso_Drink_Large", new Beverage(14, 125)},
+            {"Mocha_Latte_Cappuccino_Etc_Large", new Beverage(14, 125)},
             {"Double_Shot", new Beverage(7, 110)},
             {"Classic", new Beverage(8, 85)}
         };
