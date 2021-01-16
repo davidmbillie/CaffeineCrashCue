@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Graphics.Drawables;
 
 namespace CaffeineCrashCueMk1.Droid
 {
@@ -14,11 +15,10 @@ namespace CaffeineCrashCueMk1.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            //commented out for now because of a wonky exception that doesn't overtly affect runtime
-            //TabLayoutResource = Resource.Layout.Tabbar;
-            //ToolbarResource = Resource.Layout.Toolbar;
+			TabLayoutResource = Resource.Layout.Tabbar;
+			ToolbarResource = Resource.Layout.Toolbar;
 
-            base.OnCreate(savedInstanceState);
+			base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
             CreateNotificationChannel();
