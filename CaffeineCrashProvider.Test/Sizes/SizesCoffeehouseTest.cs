@@ -91,9 +91,9 @@ namespace CaffeineCrashProvider.Sizes
         }
 
         [Fact]
-        public void Mocha_Latte_Capp_EtcSizes_CreateReasonableTimes()
+        public void Mocha_Latte_Cappuccino_EtcSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesCoffeehouse.Mocha_Latte_Capp_Etc)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesCoffeehouse.Mocha_Latte_Cappuccino_Etc)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
@@ -102,9 +102,9 @@ namespace CaffeineCrashProvider.Sizes
         }
 
         [Fact]
-        public void Iced_Mocha_Latte_Capp_EtcSizes_CreateReasonableTimes()
+        public void Iced_Mocha_Latte_Cappuccino_EtcSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesCoffeehouse.Iced_Mocha_Latte_Capp_Etc)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesCoffeehouse.Iced_Mocha_Latte_Cappuccino_Etc)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
