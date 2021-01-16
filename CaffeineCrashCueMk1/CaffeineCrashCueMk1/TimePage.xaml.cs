@@ -12,12 +12,15 @@ namespace CaffeineCrashCueMk1
 		private const string crashTimeDescriptor = "Your estimated crash time is: ";
 		private double crashTimeMillis = 0;
 		private static string crashTimeText = "";
+		private static string crashWarningText = "";
 
 		public TimePage()
 		{
 			//default ctor for testing
 			InitializeComponent();
 			crashTimeMillis = (CueConstants.cueTime + 1) * 60000;
+			crashTimeText = DateTime.Now.ToShortTimeString();
+			crashWarningText = DateTime.Now.ToShortTimeString();
 		}
 
 		public TimePage(double crashTime)
@@ -46,7 +49,11 @@ namespace CaffeineCrashCueMk1
 			crashTimeMillis = crashTime * 3600000;
 
 			DateTime crashDateTime = DateTime.Now.AddHours(crashTime);
+			DateTime crashWarningTime = DateTime.Now.AddMinutes(-CueConstants.cueTime);
+
 			crashTimeText = crashDateTime.ToShortTimeString();
+			crashWarningText = crashWarningTime.ToShortTimeString();
+			
 			CrashLabel.Text = crashTimeDescriptor + crashTimeText;
 			CrashLabel.HorizontalTextAlignment = TextAlignment.Center;
 		}
@@ -54,7 +61,7 @@ namespace CaffeineCrashCueMk1
 		private async void Notification_Clicked(object o, EventArgs e)
 		{
 			long crashCueMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashCueMillis(crashTimeMillis);
-			DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis);
+			DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, crashWarningText);
 			Preferences.Set(CueConstants.CrashTimePrefKey, crashTimeText);
 			await DisplayAlert("Crash Cue", "Notification set " + CueConstants.cueTime.ToString() + " minutes before " + crashTimeText, "OK");
 		}
