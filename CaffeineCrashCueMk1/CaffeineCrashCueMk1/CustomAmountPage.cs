@@ -51,7 +51,7 @@ namespace CaffeineCrashCueMk1
 			CheckBox extendedCheck = new CheckBox()
 			{
 				Color = Color.SaddleBrown,
-				IsChecked = Preferences.Get("a_Extended", false)
+				IsChecked = defaultExtended
 			};
 
 			StackLayout extendedLayout = new StackLayout()
