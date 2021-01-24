@@ -17,6 +17,7 @@ namespace CaffeineCrashCueMk1
 		public TimePage()
 		{
 			//default ctor for testing
+			BackgroundImageSource = CueConstants.BackgroundImage;
 			InitializeComponent();
 			crashTimeMillis = (CueConstants.cueTime + 1) * 60000;
 			crashTimeText = DateTime.Now.ToShortTimeString();
