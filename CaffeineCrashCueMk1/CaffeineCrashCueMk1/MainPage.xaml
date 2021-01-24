@@ -10,7 +10,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.75*"/>
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -95,7 +95,7 @@
                 VerticalOptions="Fill"
                 BackgroundColor="Transparent"
                 Clicked="HourEnergyClicked"/>
-        <BoxView Grid.Row="2"
+        <!--<BoxView Grid.Row="2"
                  Grid.Column="2"
                  Color="Red" />
         <Button Grid.Row="2"
@@ -104,17 +104,18 @@
                 HorizontalOptions="Fill"
                 VerticalOptions="Fill"
                 BackgroundColor="Transparent"
-                Clicked="LatestTimeClicked"/>
+                Clicked="LatestTimeClicked"/>-->
         <BoxView Grid.Row="3"
                  Grid.ColumnSpan="3"
                  Color="SaddleBrown" />
         <Label Grid.Row="3"
                Grid.ColumnSpan="3"
                TextColor="FloralWhite"
+               FontAttributes="Bold"
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center"
-               HorizontalOptions="Fill"
-               VerticalOptions="Fill"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
                x:Name="lblLatestTime" />
         <BoxView Grid.Row="4"
                  Grid.ColumnSpan="3"
