@@ -12,6 +12,7 @@ namespace CaffeineCrashCueMk1
         {
             coeff = Preferences.Get(CueConstants.CoeffPrefKey, 1.0);
             InitializeComponent();
+            lblLatestTime.Text = "Latest Crash Time: " + Preferences.Get(CueConstants.CrashTimePrefKey, "No recent crash times");
         }
 
         private async void CoffeeClicked(object sender, EventArgs e)

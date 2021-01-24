@@ -11,6 +11,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -106,10 +107,22 @@
                 Clicked="LatestTimeClicked"/>
         <BoxView Grid.Row="3"
                  Grid.ColumnSpan="3"
-                 Color="PaleGoldenrod" />
-        <Button Grid.Row="3"
+                 Color="SaddleBrown" />
+        <Label Grid.Row="3"
+               Grid.ColumnSpan="3"
+               TextColor="FloralWhite"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               HorizontalOptions="Fill"
+               VerticalOptions="Fill"
+               x:Name="lblLatestTime" />
+        <BoxView Grid.Row="4"
+                 Grid.ColumnSpan="3"
+                 Color="FloralWhite" />
+        <Button Grid.Row="4"
                Grid.ColumnSpan="3"
                Text="Personalize"
+               TextColor="SaddleBrown"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                BackgroundColor="Transparent"
