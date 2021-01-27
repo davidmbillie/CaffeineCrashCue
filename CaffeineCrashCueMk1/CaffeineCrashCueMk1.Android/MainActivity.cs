@@ -23,6 +23,13 @@ namespace CaffeineCrashCueMk1.Droid
             CreateNotificationChannel();
         }
 
+		//allow back button to exit from app
+		public override void OnBackPressed()
+		{
+			MoveTaskToBack(true);
+			Finish();
+		}
+
 		private void CreateNotificationChannel()
 		{
 			if (Build.VERSION.SdkInt < BuildVersionCodes.O)
