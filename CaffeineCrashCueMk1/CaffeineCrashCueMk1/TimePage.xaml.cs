@@ -14,6 +14,9 @@ namespace CaffeineCrashCueMk1
 		private static string crashTimeText = "";
 		private static string crashWarningText = "";
 
+		/// <summary>
+		/// empty ctor for testing
+		/// </summary>
 		public TimePage()
 		{
 			//default ctor for testing
@@ -24,9 +27,12 @@ namespace CaffeineCrashCueMk1
 			crashWarningText = DateTime.Now.ToShortTimeString();
 		}
 
+		/// <summary>
+		/// ctor for the 'Hour Energy' grid buttom
+		/// </summary>
+		/// <param name="crashTime"></param>
 		public TimePage(double crashTime)
 		{
-			//for the 'Hour Energy' grid buttom
 			BackgroundImageSource = CueConstants.BackgroundImage;
 
 			InitializeComponent();
@@ -34,6 +40,11 @@ namespace CaffeineCrashCueMk1
 			SetCrashLabel(crashTime);
 		}
 
+		/// <summary>
+		/// main-use ctor
+		/// </summary>
+		/// <param name="coeff"></param>
+		/// <param name="amount"></param>
 		public TimePage(double coeff, double amount)
 		{
 			BackgroundImageSource = CueConstants.BackgroundImage;
@@ -41,6 +52,11 @@ namespace CaffeineCrashCueMk1
 			InitializeComponent();
 
 			double crashTime = Formulas.CalculateCrash(coeff, amount);
+
+			if (Preferences.Get("a_Extended", false))
+			{
+				crashTime = crashTime * 2;
+			}
 
 			SetCrashLabel(crashTime);
 		}

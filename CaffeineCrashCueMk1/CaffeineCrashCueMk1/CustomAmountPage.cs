@@ -7,8 +7,36 @@ namespace CaffeineCrashCueMk1
 {
 	public class CustomAmountPage : ContentPage
 	{
-		private static string defaultAmount = Preferences.Get("a_CustomAmount", "100");
-		private static bool defaultExtended = Preferences.Get("a_Extended", false);
+		private string defaultAmount
+		{
+			get
+			{
+				return Preferences.Get("a_CustomAmount", "100");
+			}
+			set
+			{
+				Preferences.Set("a_CustomAmount", value);
+			}
+		}
+
+		private bool defaultExtended
+		{
+			get
+			{
+				return Preferences.Get("a_Extended", false);
+			}
+			set
+			{
+				Preferences.Set("a_Extended", value);
+			}
+		}
+
+		private void SetDefaults (string Amount, bool Extended)
+		{
+			defaultAmount = Amount;
+			defaultExtended = Extended;
+		}
+
 		public CustomAmountPage(double coeff)
 		{
 			BackgroundImageSource = CueConstants.BackgroundImage;
@@ -78,8 +106,9 @@ namespace CaffeineCrashCueMk1
 				{
 					amountText = defaultAmount;
 				}
-				Preferences.Set("a_CustomAmount", amountText);
-				Preferences.Set("a_Extended", extendedCheck.IsChecked);
+
+				SetDefaults(amountText, extendedCheck.IsChecked);
+
 				double amount = Convert.ToDouble(amountText);
 				if (amountText == "999")
 				{
@@ -88,10 +117,6 @@ namespace CaffeineCrashCueMk1
 				}
 				else
 				{
-					if (extendedCheck.IsChecked == true)
-					{
-						amount = amount * 2;
-					}
 					await Navigation.PushAsync(new TimePage(coeff, amount));
 				}
 			};
@@ -111,13 +136,9 @@ namespace CaffeineCrashCueMk1
 				{
 					amountText = defaultAmount;
 				}
-				Preferences.Set("a_CustomAmount", amountText);
-				Preferences.Set("a_Extended", extendedCheck.IsChecked);
+
+				SetDefaults(amountText, extendedCheck.IsChecked);
 				double amount = Convert.ToDouble(amountText);
-				if (extendedCheck.IsChecked == true)
-				{
-					amount = amount * 2;
-				}
 				await Navigation.PushAsync(new OuncePage(coeff, amount));
 			};
 
@@ -135,13 +156,9 @@ namespace CaffeineCrashCueMk1
 				{
 					amountText = defaultAmount;
 				}
-				Preferences.Set("a_CustomAmount", amountText);
-				Preferences.Set("a_Extended", extendedCheck.IsChecked);
+
+				SetDefaults(amountText, extendedCheck.IsChecked);
 				double amount = Convert.ToDouble(amountText);
-				if (extendedCheck.IsChecked == true)
-				{
-					amount = amount * 2;
-				}
 				await Navigation.PushAsync(new QuantityPage(coeff, amount));
 			};
 

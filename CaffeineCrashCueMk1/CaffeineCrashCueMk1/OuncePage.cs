@@ -1,7 +1,6 @@
 ﻿using CaffeineCrashProvider;
 using System;
 using Xamarin.Essentials;
-
 using Xamarin.Forms;
 
 namespace CaffeineCrashCueMk1
