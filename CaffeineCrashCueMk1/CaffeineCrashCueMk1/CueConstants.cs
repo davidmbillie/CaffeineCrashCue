@@ -10,8 +10,10 @@
 		public const string Title = "Caffeine Crash Cue";
 		public const int uniqueId = 196418;
 		public const string EspressoShot = "EspressoShot";
+		//constants for pref keys used in more than one class
 		public const string CoeffPrefKey = "F_coeff";
 		public const string CrashTimePrefKey = "L_crashTime";
+		public const string ExtendedReleaseKey = "a_Extended";
 		public const string BackgroundImage = "drawable/caffBack.png";
 	}
 }

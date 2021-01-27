@@ -7,7 +7,7 @@ namespace CaffeineCrashCueMk1
 {
 	public class CustomAmountPage : ContentPage
 	{
-		private string defaultAmount
+		private string DefaultAmount
 		{
 			get
 			{
@@ -19,22 +19,22 @@ namespace CaffeineCrashCueMk1
 			}
 		}
 
-		private bool defaultExtended
+		private bool DefaultExtended
 		{
 			get
 			{
-				return Preferences.Get("a_Extended", false);
+				return Preferences.Get(CueConstants.ExtendedReleaseKey, false);
 			}
 			set
 			{
-				Preferences.Set("a_Extended", value);
+				Preferences.Set(CueConstants.ExtendedReleaseKey, value);
 			}
 		}
 
 		private void SetDefaults (string Amount, bool Extended)
 		{
-			defaultAmount = Amount;
-			defaultExtended = Extended;
+			DefaultAmount = Amount;
+			DefaultExtended = Extended;
 		}
 
 		public CustomAmountPage(double coeff)
@@ -52,7 +52,7 @@ namespace CaffeineCrashCueMk1
 
 			Entry amountEntry = new Entry()
 			{
-				Text = defaultAmount,
+				Text = DefaultAmount,
 				Keyboard = Keyboard.Numeric,
 				MaxLength = 5,
 				FontSize = 48,
@@ -79,7 +79,7 @@ namespace CaffeineCrashCueMk1
 			CheckBox extendedCheck = new CheckBox()
 			{
 				Color = Color.SaddleBrown,
-				IsChecked = defaultExtended
+				IsChecked = DefaultExtended
 			};
 
 			StackLayout extendedLayout = new StackLayout()
@@ -104,7 +104,7 @@ namespace CaffeineCrashCueMk1
 				string amountText = amountEntry.Text;
 				if (string.IsNullOrWhiteSpace(amountText))
 				{
-					amountText = defaultAmount;
+					amountText = DefaultAmount;
 				}
 
 				SetDefaults(amountText, extendedCheck.IsChecked);
@@ -134,7 +134,7 @@ namespace CaffeineCrashCueMk1
 				string amountText = amountEntry.Text;
 				if (string.IsNullOrWhiteSpace(amountText))
 				{
-					amountText = defaultAmount;
+					amountText = DefaultAmount;
 				}
 
 				SetDefaults(amountText, extendedCheck.IsChecked);
@@ -154,7 +154,7 @@ namespace CaffeineCrashCueMk1
 				string amountText = amountEntry.Text;
 				if (string.IsNullOrWhiteSpace(amountText))
 				{
-					amountText = defaultAmount;
+					amountText = DefaultAmount;
 				}
 
 				SetDefaults(amountText, extendedCheck.IsChecked);

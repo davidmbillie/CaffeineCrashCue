@@ -53,7 +53,7 @@ namespace CaffeineCrashCueMk1
 
 			double crashTime = Formulas.CalculateCrash(coeff, amount);
 
-			if (Preferences.Get("a_Extended", false))
+			if (Preferences.Get(CueConstants.ExtendedReleaseKey, false))
 			{
 				crashTime = crashTime * 2;
 			}
