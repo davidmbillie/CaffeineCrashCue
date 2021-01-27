@@ -20,8 +20,8 @@
         </Grid.ColumnDefinitions>
 
         <BoxView Color="#00704A" />
-        <Button Text="Coffee/Tea Drinks"
-               TextColor="White"
+        <Button Text="Coffee/Tea/Drinks"
+               TextColor="Brown"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                BackgroundColor="Transparent"
@@ -29,7 +29,7 @@
         <BoxView Grid.Column="1"
                  Color="#DA291C" />
         <Button Grid.Column="1"
-               Text="Fast Food Coffee"
+               Text="Fast Food Coffee/Drinks"
                TextColor="#FFC72C"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
@@ -38,7 +38,7 @@
         <BoxView Grid.Column="2"
                  Color="White" />
         <Button Grid.Column="2"
-               Text="Donut Coffee/Tea Drinks"
+               Text="Donut Coffee/Tea/Drinks"
                TextColor="#FF671F"
                HorizontalOptions="Fill"
                VerticalOptions="Fill" 
