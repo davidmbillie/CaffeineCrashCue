@@ -20,7 +20,7 @@ namespace CaffeineCrashCueMk1.Droid
             var message = intent.GetStringExtra("message");
             var title = intent.GetStringExtra("title");
 
-            var resultIntent = new Intent(context, typeof(MainActivity));
+            var resultIntent = new Intent(context, typeof(SplashActivity));
             var pending = PendingIntent.GetActivity(context, CueConstants.uniqueId, resultIntent, PendingIntentFlags.CancelCurrent);
             resultIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
 
