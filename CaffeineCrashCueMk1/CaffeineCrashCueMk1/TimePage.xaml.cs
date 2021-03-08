@@ -13,6 +13,7 @@ namespace CaffeineCrashCueMk1
 		private double crashTimeMillis = 0;
 		private static string crashTimeText = "";
 		private static string crashWarningText = "";
+		private static DateTime crashDateTime;
 
 		/// <summary>
 		/// empty ctor for testing
@@ -25,6 +26,7 @@ namespace CaffeineCrashCueMk1
 			crashTimeMillis = (CueConstants.cueTime + 1) * 60000;
 			crashTimeText = DateTime.Now.ToShortTimeString();
 			crashWarningText = DateTime.Now.ToShortTimeString();
+			crashDateTime = DateTime.Now;
 		}
 
 		/// <summary>
@@ -63,10 +65,8 @@ namespace CaffeineCrashCueMk1
 
 		private void SetCrashLabel(double crashTime)
 		{
-			crashTimeMillis = crashTime * 3600000;
-
-			DateTime crashDateTime = DateTime.Now.AddHours(crashTime);
-			DateTime crashWarningTime = DateTime.Now.AddMinutes(-CueConstants.cueTime);
+			crashDateTime = DateTime.Now.AddHours(crashTime);
+			DateTime crashWarningTime = crashDateTime.AddMinutes(-CueConstants.cueTime);
 
 			crashTimeText = crashDateTime.ToShortTimeString();
 			crashWarningText = crashWarningTime.ToShortTimeString();
@@ -77,15 +77,26 @@ namespace CaffeineCrashCueMk1
 
 		private async void Notification_Clicked(object o, EventArgs e)
 		{
-			long crashCueMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashCueMillis(crashTimeMillis);
-			DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, crashWarningText);
-			Preferences.Set(CueConstants.CrashTimePrefKey, crashTimeText);
-			await DisplayAlert("Crash Cue", "Notification set " + CueConstants.cueTime.ToString() + " minutes before " + crashTimeText, "OK");
+			double offsetMinutes = OffsetStepper.Value;
+
+			bool setNotif = await DisplayAlert("Crash Cue", "Set notification " + CueConstants.cueTime.ToString() + " minutes before " + crashDateTime.AddMinutes(offsetMinutes).ToShortTimeString(), "OK", "Cancel");
+			if (setNotif)
+			{
+				crashTimeMillis = crashTimeMillis + offsetMinutes * 60000;
+				long crashCueMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashCueMillis(crashTimeMillis);
+				DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, crashWarningText);
+				Preferences.Set(CueConstants.CrashTimePrefKey, crashTimeText);
+			}
 		}
 
 		private async void Home_Clicked(object o, EventArgs e)
 		{
 			await Navigation.PushAsync(new MainPage());
+		}
+
+		private void OffsetStepper_ValueChanged(object sender, ValueChangedEventArgs e)
+		{
+			OffsetLabel.Text = $"Add/Subtract: {e.NewValue} minutes";
 		}
 	}
 }

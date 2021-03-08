@@ -11,6 +11,19 @@
                Text="Your estimated crash time is: "
                FontSize="Large"/>
 
+        <Label x:Name="OffsetLabel"
+               Text="Add/Subtract: 0 minutes"
+               FontSize="Medium"
+               />
+
+        <Stepper x:Name="OffsetStepper"
+                 Maximum="60"
+                 Minimum="-60"
+                 Increment="5"
+                 Value="0"
+                 ValueChanged="OffsetStepper_ValueChanged"
+                 />
+
         <Button Text="Set Notification"
                 BackgroundColor="FloralWhite"
                 TextColor="SaddleBrown"
