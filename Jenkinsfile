@@ -20,7 +20,7 @@ pipeline {
 	    always {
 	        junit '**/test/results/*.xml'
             cobertura coberturaReportFile: '**/test/coverage/*.xml'
-            step([$class: 'CodometerBuildStep', programName: 'program', projectName: 'project', teamName: 'team', version: '4.8', channel: 'Discovery', tags: [OS: "Windows", R: 8.31447]])
+            codometer programName: 'program', projectName: 'project', teamName: 'team', version: '4.8', channel: 'Discovery', tags: [OS: "Windows", R: 8.31447]
 	    }
 	}
 }
