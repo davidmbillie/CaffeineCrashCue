@@ -7,7 +7,7 @@ namespace CaffeineCrashCueMk1
 {
 	public class OuncePage : ContentPage
 	{
-		public OuncePage(double coeff, double amount)
+		public OuncePage(double coeff, double amount, bool extendedRelease = false)
 		{
 			BackgroundImageSource = CueConstants.BackgroundImage;
 
@@ -74,7 +74,7 @@ namespace CaffeineCrashCueMk1
 				Preferences.Set("a_defaultOz", ounceText);
 				double ounces = Convert.ToDouble(ounceText);
 				double totalAmount = amount * ounces;
-				await Navigation.PushAsync(new TimePage(coeff, totalAmount));
+				await Navigation.PushAsync(new TimePage(coeff, totalAmount, extendedRelease));
 			};
 
 			flexLayout.Children.Add(ounceLayout);

@@ -4,7 +4,7 @@ namespace CaffeineCrashCueMk1
 {
 	public class QuantityPage : ContentPage
 	{
-		public QuantityPage(double coeff, double caffeineAmount)
+		public QuantityPage(double coeff, double caffeineAmount, bool extendedRelease = false)
 		{
 			BackgroundImageSource = CueConstants.BackgroundImage;
 
@@ -53,7 +53,7 @@ namespace CaffeineCrashCueMk1
 			};
 			calcButton.Clicked += async (sender, e) =>
 			{
-				await Navigation.PushAsync(new TimePage(coeff, caffeineAmount * quantStepper.Value));
+				await Navigation.PushAsync(new TimePage(coeff, caffeineAmount * quantStepper.Value, extendedRelease));
 			};
 
 			flexContent.Children.Add(quantLabel);

@@ -117,7 +117,7 @@ namespace CaffeineCrashCueMk1
 				}
 				else
 				{
-					await Navigation.PushAsync(new TimePage(coeff, amount));
+					await Navigation.PushAsync(new TimePage(coeff, amount, extendedCheck.IsChecked));
 				}
 			};
 
@@ -139,7 +139,7 @@ namespace CaffeineCrashCueMk1
 
 				SetDefaults(amountText, extendedCheck.IsChecked);
 				double amount = Convert.ToDouble(amountText);
-				await Navigation.PushAsync(new OuncePage(coeff, amount));
+				await Navigation.PushAsync(new OuncePage(coeff, amount, extendedCheck.IsChecked));
 			};
 
 			Button perServingButton = new Button()
@@ -159,7 +159,7 @@ namespace CaffeineCrashCueMk1
 
 				SetDefaults(amountText, extendedCheck.IsChecked);
 				double amount = Convert.ToDouble(amountText);
-				await Navigation.PushAsync(new QuantityPage(coeff, amount));
+				await Navigation.PushAsync(new QuantityPage(coeff, amount, extendedCheck.IsChecked));
 			};
 
 			flexLayout.Children.Add(amountEntry);

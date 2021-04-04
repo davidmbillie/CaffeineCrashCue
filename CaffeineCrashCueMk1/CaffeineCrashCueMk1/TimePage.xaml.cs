@@ -47,7 +47,7 @@ namespace CaffeineCrashCueMk1
 		/// </summary>
 		/// <param name="coeff"></param>
 		/// <param name="amount"></param>
-		public TimePage(double coeff, double amount)
+		public TimePage(double coeff, double amount, bool extendedRelease = false)
 		{
 			BackgroundImageSource = CueConstants.BackgroundImage;
 
@@ -55,7 +55,7 @@ namespace CaffeineCrashCueMk1
 
 			double crashTime = Formulas.CalculateCrash(coeff, amount);
 
-			if (Preferences.Get(CueConstants.ExtendedReleaseKey, false))
+			if (extendedRelease)
 			{
 				crashTime = crashTime * 2;
 			}
