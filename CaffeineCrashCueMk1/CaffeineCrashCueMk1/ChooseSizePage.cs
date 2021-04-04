@@ -29,11 +29,11 @@ namespace CaffeineCrashCueMk1
 			FieldInfo sizeInfo = caffeineType.GetField(source);
 			Dictionary<string, Beverage> sizePairs = (Dictionary<string, Beverage>)sizeInfo.GetValue(sizes);
 			Beverage firstBev = sizePairs.ElementAt(0).Value;
-			perOz = firstBev.Caffeine / Convert.ToInt32(firstBev.Oz.ToNaturalNumericString());
+			perOz = firstBev.CaffeinePerOz;
 
 			foreach (KeyValuePair<string, Beverage> sizePair in sizePairs)
 			{
-				string btnText = sizePair.Key + ": " + sizePair.Value.Oz;
+				string btnText = $"{sizePair.Key}: {sizePair.Value.Oz} ({sizePair.Value.Caffeine} mg)";
 				btnText = btnText.Replace('_', ' ');
 				sizeButtons.Add(new Button { Text = btnText });
 				beverageMappings.Add(btnText, sizePair.Value);
