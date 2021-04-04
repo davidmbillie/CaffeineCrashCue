@@ -37,7 +37,7 @@ namespace CaffeineCrashCueMk1
 			Label amountLabel = new Label
 			{
 				Text = $"x {caffeineAmount} mg",
-				FontSize = 24.0,
+				FontSize = 24.0
 			};
 
 			quantStepper.ValueChanged += (sender, e) =>
