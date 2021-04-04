@@ -9,7 +9,7 @@ namespace CaffeineCrashCueMk1
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TimePage : ContentPage
 	{
-		private const string crashTimeDescriptor = "Your estimated crash time is: ";
+		private readonly string crashTimeDescriptor = $"Your estimated crash time is: {Environment.NewLine}";
 		private double crashTimeMillis = 0;
 		private static string crashTimeText = "";
 		private static string crashWarningText = "";
