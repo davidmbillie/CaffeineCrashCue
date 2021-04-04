@@ -21,7 +21,7 @@
 
         <BoxView Color="#00704A" />
         <Button Text="Coffee/Tea/Drinks"
-               TextColor="Brown"
+               TextColor="White"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                BackgroundColor="Transparent"
