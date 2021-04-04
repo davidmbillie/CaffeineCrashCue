@@ -34,9 +34,15 @@ namespace CaffeineCrashCueMk1
 				FontAttributes = FontAttributes.Bold
 			};
 
+			Label amountLabel = new Label
+			{
+				Text = $"x {caffeineAmount} mg",
+				FontSize = 24.0,
+			};
+
 			quantStepper.ValueChanged += (sender, e) =>
 			{
-				quantLabel.Text = quantStepper.Value.ToString();
+				quantLabel.Text = $"{quantStepper.Value}";
 			};
 
 			Button calcButton = new Button
@@ -51,6 +57,7 @@ namespace CaffeineCrashCueMk1
 			};
 
 			flexContent.Children.Add(quantLabel);
+			flexContent.Children.Add(amountLabel);
 			flexContent.Children.Add(quantStepper);
 			flexContent.Children.Add(calcButton);
 		}
