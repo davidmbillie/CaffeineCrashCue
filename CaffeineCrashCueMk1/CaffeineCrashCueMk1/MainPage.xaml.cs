@@ -58,7 +58,7 @@ namespace CaffeineCrashCueMk1
 
         private async void LatestTimeClicked(object sender, EventArgs e)
 		{
-            await Navigation.PushAsync(new LatestCrashTime());
+            await Navigation.PushAsync(new LatestCrashTimePage());
 		}
 
         private async void PersonalizeClicked(object sender, EventArgs e)

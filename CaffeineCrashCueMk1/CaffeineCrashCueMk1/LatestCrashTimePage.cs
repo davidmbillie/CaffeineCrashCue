@@ -3,9 +3,9 @@ using Xamarin.Forms;
 
 namespace CaffeineCrashCueMk1
 {
-	public class LatestCrashTime : ContentPage
+	public class LatestCrashTimePage : ContentPage
 	{
-		public LatestCrashTime()
+		public LatestCrashTimePage()
 		{
 			BackgroundImageSource = CueConstants.BackgroundImage;
 
