@@ -27,7 +27,7 @@ namespace CaffeineCrashCueMk1.Droid
             var builder = new Notification.Builder(context, CueConstants.Id)
                 .SetContentIntent(pending)
                 .SetContentTitle(title)
-                .SetSmallIcon(Resource.Drawable.design_ic_visibility)
+                .SetSmallIcon(Resource.Drawable.coffee)
                 .SetContentText(message)
                 .SetWhen(Java.Lang.JavaSystem.CurrentTimeMillis())
                 .SetAutoCancel(true);
