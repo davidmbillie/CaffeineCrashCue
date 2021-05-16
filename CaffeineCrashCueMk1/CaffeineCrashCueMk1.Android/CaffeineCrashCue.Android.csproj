@@ -104,9 +104,9 @@
     <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CaffeineCrashCueMk1\CaffeineCrashCueMk1.csproj">
-      <Project>{CEAABBF2-3FFC-412A-9790-0ECBDEF427E0}</Project>
-      <Name>CaffeineCrashCueMk1</Name>
+    <ProjectReference Include="..\CaffeineCrashCueMk1\CaffeineCrashCue.csproj">
+      <Project>{4D40145C-CC91-438C-BB9A-76F5D4C8592C}</Project>
+      <Name>CaffeineCrashCue</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
