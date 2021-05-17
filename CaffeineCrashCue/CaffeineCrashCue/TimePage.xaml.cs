@@ -23,6 +23,7 @@ namespace CaffeineCrashCue
 			//default ctor for testing
 			BackgroundImageSource = CueConstants.BackgroundImage;
 			InitializeComponent();
+			//raise notification in half a minute
 			crashTimeMillis = (CueConstants.cueTime + 0.5) * 60000;
 			crashTimeText = DateTime.Now.ToShortTimeString();
 			crashWarningText = DateTime.Now.ToShortTimeString();
