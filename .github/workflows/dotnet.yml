@@ -25,7 +25,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal
     - name: .NET code metrics
       id: dotnet-code-metrics
-      uses: davidmbillie/CaffeineCrashCue/github-actions/DotNet.GitHubAction@main
+      uses: davidmbillie/CaffeineCrashCue/github-actions/DotNet.GitHubAction@actions
       env:
         GREETINGS: 'Hello, .NET developers!' # ${{ secrets.GITHUB_TOKEN }}
       with:
