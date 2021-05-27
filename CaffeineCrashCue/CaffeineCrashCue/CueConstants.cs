@@ -4,6 +4,8 @@
 	{
 		//amount of minutes to warn before the crash happens
 		public const int cueTime = 20;
+		public const int minToMs = 60000;
+		public const int hoursToMs = 3600000;
 		public const string Description = "Caffeine Crash Cue channel";
 		public const string Id = "CaffeineCrash";
 		public static readonly string Message = $"Your caffeine crash will occur at about ";

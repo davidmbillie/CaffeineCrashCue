@@ -24,7 +24,7 @@ namespace CaffeineCrashCue
 			BackgroundImageSource = CueConstants.BackgroundImage;
 			InitializeComponent();
 			//raise notification in half a minute
-			crashTimeMillis = (CueConstants.cueTime + 0.5) * 60000;
+			crashTimeMillis = (CueConstants.cueTime + 0.5) * CueConstants.minToMs;
 			crashTimeText = DateTime.Now.ToShortTimeString();
 			crashWarningText = DateTime.Now.ToShortTimeString();
 			crashDateTime = DateTime.Now;
@@ -66,11 +66,13 @@ namespace CaffeineCrashCue
 
 		private void SetCrashLabel(double crashTime)
 		{
-			crashDateTime = DateTime.Now.AddHours(crashTime);
-			DateTime crashWarningTime = crashDateTime.AddMinutes(-CueConstants.cueTime);
+			crashTimeMillis = crashTime * CueConstants.hoursToMs;
 
+			crashDateTime = DateTime.Now.AddHours(crashTime);
 			crashTimeText = crashDateTime.ToShortTimeString();
-			crashWarningText = crashWarningTime.ToShortTimeString();
+
+			DateTime crashWarningDateTime = crashDateTime.AddMinutes(-CueConstants.cueTime);
+			crashWarningText = crashWarningDateTime.ToShortTimeString();
 			
 			CrashLabel.Text = crashTimeDescriptor + crashTimeText;
 			CrashLabel.HorizontalTextAlignment = TextAlignment.Center;
@@ -83,7 +85,7 @@ namespace CaffeineCrashCue
 			bool setNotif = await DisplayAlert("Crash Cue", "Set notification " + CueConstants.cueTime.ToString() + " minutes before " + crashDateTime.AddMinutes(offsetMinutes).ToShortTimeString(), "OK", "Cancel");
 			if (setNotif)
 			{
-				crashTimeMillis = crashTimeMillis + offsetMinutes * 60000;
+				crashTimeMillis = crashTimeMillis + offsetMinutes * CueConstants.minToMs;
 				long crashCueMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashCueMillis(crashTimeMillis);
 				DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, crashWarningText);
 				Preferences.Set(CueConstants.CrashTimePrefKey, crashTimeText);
