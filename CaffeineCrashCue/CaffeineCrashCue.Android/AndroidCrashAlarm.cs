@@ -25,7 +25,7 @@ namespace CaffeineCrashCue.Droid
 
 			Intent alarmIntent = new Intent(context, typeof(CrashAlarmReceiver));
 			alarmIntent.PutExtra("title", CueConstants.Title);
-			alarmIntent.PutExtra("message", cueText + ": " + CueConstants.Message);
+			alarmIntent.PutExtra("message", CueConstants.Message + cueText);
 			alarmIntent.PutExtra("Id", CueConstants.uniqueId);
 
 			bool alreadyExists = (PendingIntent.GetBroadcast(context, CueConstants.uniqueId, alarmIntent, PendingIntentFlags.NoCreate) != null);

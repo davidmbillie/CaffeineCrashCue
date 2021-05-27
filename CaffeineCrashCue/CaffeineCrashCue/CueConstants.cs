@@ -6,7 +6,7 @@
 		public const int cueTime = 20;
 		public const string Description = "Caffeine Crash Cue channel";
 		public const string Id = "CaffeineCrash";
-		public static readonly string Message = $"Your caffeine crash will occur in about {cueTime} minutes";
+		public static readonly string Message = $"Your caffeine crash will occur at about ";
 		public const string Title = "Caffeine Crash Cue";
 		public const int uniqueId = 196418;
 		public const string EspressoShot = "EspressoShot";
