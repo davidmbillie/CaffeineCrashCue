@@ -23,6 +23,7 @@
                  Minimum="-60"
                  Increment="5"
                  Value="0"
+                 HorizontalOptions="Center"
                  ValueChanged="OffsetStepper_ValueChanged"
                  />
         </StackLayout>
