@@ -54,7 +54,7 @@
                     VerticalOptions="Center"
                     ThumbColor="SaddleBrown"
                     Toggled="Preg_Toggled"/>
-        <Label Text="Smoker"
+        <Label Text="Nicotine"
                    Grid.Row="5"
                    VerticalOptions="Center" />
         <Switch x:Name="smokerSwitch"
