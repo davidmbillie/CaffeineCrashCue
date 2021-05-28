@@ -12,6 +12,8 @@ namespace CaffeineCrashCue.Droid
     [Activity(Label = "@string/app_name", Icon = "@drawable/caffIcon", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+		App app;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
 			TabLayoutResource = Resource.Layout.Tabbar;
@@ -19,15 +21,23 @@ namespace CaffeineCrashCue.Droid
 
 			base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+			app = new App();
+            LoadApplication(app);
             CreateNotificationChannel();
         }
 
 		//allow back button to exit from app
 		public override void OnBackPressed()
 		{
-			MoveTaskToBack(true);
-			Finish();
+			if (app.DoBack)
+			{
+				base.OnBackPressed();
+			}
+			else
+			{
+				MoveTaskToBack(true);
+				Finish();
+			}
 		}
 
 		private void CreateNotificationChannel()

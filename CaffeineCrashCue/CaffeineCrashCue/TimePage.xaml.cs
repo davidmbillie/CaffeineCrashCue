@@ -99,7 +99,7 @@ namespace CaffeineCrashCue
 
 		private async void Home_Clicked(object o, EventArgs e)
 		{
-			await Navigation.PushAsync(new MainPage());
+			await Navigation.PopToRootAsync();
 		}
 
 		private void OffsetStepper_ValueChanged(object sender, ValueChangedEventArgs e)

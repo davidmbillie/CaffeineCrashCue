@@ -33,5 +33,13 @@ namespace CaffeineCrashCue
         {
             // Handle when your app resumes
         }
+
+        public bool DoBack
+        {
+            get
+            {
+                return MainPage.Navigation.NavigationStack.Count > 1;
+            }
+        }
     }
 }
