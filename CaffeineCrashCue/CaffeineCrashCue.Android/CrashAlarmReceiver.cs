@@ -32,6 +32,7 @@ namespace CaffeineCrashCue.Droid
                 .SetWhen(Java.Lang.JavaSystem.CurrentTimeMillis())
                 .SetShowWhen(true)
                 .SetAutoCancel(true);
+            //TODO: SetWhen/SetShowWhen could be revisited for showing timestamps, but they currently aren't functional
 
             builder.SetContentIntent(pending);
             var notification = builder.Build();
