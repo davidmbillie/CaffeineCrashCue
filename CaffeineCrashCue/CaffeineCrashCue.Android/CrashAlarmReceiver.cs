@@ -21,21 +21,22 @@ namespace CaffeineCrashCue.Droid
             var title = intent.GetStringExtra("title");
 
             var resultIntent = new Intent(context, typeof(SplashActivity));
-            var pending = PendingIntent.GetActivity(context, CueConstants.uniqueId, resultIntent, PendingIntentFlags.CancelCurrent);
+            var pending = PendingIntent.GetActivity(context, CueConstants.UniqueId, resultIntent, PendingIntentFlags.CancelCurrent);
             resultIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
 
-            var builder = new Notification.Builder(context, CueConstants.Id)
+            var builder = new Notification.Builder(context, CueConstants.NotifId)
                 .SetContentIntent(pending)
                 .SetContentTitle(title)
                 .SetSmallIcon(Resource.Drawable.coffee)
                 .SetContentText(message)
                 .SetWhen(Java.Lang.JavaSystem.CurrentTimeMillis())
+                .SetShowWhen(true)
                 .SetAutoCancel(true);
 
             builder.SetContentIntent(pending);
             var notification = builder.Build();
             var manager = NotificationManager.FromContext(context);
-            manager.Notify(CueConstants.uniqueId, notification);
+            manager.Notify(CueConstants.UniqueId, notification);
         }
     }
 }

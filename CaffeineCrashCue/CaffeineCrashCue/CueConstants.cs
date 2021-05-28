@@ -3,19 +3,19 @@
 	public static class CueConstants
 	{
 		//amount of minutes to warn before the crash happens
-		public const int cueTime = 20;
-		public const int minToMs = 60000;
-		public const int hoursToMs = 3600000;
-		public const string Description = "Caffeine Crash Cue channel";
-		public const string Id = "CaffeineCrash";
-		public static readonly string Message = $"Your caffeine crash will occur at about ";
-		public const string Title = "Caffeine Crash Cue";
-		public const int uniqueId = 196418;
-		public const string EspressoShot = "EspressoShot";
+		public static int CueTime { get { return 20; } }
+		public static int MinToMs { get { return 60000; } }
+		public static int HoursToMs { get { return 3600000; } }
+		public static string Description { get { return "Caffeine Crash Cue channel"; } }
+		public static string NotifId { get { return "CaffeineCrash"; } }
+		public static string NotifMessage { get { return "Your caffeine crash will occur at about "; } }
+		public static string NotifTitle { get { return $"{CueTime} Minute Crash Cue"; } }
+		public static int UniqueId { get { return 196418; } }
+		public static string EspressoShot { get { return "EspressoShot"; } }
 		//constants for pref keys used in more than one class
-		public const string CoeffPrefKey = "F_coeff";
-		public const string CrashTimePrefKey = "L_crashTime";
-		public const string ExtendedReleaseKey = "a_Extended";
-		public const string BackgroundImage = "drawable/caffBack.png";
+		public static string CoeffPrefKey { get { return "F_coeff"; } }
+		public static string CrashTimePrefKey { get { return "L_crashTime"; } }
+		public static string ExtendedReleaseKey { get { return "a_Extended"; } }
+		public static string BackgroundImage { get { return "drawable/caffBack.png"; } }
 	}
 }

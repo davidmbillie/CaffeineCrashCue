@@ -24,7 +24,7 @@ namespace CaffeineCrashCue
 			BackgroundImageSource = CueConstants.BackgroundImage;
 			InitializeComponent();
 			//raise notification in half a minute
-			crashTimeMillis = (CueConstants.cueTime + 0.5) * CueConstants.minToMs;
+			crashTimeMillis = (CueConstants.CueTime + 0.5) * CueConstants.MinToMs;
 			crashTimeText = DateTime.Now.ToShortTimeString();
 			crashWarningText = DateTime.Now.ToShortTimeString();
 			crashDateTime = DateTime.Now;
@@ -40,7 +40,8 @@ namespace CaffeineCrashCue
 
 			InitializeComponent();
 
-			SetCrashLabel(crashTime);
+			SetCrashValues(crashTime);
+			SetCrashLabel();
 		}
 
 		/// <summary>
@@ -61,19 +62,23 @@ namespace CaffeineCrashCue
 				crashTime = crashTime * 2;
 			}
 
-			SetCrashLabel(crashTime);
+			SetCrashValues(crashTime);
+			SetCrashLabel();
 		}
 
-		private void SetCrashLabel(double crashTime)
+		private void SetCrashValues(double crashTime)
 		{
-			crashTimeMillis = crashTime * CueConstants.hoursToMs;
+			crashTimeMillis = crashTime * CueConstants.HoursToMs;
 
 			crashDateTime = DateTime.Now.AddHours(crashTime);
 			crashTimeText = crashDateTime.ToShortTimeString();
 
-			DateTime crashWarningDateTime = crashDateTime.AddMinutes(-CueConstants.cueTime);
+			DateTime crashWarningDateTime = crashDateTime.AddMinutes(-CueConstants.CueTime);
 			crashWarningText = crashWarningDateTime.ToShortTimeString();
-			
+		}
+
+		private void SetCrashLabel()
+		{			
 			CrashLabel.Text = crashTimeDescriptor + crashTimeText;
 			CrashLabel.HorizontalTextAlignment = TextAlignment.Center;
 		}
@@ -82,12 +87,12 @@ namespace CaffeineCrashCue
 		{
 			double offsetMinutes = OffsetStepper.Value;
 
-			bool setNotif = await DisplayAlert("Crash Cue", "Set notification " + CueConstants.cueTime.ToString() + " minutes before " + crashDateTime.AddMinutes(offsetMinutes).ToShortTimeString(), "OK", "Cancel");
+			bool setNotif = await DisplayAlert("Crash Cue", "Set notification " + CueConstants.CueTime.ToString() + " minutes before " + crashDateTime.AddMinutes(offsetMinutes).ToShortTimeString(), "OK", "Cancel");
 			if (setNotif)
 			{
-				crashTimeMillis = crashTimeMillis + offsetMinutes * CueConstants.minToMs;
+				crashTimeMillis = crashTimeMillis + offsetMinutes * CueConstants.MinToMs;
 				long crashCueMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashCueMillis(crashTimeMillis);
-				DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, crashWarningText);
+				DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, crashTimeText);
 				Preferences.Set(CueConstants.CrashTimePrefKey, crashTimeText);
 			}
 		}
