@@ -61,5 +61,10 @@ namespace CaffeineCrashCue.Droid
 			long cueTimeMillis = CueConstants.CueTime * CueConstants.MinToMs;
 			return Java.Lang.JavaSystem.CurrentTimeMillis() + crashLong - cueTimeMillis;
 		}
+
+		public long GetCurrentTimeMillis()
+		{
+			return Java.Lang.JavaSystem.CurrentTimeMillis();
+		}
 	}
 }
