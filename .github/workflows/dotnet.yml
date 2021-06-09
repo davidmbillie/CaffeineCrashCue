@@ -21,7 +21,7 @@ jobs:
       with:
         dotnet-version: 3.1.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: nuget restore CaffeineCrashCue.sln
     - name: Build
       run: msbuild CaffeineCrashCue.sln
     - name: Test
