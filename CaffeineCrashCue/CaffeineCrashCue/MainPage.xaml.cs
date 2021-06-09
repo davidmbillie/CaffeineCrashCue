@@ -56,6 +56,11 @@ namespace CaffeineCrashCue
             await Navigation.PushAsync(new HourEnergyPage());
         }
 
+        private async void SodaClicked(object sender, EventArgs e)
+		{
+            await Navigation.PushAsync(new ChooseTypePage(new SizesSoda(), coeff));
+		}
+
         private async void LatestTimeClicked(object sender, EventArgs e)
 		{
             await Navigation.PushAsync(new LatestCrashTimePage());

@@ -47,7 +47,7 @@
         <BoxView Grid.Row="1"
                  Color="#E09762" />
         <Button Grid.Row="1"
-               Text="Bottled Drinks"
+               Text="Bottled Coffee/Energy"
                TextColor="#8A502B"
                HorizontalOptions="Fill"
                VerticalOptions="Fill" 
@@ -58,7 +58,7 @@
                  Color="Black" />
         <Button Grid.Row="1"
                Grid.Column="1"
-               Text="Canned Drinks"
+               Text="Canned Energy"
                TextColor="Lime"
                HorizontalOptions="Fill"
                VerticalOptions="Fill" 
@@ -97,14 +97,15 @@
                 Clicked="HourEnergyClicked"/>
         <!--<BoxView Grid.Row="2"
                  Grid.Column="2"
-                 Color="Red" />
+                 Color="#94C93D" />
         <Button Grid.Row="2"
                 Grid.Column="2"
-                Text="Check Latest Crash Time"
+                Text="Soda"
+                TextColor="#ED1A37"
                 HorizontalOptions="Fill"
                 VerticalOptions="Fill"
                 BackgroundColor="Transparent"
-                Clicked="LatestTimeClicked"/>-->
+                Clicked="SodaClicked"/>-->
         <BoxView Grid.Row="3"
                  Grid.ColumnSpan="3"
                  Color="SaddleBrown" />

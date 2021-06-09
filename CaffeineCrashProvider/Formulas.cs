@@ -26,7 +26,7 @@ namespace CaffeineCrashProvider
             double coeff = 1;
             foreach (double val in subCoeffs)
             {
-                coeff = coeff * val;
+                coeff *= val;
             }
             return coeff;
         }
@@ -36,6 +36,5 @@ namespace CaffeineCrashProvider
             double weightfactor = weight - 150;
             return 1 + (0.003434307937522 * weightfactor);
         }
-        //test7
     }
 }
