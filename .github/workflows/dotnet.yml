@@ -25,6 +25,6 @@ jobs:
     - name: Build Base
       run: dotnet build -c ExcludePlatforms --no-restore
     - name: Build Android
-      run: msbuild CaffeineCrashCue.sln /t:PackageForAndroid /p:Configuration=Debug
+      run: msbuild ./CaffeineCrashCue/CaffeineCrashCue.Android/CaffeineCrashCue.Android.csproj /t:PackageForAndroid /p:Configuration=Debug
     - name: Test
       run: dotnet test --no-build --verbosity normal
