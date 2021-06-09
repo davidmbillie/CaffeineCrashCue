@@ -22,7 +22,9 @@ jobs:
         dotnet-version: 3.1.x
     - name: Restore dependencies
       run: nuget restore CaffeineCrashCue.sln
-    - name: Build
+    - name: Build Base
+      run: dotnet build -c ExcludePlatforms --no-restore
+    - name: Build Android
       run: msbuild CaffeineCrashCue.sln /t:PackageForAndroid /p:Configuration=Debug
     - name: Test
       run: dotnet test --no-build --verbosity normal
