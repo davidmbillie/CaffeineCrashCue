@@ -23,6 +23,6 @@ jobs:
     - name: Restore dependencies
       run: nuget restore CaffeineCrashCue.sln
     - name: Build
-      run: msbuild CaffeineCrashCue.sln
+      run: msbuild CaffeineCrashCue.sln /t:PackageForAndroid /p:Configuration=Debug
     - name: Test
       run: dotnet test --no-build --verbosity normal
