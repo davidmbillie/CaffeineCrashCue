@@ -1,5 +1,6 @@
 ﻿using CaffeineCrashProvider.Models;
 using System.Collections.Generic;
+using System.Reflection;
 
 using Xunit;
 
@@ -7,6 +8,33 @@ namespace CaffeineCrashProvider.Sizes
 {
     public class SizesDonutTest
     {
+        [Fact]
+        public void All_Fields_Are_Contained_In_Sources()
+        {
+            SizesSet sizes = new SizesDonut();
+            FieldInfo[] fields = sizes.GetType().GetFields();
+            foreach (FieldInfo field in fields)
+            {
+                Assert.Contains(field.Name, sizes.Sources);
+            }
+        }
+
+        [Fact]
+        public void All_Sources_Have_Fields()
+        {
+            SizesSet sizes = new SizesDonut();
+            FieldInfo[] fields = sizes.GetType().GetFields();
+            List<string> fieldNames = new List<string>();
+            foreach (FieldInfo field in fields)
+            {
+                fieldNames.Add(field.Name);
+            }
+            foreach (string source in sizes.Sources)
+            {
+                Assert.Contains(source, fieldNames);
+            }
+        }
+
         [Fact]
         public void RegularSizes_CreateReasonableTimes()
         {
@@ -63,9 +91,9 @@ namespace CaffeineCrashProvider.Sizes
         }
 
         [Fact]
-        public void IcedDarkSizes_CreateReasonableTimes()
+        public void Iced_DarkSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.IcedDark)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.Iced_Dark)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
@@ -85,9 +113,9 @@ namespace CaffeineCrashProvider.Sizes
         }
 
         [Fact]
-        public void IcedTeaSizes_CreateReasonableTimes()
+        public void Iced_TeaSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.IcedTea)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.Iced_Tea)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
@@ -96,9 +124,9 @@ namespace CaffeineCrashProvider.Sizes
         }
 
         [Fact]
-        public void IcedGreenTeaSizes_CreateReasonableTimes()
+        public void Iced_Green_TeaSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.IcedGreenTea)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.Frozen_Green_Matcha)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
@@ -107,9 +135,9 @@ namespace CaffeineCrashProvider.Sizes
         }
 
         [Fact]
-        public void HotTeaSizes_CreateReasonableTimes()
+        public void Hot_TeaSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.HotTea)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.Hot_Tea)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
@@ -118,9 +146,9 @@ namespace CaffeineCrashProvider.Sizes
         }
 
         [Fact]
-        public void ChaiTeaSizes_CreateReasonableTimes()
+        public void Chai_TeaSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.ChaiTea)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.Chai_Tea)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
@@ -128,20 +156,9 @@ namespace CaffeineCrashProvider.Sizes
             }
         }
         [Fact]
-        public void GreenTeaSizes_CreateReasonableTimes()
+        public void Green_TeaSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.GreenTea)
-            {
-                double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
-                Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
-                Assert.True(result <= 6, kvp.Key + "crash time too high: " + result.ToString());
-            }
-        }
-
-        [Fact]
-        public void ColdBrewSizes_CreateReasonableTimes()
-        {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.ColdBrew)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.Green_Tea)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
@@ -150,9 +167,9 @@ namespace CaffeineCrashProvider.Sizes
         }
 
         [Fact]
-        public void EnergyColdBrewSizes_CreateReasonableTimes()
+        public void Cold_BrewSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.EnergyColdBrew)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.Cold_Brew)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
@@ -161,9 +178,9 @@ namespace CaffeineCrashProvider.Sizes
         }
 
         [Fact]
-        public void EspressoMilkSizes_CreateReasonableTimes()
+        public void Energy_Cold_BrewSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.EspressoMilk)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.Energy_Cold_Brew)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
@@ -172,9 +189,20 @@ namespace CaffeineCrashProvider.Sizes
         }
 
         [Fact]
-        public void IcedEspressoMilkSizes_CreateReasonableTimes()
+        public void Mocha_Latte_Cappuccino_EtcSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.IcedEspressoMilk)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.Mocha_Latte_Cappuccino_Etc)
+            {
+                double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
+                Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
+                Assert.True(result <= 6, kvp.Key + "crash time too high: " + result.ToString());
+            }
+        }
+
+        [Fact]
+        public void Iced_Mocha_Latte_Cappuccino_EtcSizes_CreateReasonableTimes()
+        {
+            foreach (KeyValuePair<string, Beverage> kvp in SizesDonut.Iced_Mocha_Latte_Cappuccino_Etc)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());

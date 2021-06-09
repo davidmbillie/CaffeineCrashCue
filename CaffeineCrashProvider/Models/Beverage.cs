@@ -5,11 +5,13 @@ namespace CaffeineCrashProvider.Models
     {
         public string Oz { get; }
         public int Caffeine { get; }
+        public double CaffeinePerOz { get; }
 
         public Beverage(int ounces, int caffeine)
         {
             Oz = $"{ounces} Oz.";
             Caffeine = caffeine;
+            CaffeinePerOz = caffeine / ounces;            
         }
     }
 }
