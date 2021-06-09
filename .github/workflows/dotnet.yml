@@ -27,4 +27,4 @@ jobs:
     - name: Build Android
       run: msbuild ./CaffeineCrashCue/CaffeineCrashCue.Android/CaffeineCrashCue.Android.csproj /t:PackageForAndroid /p:Configuration=Debug
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test -c ExcludePlatforms --no-build --verbosity normal
