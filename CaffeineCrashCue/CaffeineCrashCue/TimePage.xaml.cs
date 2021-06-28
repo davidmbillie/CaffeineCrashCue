@@ -103,16 +103,20 @@ namespace CaffeineCrashCue
 		private async void Notification_Clicked(object o, EventArgs e)
 		{
 			double offsetMinutes = OffsetStepper.Value;
+			string updatedCrashTimeText = crashDateTime.AddMinutes(offsetMinutes).ToShortTimeString();
 
-			bool setNotif = await DisplayAlert("Crash Cue", "Set notification " + CueConstants.CueTime.ToString() + " minutes before " + crashDateTime.AddMinutes(offsetMinutes).ToShortTimeString(), "OK", "Cancel");
+			bool setNotif = await DisplayAlert("Crash Cue", "Set notification " + CueConstants.CueTime.ToString() + " minutes before " + updatedCrashTimeText, "OK", "Cancel");
 			if (setNotif)
 			{
 				crashTimeMillis += offsetMinutes * CueConstants.MinToMs;
+
 				//Generate the cue time by subtracting the cue constant from the crash time, then adding it to the Java.Lang.JavaSystem.CurrentTimeMillis() 
 				long crashCueMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashCueMillis(crashTimeMillis);
+				DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, updatedCrashTimeText);
 
-				DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, crashTimeText);
-				Preferences.Set(CueConstants.CrashTimePrefKey, crashTimeText);
+				//string updatedCrashTimeText = DateTime.Now.AddMilliseconds(crashTimeMillis).ToString(@"hh\:mm");
+				Preferences.Set(CueConstants.CrashTimePrefKey, updatedCrashTimeText);
+
 				decayProvider.SetDecayVaules(amount, crashTimeMillis, DependencyService.Get<ICrashAlarm>().GetCurrentTimeMillis());
 			}
 		}
