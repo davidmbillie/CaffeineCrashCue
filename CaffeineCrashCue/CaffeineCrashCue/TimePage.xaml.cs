@@ -127,6 +127,14 @@ namespace CaffeineCrashCue
 			if (yesRecalc)
 			{
 				double adjustedAmount = decayProvider.GetAdjustedAmount(amount, DependencyService.Get<ICrashAlarm>().GetCurrentTimeMillis());
+				if (adjustedAmount >= 1000)
+				{
+					bool amountWarning = await DisplayAlert("Warning", "Your current caffeine consumption is calculated to be 1 g or higher. Please reconsider or proceed with caution.", "Proceed", "Cancel");
+					if (!amountWarning)
+					{
+						return;
+					}
+				}
 				await Navigation.PushAsync(new TimePage(coeff, adjustedAmount, extendedRelease));
 			}
 		}
