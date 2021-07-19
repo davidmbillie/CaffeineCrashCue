@@ -9,14 +9,14 @@ namespace CaffeineCrashCue
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ConfigPage : ContentPage
 	{
-		private static double F_alc = 1;
-		private static double F_bc = 1;
-		private static double F_ex = 1;
-		private static double F_gfj = 1;
-		private static double F_preg = 1;
-		private static double F_smoke = 1;
-		private static double F_vgc = 1;
-		private static double F_weight = 1;
+		private double F_alc = 1;
+		private double F_bc = 1;
+		private double F_ex = 1;
+		private double F_gfj = 1;
+		private double F_preg = 1;
+		private double F_smoke = 1;
+		private double F_vgc = 1;
+		private double F_weight = 1;
 
 		public ConfigPage()
 		{
@@ -40,7 +40,7 @@ namespace CaffeineCrashCue
 
 		private void Alc_Toggled(object sender, ToggledEventArgs e)
 		{
-			if (e.Value == true)
+			if (e.Value)
 			{
 				F_alc = CoefficientConstants.alcohol;
 			}
@@ -53,7 +53,7 @@ namespace CaffeineCrashCue
 
 		private void BC_Toggled(object sender, ToggledEventArgs e)
 		{
-			if (e.Value == true)
+			if (e.Value)
 			{
 				F_bc = CoefficientConstants.birthControl;
 			}
@@ -66,7 +66,7 @@ namespace CaffeineCrashCue
 
 		private void Ex_Toggled(object sender, ToggledEventArgs e)
 		{
-			if (e.Value == true)
+			if (e.Value)
 			{
 				F_ex = CoefficientConstants.exercise;
 			}
@@ -79,7 +79,7 @@ namespace CaffeineCrashCue
 
 		private void GFJ_Toggled(object sender, ToggledEventArgs e)
 		{
-			if (e.Value == true)
+			if (e.Value)
 			{
 				F_gfj = CoefficientConstants.grapefruitJuice;
 			}
@@ -93,7 +93,7 @@ namespace CaffeineCrashCue
 
 		private void Preg_Toggled(object sender, ToggledEventArgs e)
 		{
-			if (e.Value == true)
+			if (e.Value)
 			{
 				F_preg = CoefficientConstants.pregnant;
 			}
@@ -106,7 +106,7 @@ namespace CaffeineCrashCue
 
 		private void Smoke_Toggled(object sender, ToggledEventArgs e)
 		{
-			if (e.Value == true)
+			if (e.Value)
 			{
 				F_smoke = CoefficientConstants.smoker;
 			}
@@ -119,7 +119,7 @@ namespace CaffeineCrashCue
 
 		private void VGC_Toggled(object sender, ToggledEventArgs e)
 		{
-			if (e.Value == true)
+			if (e.Value)
 			{
 				F_vgc = CoefficientConstants.vegetableAndGrilledChickenDiet;
 			}

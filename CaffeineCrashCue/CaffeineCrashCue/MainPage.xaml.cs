@@ -7,7 +7,7 @@ namespace CaffeineCrashCue
 {
     public partial class MainPage : ContentPage
     {
-        private static double coeff = 1.0;
+        private readonly double coeff;
         public MainPage()
         {
             BackgroundImageSource = CueConstants.BackgroundImage;
