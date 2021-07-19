@@ -16,8 +16,8 @@ namespace CaffeineCrashCue
 
 		private readonly string crashTimeDescriptor = $"Your estimated crash time is: {Environment.NewLine}";
 		private double crashTimeMillis = 0;
-		private static string crashTimeText = "";
-		private static DateTime crashDateTime;
+		private string crashTimeText = "";
+		private DateTime crashDateTime;
 
 		private static readonly DecayProvider decayProvider = DecayProvider.Instance;
 
@@ -49,14 +49,7 @@ namespace CaffeineCrashCue
 			if (!decayProvider.IsReady(DependencyService.Get<ICrashAlarm>().GetCurrentTimeMillis()))
 			{
 				btnRecalc.IsVisible = false;
-				//btnClear.IsVisible = false;
 			}
-			//else
-			//{
-			//	//these will need to be toggled to visible again if made invisible by the `Clear` button
-			//	btnRecalc.IsVisible = true;
-			//	btnClear.IsVisible = true;
-			//}
 		}
 
 		/// <summary>
@@ -70,7 +63,6 @@ namespace CaffeineCrashCue
 			SetCrashValues(crashTime);
 			SetCrashLabel();
 			btnRecalc.IsVisible = false;
-			//btnClear.IsVisible = false;
 		}
 
 		/// <summary>
@@ -114,7 +106,6 @@ namespace CaffeineCrashCue
 				long crashCueMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashCueMillis(crashTimeMillis);
 				DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, updatedCrashTimeText);
 
-				//string updatedCrashTimeText = DateTime.Now.AddMilliseconds(crashTimeMillis).ToString(@"hh\:mm");
 				Preferences.Set(CueConstants.CrashTimePrefKey, updatedCrashTimeText);
 
 				decayProvider.SetDecayVaules(amount, crashTimeMillis, DependencyService.Get<ICrashAlarm>().GetCurrentTimeMillis());
@@ -138,16 +129,6 @@ namespace CaffeineCrashCue
 				await Navigation.PushAsync(new TimePage(coeff, adjustedAmount, extendedRelease));
 			}
 		}
-
-		//private async void Clear_Clicked(object o, EventArgs e)
-		//{
-		//	bool confirmClear = await DisplayAlert("Crash Cue", "Confirm", "Yes", "No");
-		//	if (confirmClear)
-		//	{
-		//		decayProvider.SetDecayVaules(-1, -1, -1);
-		//		await Navigation.PopAsync();
-		//	}
-		//}
 
 		private async void Home_Clicked(object o, EventArgs e)
 		{

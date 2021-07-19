@@ -13,7 +13,6 @@ namespace CaffeineCrashCue
             BackgroundImageSource = CueConstants.BackgroundImage;
             coeff = Preferences.Get(CueConstants.CoeffPrefKey, 1.0);
             InitializeComponent();
-            //lblLatestTime.Text = "Latest Crash Time: " + Preferences.Get(CueConstants.CrashTimePrefKey, "No recent crash times");
         }
 
 		protected override void OnAppearing()
