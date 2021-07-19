@@ -11,7 +11,7 @@ namespace CaffeineCrashProvider.Models
         {
             Oz = $"{ounces} Oz.";
             Caffeine = caffeine;
-            CaffeinePerOz = caffeine / ounces;            
+            CaffeinePerOz = (double)caffeine / ounces;            
         }
     }
 }
