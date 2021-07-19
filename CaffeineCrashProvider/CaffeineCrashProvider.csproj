@@ -5,4 +5,17 @@
     <Configurations>Debug;Release;ExcludePlatforms</Configurations>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Collections.Immutable" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>CaffeineCrashProvider.Test</_Parameter1>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>CaffeineCrashCue</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  
 </Project>
