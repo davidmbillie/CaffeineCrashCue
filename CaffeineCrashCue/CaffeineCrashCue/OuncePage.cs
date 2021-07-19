@@ -47,7 +47,7 @@ namespace CaffeineCrashCue
 					ounceLabel
 				}
 			};
-;
+
 			ounceEntry.TextChanged += (sender, e) =>
 			{
 				if (e.NewTextValue.IndexOf('.') != e.NewTextValue.LastIndexOf('.'))

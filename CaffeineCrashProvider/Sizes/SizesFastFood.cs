@@ -1,5 +1,6 @@
 ﻿using CaffeineCrashProvider.Models;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 
 namespace CaffeineCrashProvider.Sizes
 {
@@ -22,46 +23,46 @@ namespace CaffeineCrashProvider.Sizes
             }
         }
 
-        public static readonly Dictionary<string, Beverage> Regular = new Dictionary<string, Beverage>()
+        public static readonly ImmutableDictionary<string, Beverage> Regular = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(12, 109)},
             {"Medium", new Beverage(16, 145)},
             {"Large", new Beverage(21, 185)}
-        };
+        }.ToImmutableDictionary();
 
-        public static readonly Dictionary<string, Beverage> Iced = new Dictionary<string, Beverage>()
+        public static readonly ImmutableDictionary<string, Beverage> Iced = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(16, 133)},
             {"Medium", new Beverage(21, 200)},
             {"Large", new Beverage(32, 320)}
-        };
+        }.ToImmutableDictionary();
 
-        public static readonly Dictionary<string, Beverage> Mocha_Latte_Cappuccino_Etc = new Dictionary<string, Beverage>()
+        public static readonly ImmutableDictionary<string, Beverage> Mocha_Latte_Cappuccino_Etc = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(12, 71)},
             {"Medium", new Beverage(16, 142)},
             {"Large", new Beverage(21, 178)}
-        };
+        }.ToImmutableDictionary();
 
-        public static readonly Dictionary<string, Beverage> Iced_Mocha_Latte_Cappuccino_Etc = new Dictionary<string, Beverage>()
+        public static readonly ImmutableDictionary<string, Beverage> Iced_Mocha_Latte_Cappuccino_Etc = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(12, 71)},
             {"Medium", new Beverage(16, 142)},
             {"Large", new Beverage(22, 178)}
-        };
+        }.ToImmutableDictionary();
 
-        public static readonly Dictionary<string, Beverage> Caramel_Frappe = new Dictionary<string, Beverage>()
+        public static readonly ImmutableDictionary<string, Beverage> Caramel_Frappe = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(12, 75)},
             {"Medium", new Beverage(16, 90)},
             {"Large", new Beverage(22, 130)}
-        };
+        }.ToImmutableDictionary();
 
-        public static readonly Dictionary<string, Beverage> Mocha_Frappe = new Dictionary<string, Beverage>()
+        public static readonly ImmutableDictionary<string, Beverage> Mocha_Frappe = new Dictionary<string, Beverage>()
         {
             {"Small", new Beverage(12, 100)},
             {"Medium", new Beverage(16, 125)},
             {"Large", new Beverage(22, 180)}
-        };
+        }.ToImmutableDictionary();
     }
 }

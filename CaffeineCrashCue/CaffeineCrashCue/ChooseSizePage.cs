@@ -3,6 +3,7 @@ using CaffeineCrashProvider.Sizes;
 using CaffeineCrashProvider.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Reflection;
 
@@ -12,8 +13,8 @@ namespace CaffeineCrashCue
 {
 	public class ChooseSizePage : ContentPage
 	{
-		private static Dictionary<string, Beverage> beverageMappings;
-		private static double perOz;
+		private readonly Dictionary<string, Beverage> beverageMappings;
+		private readonly double perOz;
 		public ChooseSizePage(SizesSet sizes, string source, Type caffeineType, double coeff)
 		{
 			BackgroundImageSource = CueConstants.BackgroundImage;
@@ -27,7 +28,7 @@ namespace CaffeineCrashCue
 
 			HashSet<Button> sizeButtons = new HashSet<Button>();
 			FieldInfo sizeInfo = caffeineType.GetField(source);
-			Dictionary<string, Beverage> sizePairs = (Dictionary<string, Beverage>)sizeInfo.GetValue(sizes);
+			ImmutableDictionary<string, Beverage> sizePairs = (ImmutableDictionary<string, Beverage>)sizeInfo.GetValue(sizes);
 			Beverage firstBev = sizePairs.ElementAt(0).Value;
 			perOz = firstBev.CaffeinePerOz;
 
