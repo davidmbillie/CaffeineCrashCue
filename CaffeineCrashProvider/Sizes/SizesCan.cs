@@ -60,5 +60,10 @@ namespace CaffeineCrashProvider.Sizes
         {
             {"Regular", new Beverage(16, 90)}
         }.ToImmutableDictionary();
+
+        public static readonly ImmutableDictionary<string, Beverage> Rise_Energy = new Dictionary<string, Beverage>()
+        {
+            {"Regular", new Beverage(16, 180)}
+        }.ToImmutableDictionary();
     }
 }
