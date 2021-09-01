@@ -20,7 +20,7 @@ namespace CaffeineCrashProvider.Sizes
             get
             {
                 return new string[] { "Coffee", "R_Bull_Energy_Drink", "Energy_Drink", 
-                    "Fruit_And_Veg_Energy_Drink", "Workout_Energy_Drink", "Kickstart_Game_Fuel_Energy"};
+                    "Fruit_And_Veg_Energy_Drink", "Workout_Energy_Drink", "Kickstart_Game_Fuel_Energy", "Rise_Energy"};
             }
         }
 
