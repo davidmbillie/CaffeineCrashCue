@@ -22,8 +22,8 @@ namespace CaffeineCrashCue
 			{
 				Value = 1.0,
 				Maximum = 8.0,
-				Minimum = 0.5,
-				Increment = 0.5,
+				Minimum = 0.25,
+				Increment = 0.25,
 				BackgroundColor = Color.FloralWhite
 			};
 
