@@ -24,7 +24,7 @@ namespace CaffeineCrashProvider.Sizes
             }
         }
 
-        public static readonly ImmutableDictionary<string, Beverage> Coffee = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Coffee = new Dictionary<string, Beverage>()
         {
             {"Regular", new Beverage(11, 160)},
             {"Regular_Large", new Beverage(14, 180)},
@@ -35,11 +35,11 @@ namespace CaffeineCrashProvider.Sizes
             {"Mocha_Latte_Cappuccino_Etc_Large", new Beverage(14, 125)},
             {"Double_Shot", new Beverage(7, 110)},
             {"Classic", new Beverage(8, 85)}
-        }.ToImmutableDictionary();
+        };
 
-        public static readonly ImmutableDictionary<string, Beverage> Energy = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Energy = new Dictionary<string, Beverage>()
         {
             {"Hydro Energy", new Beverage(25, 188)},
-        }.ToImmutableDictionary();
+        };
     }
 }

@@ -28,7 +28,7 @@ namespace CaffeineCrashCue
 
 			HashSet<Button> sizeButtons = new HashSet<Button>();
 			FieldInfo sizeInfo = caffeineType.GetField(source);
-			ImmutableDictionary<string, Beverage> sizePairs = (ImmutableDictionary<string, Beverage>)sizeInfo.GetValue(sizes);
+			Dictionary<string, Beverage> sizePairs = (Dictionary<string, Beverage>)sizeInfo.GetValue(sizes);
 			Beverage firstBev = sizePairs.ElementAt(0).Value;
 			perOz = firstBev.CaffeinePerOz;
 

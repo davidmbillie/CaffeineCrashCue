@@ -1,6 +1,6 @@
 ﻿using CaffeineCrashProvider.Models;
 using System;
-using System.Collections.Immutable;
+using System.Collections.Generic;
 using System.Reflection;
 using Xunit;
 
@@ -14,7 +14,7 @@ namespace CaffeineCrashProvider.Sizes
 			SizesSet sizesSet = new SizesFastFood();
 			Type fastFoodType = sizesSet.GetType();
 			FieldInfo regularSizeInfo = fastFoodType.GetField("Regular");
-			ImmutableDictionary<string, Beverage> result = (ImmutableDictionary<string, Beverage>)regularSizeInfo.GetValue(sizesSet);
+			Dictionary<string, Beverage> result = (Dictionary<string, Beverage>)regularSizeInfo.GetValue(sizesSet);
 			Assert.True(result.ContainsKey("Small"));
 		}
 
