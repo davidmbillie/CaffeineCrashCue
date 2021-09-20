@@ -1,6 +1,5 @@
 ﻿using CaffeineCrashProvider.Models;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 
 namespace CaffeineCrashProvider.Sizes
 {
