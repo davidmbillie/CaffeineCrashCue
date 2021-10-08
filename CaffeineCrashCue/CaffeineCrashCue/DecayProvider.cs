@@ -1,14 +1,62 @@
-﻿namespace CaffeineCrashCue
+﻿using Xamarin.Essentials;
+
+namespace CaffeineCrashCue
 {
     public sealed class DecayProvider
     {
         private static DecayProvider instance = null;
 		private static readonly object padlock = new object();
 
-		private double oldAmount = -1;
-		private double decayRate = -1;
-		private double halfLife = -1;
-		private long startTime = -1;
+		private const string oldAmountKey = "D_oldAmount";
+		private const string decayRateKey = "D_decayRate";
+		private const string halfLifeKey = "D_halfLife";
+		private const string startTimeKey = "D_startTime";
+
+		private double oldAmount
+		{
+			get
+			{
+				return Preferences.Get(oldAmountKey, -1.0);
+			}
+			set
+			{
+				Preferences.Set(oldAmountKey, value);
+			}
+		}
+
+		private double decayRate
+		{
+			get
+			{
+				return Preferences.Get(decayRateKey, -1.0);
+			}
+			set
+			{
+				Preferences.Set(decayRateKey, value);
+			}
+		}
+		private double halfLife
+		{
+			get
+			{
+				return Preferences.Get(halfLifeKey, -1.0);
+			}
+			set
+			{
+				Preferences.Set(halfLifeKey, value);
+			}
+		}
+		private long startTime
+		{
+			get
+			{
+				return Preferences.Get(startTimeKey, -1L);
+			}
+			set
+			{
+				Preferences.Set(startTimeKey, value);
+			}
+		}
 
 		public static DecayProvider Instance
 		{
@@ -27,13 +75,13 @@
 
 		public bool IsReady(long currentTime)
 		{
-			if (halfLife == -1)
+			if (halfLife == -1.0)
 			{
 				return false;
 			}
 			else if (currentTime - startTime > halfLife)
 			{
-				halfLife = -1;
+				halfLife = -1.0;
 				return false;
 			}
 			else

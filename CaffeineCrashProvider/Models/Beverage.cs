@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace CaffeineCrashProvider.Models
 {
     public class Beverage
@@ -7,11 +9,28 @@ namespace CaffeineCrashProvider.Models
         public int Caffeine { get; }
         public double CaffeinePerOz { get; }
 
+        /// <summary>
+        /// Constructor using total caffeine amount as an integer
+        /// </summary>
+        /// <param name="ounces"></param>
+        /// <param name="caffeine"></param>
         public Beverage(int ounces, int caffeine)
         {
             Oz = $"{ounces} Oz.";
             Caffeine = caffeine;
-            CaffeinePerOz = caffeine / ounces;            
+            CaffeinePerOz = (double)caffeine / ounces;            
+        }
+
+        /// <summary>
+        /// Constructor using caffeine per oz as a double
+        /// </summary>
+        /// <param name="ounces"></param>
+        /// <param name="caffeinePerOz"></param>
+        public Beverage(int ounces, double caffeinePerOz)
+        {
+            Oz = $"{ounces} Oz.";
+            Caffeine = (int)Math.Round(caffeinePerOz * ounces);
+            CaffeinePerOz = caffeinePerOz;
         }
     }
 }

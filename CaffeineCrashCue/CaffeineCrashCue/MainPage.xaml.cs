@@ -7,16 +7,22 @@ namespace CaffeineCrashCue
 {
     public partial class MainPage : ContentPage
     {
-        private static double coeff = 1.0;
+        private readonly double coeff;
         public MainPage()
         {
             BackgroundImageSource = CueConstants.BackgroundImage;
             coeff = Preferences.Get(CueConstants.CoeffPrefKey, 1.0);
             InitializeComponent();
-            lblLatestTime.Text = "Latest Crash Time: " + Preferences.Get(CueConstants.CrashTimePrefKey, "No recent crash times");
         }
 
-        private async void CoffeeClicked(object sender, EventArgs e)
+		protected override void OnAppearing()
+		{
+            //placing this in OnAppearing to update text after clicking the 'Home' button on the timer page
+            lblLatestTime.Text = "Latest Crash Time: " + Preferences.Get(CueConstants.CrashTimePrefKey, "No recent crash times");
+            base.OnAppearing();
+		}
+
+		private async void CoffeeClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ChooseTypePage(new SizesCoffeehouse(), coeff));
         }

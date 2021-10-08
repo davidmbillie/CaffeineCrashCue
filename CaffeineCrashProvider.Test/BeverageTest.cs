@@ -13,5 +13,15 @@ namespace CaffeineCrashProvider.Models
             Assert.Equal(48, subject.Caffeine);
             Assert.Equal(4, subject.CaffeinePerOz);
         }
+
+        [Fact]
+        public void PerOzConstructor_SetsCorrectTotalAmount()
+        {
+            Beverage subject = new Beverage(12, 4.0);
+
+            Assert.Equal("12 Oz.", subject.Oz);
+            Assert.Equal(48, subject.Caffeine);
+            Assert.Equal(4, subject.CaffeinePerOz);
+        }
     }
 }

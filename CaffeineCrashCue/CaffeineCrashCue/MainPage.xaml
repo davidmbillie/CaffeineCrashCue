@@ -19,9 +19,9 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <BoxView Color="#00704A" />
+        <BoxView Color="#E09762" />
         <Button Text="Coffee/Tea/Drinks"
-               TextColor="White"
+               TextColor="#00704A"
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                BackgroundColor="Transparent"
@@ -45,10 +45,10 @@
                BackgroundColor="Transparent"
                Clicked="DonutClicked"/>
         <BoxView Grid.Row="1"
-                 Color="#E09762" />
+                 Color="#3A2E2E" />
         <Button Grid.Row="1"
                Text="Bottled Coffee/Energy"
-               TextColor="#8A502B"
+               TextColor="#7ACAF4"
                HorizontalOptions="Fill"
                VerticalOptions="Fill" 
                BackgroundColor="Transparent"

@@ -12,8 +12,8 @@ namespace CaffeineCrashCue
 {
 	public class ChooseSizePage : ContentPage
 	{
-		private static Dictionary<string, Beverage> beverageMappings;
-		private static double perOz;
+		private readonly Dictionary<string, Beverage> beverageMappings;
+		private readonly double perOz;
 		public ChooseSizePage(SizesSet sizes, string source, Type caffeineType, double coeff)
 		{
 			BackgroundImageSource = CueConstants.BackgroundImage;

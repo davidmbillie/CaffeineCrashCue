@@ -21,6 +21,9 @@ obj/
 *.userosscache
 *.sln.docstates
 
+# Sonarqube
+.sonarqube
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 
 # Mono auto generated files

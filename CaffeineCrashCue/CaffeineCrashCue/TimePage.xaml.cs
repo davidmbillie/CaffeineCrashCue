@@ -16,8 +16,8 @@ namespace CaffeineCrashCue
 
 		private readonly string crashTimeDescriptor = $"Your estimated crash time is: {Environment.NewLine}";
 		private double crashTimeMillis = 0;
-		private static string crashTimeText = "";
-		private static DateTime crashDateTime;
+		private string crashTimeText = "";
+		private DateTime crashDateTime;
 
 		private static readonly DecayProvider decayProvider = DecayProvider.Instance;
 
@@ -49,14 +49,7 @@ namespace CaffeineCrashCue
 			if (!decayProvider.IsReady(DependencyService.Get<ICrashAlarm>().GetCurrentTimeMillis()))
 			{
 				btnRecalc.IsVisible = false;
-				//btnClear.IsVisible = false;
 			}
-			//else
-			//{
-			//	//these will need to be toggled to visible again if made invisible by the `Clear` button
-			//	btnRecalc.IsVisible = true;
-			//	btnClear.IsVisible = true;
-			//}
 		}
 
 		/// <summary>
@@ -70,7 +63,6 @@ namespace CaffeineCrashCue
 			SetCrashValues(crashTime);
 			SetCrashLabel();
 			btnRecalc.IsVisible = false;
-			//btnClear.IsVisible = false;
 		}
 
 		/// <summary>
@@ -103,16 +95,19 @@ namespace CaffeineCrashCue
 		private async void Notification_Clicked(object o, EventArgs e)
 		{
 			double offsetMinutes = OffsetStepper.Value;
+			string updatedCrashTimeText = crashDateTime.AddMinutes(offsetMinutes).ToShortTimeString();
 
-			bool setNotif = await DisplayAlert("Crash Cue", "Set notification " + CueConstants.CueTime.ToString() + " minutes before " + crashDateTime.AddMinutes(offsetMinutes).ToShortTimeString(), "OK", "Cancel");
+			bool setNotif = await DisplayAlert("Crash Cue", "Set notification " + CueConstants.CueTime.ToString() + " minutes before " + updatedCrashTimeText, "OK", "Cancel");
 			if (setNotif)
 			{
 				crashTimeMillis += offsetMinutes * CueConstants.MinToMs;
+
 				//Generate the cue time by subtracting the cue constant from the crash time, then adding it to the Java.Lang.JavaSystem.CurrentTimeMillis() 
 				long crashCueMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashCueMillis(crashTimeMillis);
+				DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, updatedCrashTimeText);
 
-				DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, crashTimeText);
-				Preferences.Set(CueConstants.CrashTimePrefKey, crashTimeText);
+				Preferences.Set(CueConstants.CrashTimePrefKey, updatedCrashTimeText);
+
 				decayProvider.SetDecayVaules(amount, crashTimeMillis, DependencyService.Get<ICrashAlarm>().GetCurrentTimeMillis());
 			}
 		}
@@ -123,19 +118,17 @@ namespace CaffeineCrashCue
 			if (yesRecalc)
 			{
 				double adjustedAmount = decayProvider.GetAdjustedAmount(amount, DependencyService.Get<ICrashAlarm>().GetCurrentTimeMillis());
+				if (adjustedAmount >= 1000)
+				{
+					bool amountWarning = await DisplayAlert("Warning", "Your current caffeine consumption is calculated to be 1 g or higher. Please reconsider or proceed with caution.", "Proceed", "Cancel");
+					if (!amountWarning)
+					{
+						return;
+					}
+				}
 				await Navigation.PushAsync(new TimePage(coeff, adjustedAmount, extendedRelease));
 			}
 		}
-
-		//private async void Clear_Clicked(object o, EventArgs e)
-		//{
-		//	bool confirmClear = await DisplayAlert("Crash Cue", "Confirm", "Yes", "No");
-		//	if (confirmClear)
-		//	{
-		//		decayProvider.SetDecayVaules(-1, -1, -1);
-		//		await Navigation.PopAsync();
-		//	}
-		//}
 
 		private async void Home_Clicked(object o, EventArgs e)
 		{
