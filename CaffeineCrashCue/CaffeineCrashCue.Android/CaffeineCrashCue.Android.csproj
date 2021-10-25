@@ -73,7 +73,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdBanner_Droid.cs" />
+    <Compile Include="AdMob\AdBanner_Droid.cs" />
     <Compile Include="AndroidCrashAlarm.cs" />
     <Compile Include="CrashAlarmReceiver.cs" />
     <Compile Include="MainActivity.cs" />
