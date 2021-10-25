@@ -2,10 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CaffeineCrashCue"
+             xmlns:ads="clr-namespace:AdMob.CustomRenders;assembly=CaffeineCrashCue"
              x:Class="CaffeineCrashCue.MainPage"
              Title="Choose Source">
     <Grid RowSpacing="0"
-          ColumnSpacing="0">
+          ColumnSpacing="0"
+          x:Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -129,5 +131,8 @@
                VerticalOptions="Fill"
                BackgroundColor="Transparent"
                Clicked="PersonalizeClicked"/>
+        <ads:AdBanner Size="Standardbanner"
+                      Grid.ColumnSpan="3"
+                      Grid.Row="5"/>
     </Grid>
 </ContentPage>
