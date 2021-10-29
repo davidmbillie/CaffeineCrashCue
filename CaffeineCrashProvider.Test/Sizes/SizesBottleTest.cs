@@ -8,6 +8,12 @@ namespace CaffeineCrashProvider.Sizes
 {
     public class SizesBottleTest
     {
+        [Fact(Skip = "Skipping for Jenkins")]
+        public void SkippingATestForJenkins()
+		{
+            Assert.True(true);
+		}
+
         [Fact]
         public void All_Fields_Are_Contained_In_Sources()
         {
