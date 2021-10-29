@@ -1,19 +1,20 @@
 using System;
-using Xunit;
+using NUnit.Framework;
 
 namespace CaffeineCrashCue.Jenkins
 {
     public class JenkinsTest
     {
-        [Theory]
-        [InlineData(2, 4, 16)]
-        public void DoesJenkinsAggregateMetrics(double x, double y, double expected)
-        {
-            JenkinsPower resultTest = new JenkinsPower();
+		[Test]
+		[TestCase(2, 4, 16)]
+		public void DoesJenkinsAggregateMetrics(double x, double y, double expected)
+		{
+			JenkinsPower resultTest = new JenkinsPower();
 
-            double result = resultTest.Power(x, y);
+			double result = resultTest.Power(x, y);
 
-            Assert.Equal(expected, result);
-        }
-    }
+			//Assert.AreEqual(expected, result);
+			Assert.Warn("Warning for Jenkins");
+		}
+	}
 }
