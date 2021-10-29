@@ -18,6 +18,20 @@ namespace CaffeineCrashCue.Jenkins
 		}
 
 		[Test]
+		[Ignore("Ignoring for Jenkins")]
+		public void IgnoreForJenkins()
+		{
+			Assert.True(true);
+		}
+
+		[Test]
+		[Ignore("Ignoring for Jenkins")]
+		public void IgnoreAssertForJenkins()
+		{
+			Assert.Ignore("Ignore assert for Jenkins");
+		}
+
+		[Test]
 		public void WarningForJenkins()
 		{
 			Assert.Warn("Warning for Jenkins");
