@@ -3,8 +3,9 @@ using NUnit.Framework;
 
 namespace CaffeineCrashCue.Jenkins
 {
-    public class JenkinsTest
-    {
+	[TestFixture]
+	public class JenkinsTest
+	{
 		[Test]
 		[TestCase(2, 4, 16)]
 		public void DoesJenkinsAggregateMetrics(double x, double y, double expected)
@@ -13,7 +14,12 @@ namespace CaffeineCrashCue.Jenkins
 
 			double result = resultTest.Power(x, y);
 
-			//Assert.AreEqual(expected, result);
+			Assert.AreEqual(expected, result);
+		}
+
+		[Test]
+		public void WarningForJenkins()
+		{
 			Assert.Warn("Warning for Jenkins");
 		}
 	}
