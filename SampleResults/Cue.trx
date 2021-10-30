@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="25550b51-5ae7-404a-a36a-17e7140c4af6" name="david@GWTN156-4 2021-10-30 00:32:29" runUser="GWTN156-4\david" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2021-10-30T00:32:29.9211822-04:00" queuing="2021-10-30T00:32:29.9211838-04:00" start="2021-10-30T00:32:28.3221849-04:00" finish="2021-10-30T00:32:29.9355578-04:00" />
+  <TestSettings name="default" id="7436ec41-263f-4d61-979c-e7b2c7e093c0">
+    <Deployment runDeploymentRoot="david_GWTN156-4_2021-10-30_00_32_29" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="7cffca58-ca29-4b93-9d57-785a7e7e3c5e" testId="b39da5ee-5f1b-d721-46c2-d81a4be4cda8" testName="DoesJenkinsAggregateMetrics(2,4,16)" computerName="GWTN156-4" duration="00:00:00.0215069" startTime="2021-10-30T00:32:29.6543021-04:00" endTime="2021-10-30T00:32:29.6756494-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7cffca58-ca29-4b93-9d57-785a7e7e3c5e" />
+    <UnitTestResult executionId="2b624020-6e8b-4023-a8e2-b064408728b7" testId="2eba1d5a-8e76-2474-2eb8-81b9fd9e935d" testName="WarningForJenkins" computerName="GWTN156-4" duration="00:00:00.0557300" startTime="2021-10-30T00:32:29.6821221-04:00" endTime="2021-10-30T00:32:29.7378483-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2b624020-6e8b-4023-a8e2-b064408728b7">
+      <Output>
+        <StdOut>Warning for Jenkins</StdOut>
+        <ErrorInfo>
+          <Message>Warning for Jenkins</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8b94b660-a0e9-4f7b-8638-2c669f13c8af" testId="57898e4c-a11b-71a9-7ab5-65cfe6f6ca10" testName="IgnoreForJenkins" computerName="GWTN156-4" duration="00:00:00.0000430" startTime="2021-10-30T00:32:29.6820667-04:00" endTime="2021-10-30T00:32:29.6821100-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8b94b660-a0e9-4f7b-8638-2c669f13c8af">
+      <Output>
+        <StdOut>Ignoring for Jenkins</StdOut>
+        <ErrorInfo>
+          <Message>Ignoring for Jenkins</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="cb44e356-c393-475c-985b-5bee55aed4b3" testId="b2d0581b-3890-9c4d-9cf1-93d810cbb081" testName="IgnoreAssertForJenkins" computerName="GWTN156-4" duration="00:00:00.0007790" startTime="2021-10-30T00:32:29.6811663-04:00" endTime="2021-10-30T00:32:29.6819467-04:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cb44e356-c393-475c-985b-5bee55aed4b3">
+      <Output>
+        <StdOut>Ignoring for Jenkins</StdOut>
+        <ErrorInfo>
+          <Message>Ignoring for Jenkins</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="IgnoreAssertForJenkins" storage="c:\git\caffeinecrashcue\caffeinecrashcue.test\bin\debug\netcoreapp3.1\caffeinecrashcue.test.dll" id="b2d0581b-3890-9c4d-9cf1-93d810cbb081">
+      <Execution id="cb44e356-c393-475c-985b-5bee55aed4b3" />
+      <TestMethod codeBase="C:\git\CaffeineCrashCue\CaffeineCrashCue.Test\bin\Debug\netcoreapp3.1\CaffeineCrashCue.Test.dll" adapterTypeName="executor://nunit3testexecutor/" className="CaffeineCrashCue.Jenkins.JenkinsTest" name="IgnoreAssertForJenkins" />
+    </UnitTest>
+    <UnitTest name="DoesJenkinsAggregateMetrics(2,4,16)" storage="c:\git\caffeinecrashcue\caffeinecrashcue.test\bin\debug\netcoreapp3.1\caffeinecrashcue.test.dll" id="b39da5ee-5f1b-d721-46c2-d81a4be4cda8">
+      <Execution id="7cffca58-ca29-4b93-9d57-785a7e7e3c5e" />
+      <TestMethod codeBase="C:\git\CaffeineCrashCue\CaffeineCrashCue.Test\bin\Debug\netcoreapp3.1\CaffeineCrashCue.Test.dll" adapterTypeName="executor://nunit3testexecutor/" className="CaffeineCrashCue.Jenkins.JenkinsTest" name="DoesJenkinsAggregateMetrics(2,4,16)" />
+    </UnitTest>
+    <UnitTest name="IgnoreForJenkins" storage="c:\git\caffeinecrashcue\caffeinecrashcue.test\bin\debug\netcoreapp3.1\caffeinecrashcue.test.dll" id="57898e4c-a11b-71a9-7ab5-65cfe6f6ca10">
+      <Execution id="8b94b660-a0e9-4f7b-8638-2c669f13c8af" />
+      <TestMethod codeBase="C:\git\CaffeineCrashCue\CaffeineCrashCue.Test\bin\Debug\netcoreapp3.1\CaffeineCrashCue.Test.dll" adapterTypeName="executor://nunit3testexecutor/" className="CaffeineCrashCue.Jenkins.JenkinsTest" name="IgnoreForJenkins" />
+    </UnitTest>
+    <UnitTest name="WarningForJenkins" storage="c:\git\caffeinecrashcue\caffeinecrashcue.test\bin\debug\netcoreapp3.1\caffeinecrashcue.test.dll" id="2eba1d5a-8e76-2474-2eb8-81b9fd9e935d">
+      <Execution id="2b624020-6e8b-4023-a8e2-b064408728b7" />
+      <TestMethod codeBase="C:\git\CaffeineCrashCue\CaffeineCrashCue.Test\bin\Debug\netcoreapp3.1\CaffeineCrashCue.Test.dll" adapterTypeName="executor://nunit3testexecutor/" className="CaffeineCrashCue.Jenkins.JenkinsTest" name="WarningForJenkins" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="b39da5ee-5f1b-d721-46c2-d81a4be4cda8" executionId="7cffca58-ca29-4b93-9d57-785a7e7e3c5e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2eba1d5a-8e76-2474-2eb8-81b9fd9e935d" executionId="2b624020-6e8b-4023-a8e2-b064408728b7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="57898e4c-a11b-71a9-7ab5-65cfe6f6ca10" executionId="8b94b660-a0e9-4f7b-8638-2c669f13c8af" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b2d0581b-3890-9c4d-9cf1-93d810cbb081" executionId="cb44e356-c393-475c-985b-5bee55aed4b3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 3.17.0.0: Test execution started&#xD;
+Running all tests in C:\git\CaffeineCrashCue\CaffeineCrashCue.Test\bin\Debug\netcoreapp3.1\CaffeineCrashCue.Test.dll&#xD;
+   NUnit3TestExecutor discovered 4 of 4 NUnit test cases&#xD;
+IgnoreAssertForJenkins: Ignoring for Jenkins&#xD;
+IgnoreForJenkins: Ignoring for Jenkins&#xD;
+WarningForJenkins: Warning for Jenkins&#xD;
+NUnit Adapter 3.17.0.0: Test execution complete&#xD;
+Test 'IgnoreAssertForJenkins' was skipped in the test run.&#xD;
+Test 'IgnoreForJenkins' was skipped in the test run.&#xD;
+Test 'WarningForJenkins' was skipped in the test run.&#xD;
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

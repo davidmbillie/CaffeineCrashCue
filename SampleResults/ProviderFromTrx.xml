@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" hostname="GWTN156-4" package="not available" id="0" tests="16" failures="0" errors="0" skipped="0" time="0.014" timestamp="2021-10-30T00:32:30">
+    <properties />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.FrappLiteSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.Iced_Chai_TeaSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.Chai_TeaSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.CoffeeFrapSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.001" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.MediumSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.EspressoFrapSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.001" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.Cold_BrewSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.001" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.All_Fields_Are_Contained_In_Sources" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.Mocha_Latte_Cappuccino_EtcSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.Iced_Mocha_Latte_Cappuccino_EtcSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.006" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.IcedSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.001" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.LightSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.Green_TeaFrappSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.All_Sources_Have_Fields" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.001" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.RegularSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest.Green_Tea_LatteSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCoffeehouseTest" time="0.000" status="1" />
+    <system-out />
+    <system-err />
+  </testsuite>
+  <testsuite name="CaffeineCrashProvider.Sizes.SizesFastFoodTest" hostname="GWTN156-4" package="not available" id="1" tests="5" failures="0" errors="0" skipped="0" time="0.008" timestamp="2021-10-30T00:32:30">
+    <properties />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesFastFoodTest.All_Fields_Are_Contained_In_Sources" classname="CaffeineCrashProvider.Sizes.SizesFastFoodTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesFastFoodTest.All_Sources_Have_Fields" classname="CaffeineCrashProvider.Sizes.SizesFastFoodTest" time="0.006" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesFastFoodTest.Mocha_Latte_Cappuccino_EtcSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesFastFoodTest" time="0.001" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesFastFoodTest.RegularSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesFastFoodTest" time="0.001" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesFastFoodTest.IcedSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesFastFoodTest" time="0.000" status="1" />
+    <system-out />
+    <system-err />
+  </testsuite>
+  <testsuite name="CaffeineCrashProvider.Sizes.SizesDonutTest" hostname="GWTN156-4" package="not available" id="2" tests="18" failures="0" errors="0" skipped="0" time="0.014" timestamp="2021-10-30T00:32:30">
+    <properties />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.RegularSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.Iced_TeaSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.Green_TeaSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.006" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.All_Sources_Have_Fields" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.DarkSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.Cold_BrewSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.Iced_DarkSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.MacchiatoSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.001" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.Energy_Cold_BrewSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.Iced_Mocha_Latte_Cappuccino_EtcSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.AmericanoSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.Chai_TeaSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.Mocha_Latte_Cappuccino_EtcSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.All_Fields_Are_Contained_In_Sources" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.001" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.IcedSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.001" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.FrozenSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.001" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.Iced_Green_TeaSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesDonutTest.Hot_TeaSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesDonutTest" time="0.000" status="1" />
+    <system-out />
+    <system-err />
+  </testsuite>
+  <testsuite name="CaffeineCrashProvider.Sizes.SizesCanTest" hostname="GWTN156-4" package="not available" id="3" tests="7" failures="0" errors="0" skipped="0" time="0.009" timestamp="2021-10-30T00:32:30">
+    <properties />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCanTest.EnergyDrinkSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCanTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCanTest.FruitVegEnergyDrinkSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCanTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCanTest.RedOxEnergyDrinkSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCanTest" time="0.006" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCanTest.CoffeeSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCanTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCanTest.All_Fields_Are_Contained_In_Sources" classname="CaffeineCrashProvider.Sizes.SizesCanTest" time="0.001" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCanTest.WorkoutEnergyDrinkSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesCanTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesCanTest.All_Sources_Have_Fields" classname="CaffeineCrashProvider.Sizes.SizesCanTest" time="0.000" status="1" />
+    <system-out />
+    <system-err />
+  </testsuite>
+  <testsuite name="CaffeineCrashProvider.Models.BeverageTest" hostname="GWTN156-4" package="not available" id="4" tests="2" failures="0" errors="0" skipped="0" time="0.010" timestamp="2021-10-30T00:32:30">
+    <properties />
+    <testcase name="CaffeineCrashProvider.Models.BeverageTest.PerOzConstructor_SetsCorrectTotalAmount" classname="CaffeineCrashProvider.Models.BeverageTest" time="0.010" status="1" />
+    <testcase name="CaffeineCrashProvider.Models.BeverageTest.Constructor_SetsOuncesAndCaffeine" classname="CaffeineCrashProvider.Models.BeverageTest" time="0.000" status="1" />
+    <system-out />
+    <system-err />
+  </testsuite>
+  <testsuite name="CaffeineCrashProvider.FormulasTest" hostname="GWTN156-4" package="not available" id="5" tests="9" failures="0" errors="0" skipped="0" time="0.010" timestamp="2021-10-30T00:32:30">
+    <properties />
+    <testcase name="CaffeineCrashProvider.FormulasTest.CalculateCrash_ReturnsIntuitiveValueWithLowCoeff" classname="CaffeineCrashProvider.FormulasTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.FormulasTest.WeightFactor_Below150ReturnsIntuitiveValue" classname="CaffeineCrashProvider.FormulasTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.FormulasTest.CalculateCrash_ReturnsIntuitiveValueWithHighCoeff" classname="CaffeineCrashProvider.FormulasTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.FormulasTest.CalculateCrash_ReturnsMin3" classname="CaffeineCrashProvider.FormulasTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.FormulasTest.WeightFactor_ReturnsBaseline" classname="CaffeineCrashProvider.FormulasTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.FormulasTest.CalculateCrash_ReturnsMax6" classname="CaffeineCrashProvider.FormulasTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.FormulasTest.CalculateCrash_ReturnsIntuitiveValue" classname="CaffeineCrashProvider.FormulasTest" time="0.008" status="1" />
+    <testcase name="CaffeineCrashProvider.FormulasTest.WeightFactor_Above150ReturnsIntuitiveValue" classname="CaffeineCrashProvider.FormulasTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.FormulasTest.CalculateCoeff_ReturnsIntuitiveValueFromAllConstants" classname="CaffeineCrashProvider.FormulasTest" time="0.000" status="1" />
+    <system-out />
+    <system-err />
+  </testsuite>
+  <testsuite name="CaffeineCrashProvider.Sizes.SizesBottleTest" hostname="GWTN156-4" package="not available" id="6" tests="4" failures="0" errors="0" skipped="1" time="0.003" timestamp="2021-10-30T00:32:30">
+    <properties />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesBottleTest.All_Fields_Are_Contained_In_Sources" classname="CaffeineCrashProvider.Sizes.SizesBottleTest" time="0.001" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesBottleTest.SkippingATestForJenkins" classname="CaffeineCrashProvider.Sizes.SizesBottleTest" time="0.001">
+      <skipped />
+      <system-out>Skipping for Jenkins</system-out>
+    </testcase>
+    <testcase name="CaffeineCrashProvider.Sizes.SizesBottleTest.All_Sources_Have_Fields" classname="CaffeineCrashProvider.Sizes.SizesBottleTest" time="0.000" status="1" />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesBottleTest.CoffeeSizes_CreateReasonableTimes" classname="CaffeineCrashProvider.Sizes.SizesBottleTest" time="0.001" status="1" />
+    <system-out>Skipping for Jenkins</system-out>
+    <system-err />
+  </testsuite>
+  <testsuite name="CaffeineCrashProvider.ProviderExtensionsTest" hostname="GWTN156-4" package="not available" id="7" tests="2" failures="0" errors="0" skipped="0" time="0.009" timestamp="2021-10-30T00:32:30">
+    <properties />
+    <testcase name="CaffeineCrashProvider.ProviderExtensionsTest.ToNumericString_ReturnsOnlyNumbersAndDecimals" classname="CaffeineCrashProvider.ProviderExtensionsTest" time="0.009" status="1" />
+    <testcase name="CaffeineCrashProvider.ProviderExtensionsTest.ToNaturalNumericString_ReturnsOnlyNumbers" classname="CaffeineCrashProvider.ProviderExtensionsTest" time="0.000" status="1" />
+    <system-out />
+    <system-err />
+  </testsuite>
+  <testsuite name="CaffeineCrashProvider.Sizes.SizesSetTest" hostname="GWTN156-4" package="not available" id="8" tests="1" failures="0" errors="0" skipped="0" time="0.006" timestamp="2021-10-30T00:32:30">
+    <properties />
+    <testcase name="CaffeineCrashProvider.Sizes.SizesSetTest.SizeDictionariesCanBeLoadedWithReflection" classname="CaffeineCrashProvider.Sizes.SizesSetTest" time="0.006" status="1" />
+    <system-out />
+    <system-err />
+  </testsuite>
+</testsuites>
