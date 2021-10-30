@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+  <testsuite name="CaffeineCrashCue.Jenkins.JenkinsTest" hostname="GWTN156-4" package="not available" id="0" tests="4" failures="0" errors="0" skipped="3" time="0.078" timestamp="2021-10-30T00:32:29">
+    <properties />
+    <testcase name="IgnoreAssertForJenkins" classname="CaffeineCrashCue.Jenkins.JenkinsTest" time="0.001">
+      <skipped />
+      <system-out>Ignoring for Jenkins</system-out>
+    </testcase>
+    <testcase name="DoesJenkinsAggregateMetrics(2,4,16)" classname="CaffeineCrashCue.Jenkins.JenkinsTest" time="0.022" status="1" />
+    <testcase name="IgnoreForJenkins" classname="CaffeineCrashCue.Jenkins.JenkinsTest" time="0.000">
+      <skipped />
+      <system-out>Ignoring for Jenkins</system-out>
+    </testcase>
+    <testcase name="WarningForJenkins" classname="CaffeineCrashCue.Jenkins.JenkinsTest" time="0.056">
+      <skipped />
+      <system-out>Warning for Jenkins</system-out>
+    </testcase>
+    <system-out>Ignoring for Jenkins
+Ignoring for Jenkins
+Warning for Jenkins</system-out>
+    <system-err />
+  </testsuite>
+</testsuites>

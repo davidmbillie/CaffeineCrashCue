@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<testsuites time="0.090" tests="4" failures="0">
+  <testsuite id="0" name="CaffeineCrashCue.Test.dll" tests="4" failures="0" time="0.090">
+    <testcase classname="CaffeineCrashCue.Jenkins.JenkinsTest" name="DoesJenkinsAggregateMetrics(2,4,16)" time="0.0193240" />
+    <testcase classname="CaffeineCrashCue.Jenkins.JenkinsTest" name="IgnoreAssertForJenkins" time="0.0006980" />
+    <testcase classname="CaffeineCrashCue.Jenkins.JenkinsTest" name="IgnoreForJenkins" time="0.0000300" />
+    <testcase classname="CaffeineCrashCue.Jenkins.JenkinsTest" name="WarningForJenkins" time="0.0704000" />
+  </testsuite>
+</testsuites>
