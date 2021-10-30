@@ -15,8 +15,8 @@ pipeline {
                 // bat 'dotnet test ./CaffeineCrashCue.Test/CaffeineCrashCue.Test.csproj -c ExcludePlatforms -p:CollectCoverage=true -p:CoverletOutputFormat=cobertura -p:CoverletOutput=./test/coverage/cueCoverage.xml -p:Exclude="[xunit.*]*" -l:"JUnit;LogFilePath=$WORKSPACE/test/results/cueResults.xml" --no-restore --no-build'
                 bat 'dotnet test ./CaffeineCrashProvider.Test/CaffeineCrashProvider.Test.csproj -c ExcludePlatforms -p:CollectCoverage=true -p:CoverletOutputFormat=cobertura -p:CoverletOutput=./test/coverage/providerCoverage.xml -p:Exclude="[xunit.*]*" -l:"trx;LogFilePath=$WORKSPACE/test/results/providerResults.trx" --no-restore --no-build'
                 bat 'dotnet test ./CaffeineCrashCue.Test/CaffeineCrashCue.Test.csproj -c ExcludePlatforms -p:CollectCoverage=true -p:CoverletOutputFormat=cobertura -p:CoverletOutput=./test/coverage/cueCoverage.xml -p:Exclude="[xunit.*]*" -l:"trx;LogFilePath=$WORKSPACE/test/results/cueResults.trx" --no-restore --no-build'
-				bat 'dotnet tool install -g trx2junit'
-				bat 'trx2junit **/test/results/*.trx'
+                bat 'dotnet tool install -g trx2junit'
+                bat 'trx2junit **/test/results/*.trx'
             }
         }
 	}
