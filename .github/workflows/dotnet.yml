@@ -29,10 +29,16 @@ jobs:
     #  run: msbuild ./CaffeineCrashCue/CaffeineCrashCue.Android/CaffeineCrashCue.Android.csproj /t:PackageForAndroid /p:Configuration=Debug
     - name: Test
       run: dotnet test -c ExcludePlatforms -l trx --no-build --verbosity normal
-
-    - uses: HylandSoftware/unit-test-reporter@v1
-      if: always()
-      with: 
+    #- uses: HylandSoftware/unit-test-reporter@v1
+    #  if: always()
+    #  with: 
+    #    path: '**/TestResults/*.trx'
+    #    reportType: 'trx'
+    #    access-token: ${{secrets.GITHUB_TOKEN}}
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      if: success() || failure()
+      with:
+        name: Unit Tests
         path: '**/TestResults/*.trx'
-        reportType: 'trx'
-        access-token: ${{secrets.GITHUB_TOKEN}}
+        reporter: dotnet-trx
