@@ -39,6 +39,6 @@ jobs:
       uses: dorny/test-reporter@v1
       if: success() || failure()
       with:
-        name: Unit Tests
+        name: Dorny Unit Test Report
         path: '**/TestResults/*.trx'
         reporter: dotnet-trx
