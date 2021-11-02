@@ -1,10 +1,11 @@
 name: .NET Build/Test
 
 on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  push
+  #push:
+  #  branches: [ master ]
+  #pull_request:
+  #  branches: [ master ]
 
 jobs:
   build:
@@ -24,7 +25,14 @@ jobs:
       run: nuget restore CaffeineCrashCue.sln
     - name: Build Base
       run: dotnet build -c ExcludePlatforms --no-restore
-    - name: Build Android
-      run: msbuild ./CaffeineCrashCue/CaffeineCrashCue.Android/CaffeineCrashCue.Android.csproj /t:PackageForAndroid /p:Configuration=Debug
+    #- name: Build Android
+    #  run: msbuild ./CaffeineCrashCue/CaffeineCrashCue.Android/CaffeineCrashCue.Android.csproj /t:PackageForAndroid /p:Configuration=Debug
     - name: Test
-      run: dotnet test -c ExcludePlatforms --no-build --verbosity normal
+      run: dotnet test -c ExcludePlatforms -l trx --no-build --verbosity normal
+
+    - uses: HylandSoftware/unit-test-reporter@v1
+      if: always()
+      with: 
+        path: '**/TestResults/*.trx'
+        reportType: 'trx'
+        access-token: ${{secrets.GITHUB_TOKEN}}
