@@ -132,6 +132,7 @@
                BackgroundColor="Transparent"
                Clicked="PersonalizeClicked"/>
         <ads:AdBanner Size="Standardbanner"
+                      HeightRequest="90"
                       Grid.ColumnSpan="3"
                       Grid.Row="5"/>
     </Grid>
