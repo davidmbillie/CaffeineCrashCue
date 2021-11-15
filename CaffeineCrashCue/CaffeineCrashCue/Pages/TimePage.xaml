@@ -1,52 +1,59 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ads="clr-namespace:AdMob.CustomRenders;assembly=CaffeineCrashCue"
              x:Class="CaffeineCrashCue.TimePage"
              Title="Crash Cue">
-    <FlexLayout Direction="Column"
+    <StackLayout>
+        <FlexLayout Direction="Column"
                 AlignItems="Center"
-                JustifyContent="SpaceEvenly">
+                JustifyContent="SpaceEvenly"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand">
 
-        <Label x:Name="CrashLabel"
+            <Label x:Name="CrashLabel"
                Text="Your estimated crash time is: "
                FontSize="Title"
                FontAttributes="Bold"
                HorizontalTextAlignment="Center"/>
-        
-        <Button x:Name="btnRecalc"
+
+            <Button x:Name="btnRecalc"
                 Text="Recalculate with remaining caffeine"
                 BackgroundColor="FloralWhite"
                 TextColor="SaddleBrown"
                 Clicked="Recalculate_Clicked"/>
-        
-        <!--<Button x:Name="btnClear"
+
+            <!--<Button x:Name="btnClear"
                 Text="Clear remaining caffeine"
                 BackgroundColor="FloralWhite"
                 TextColor="SaddleBrown"
                 Clicked="Clear_Clicked"/>-->
 
-        <StackLayout>
-            <Label x:Name="OffsetLabel"
+            <StackLayout>
+                <Label x:Name="OffsetLabel"
                Text="Add/Subtract: 0 minutes"
                FontSize="Medium"/>
-            <Stepper x:Name="OffsetStepper"
+                <Stepper x:Name="OffsetStepper"
                  Maximum="60"
                  Minimum="-60"
                  Increment="5"
                  Value="0"
                  HorizontalOptions="Center"
                  ValueChanged="OffsetStepper_ValueChanged"/>
-        </StackLayout>
+            </StackLayout>
 
-        <Button Text="Set Notification"
+            <Button Text="Set Notification"
                 BackgroundColor="FloralWhite"
                 TextColor="SaddleBrown"
                 Clicked="Notification_Clicked"/>
 
-        <Button Text="Home"
+            <Button Text="Home"
                 BackgroundColor="FloralWhite"
                 TextColor="SaddleBrown"
                 Clicked="Home_Clicked"/>
-        
-    </FlexLayout>
+        </FlexLayout>
+
+        <ads:AdBanner Size="Standardbanner"
+                      HeightRequest="90"/>
+    </StackLayout>
 </ContentPage>
