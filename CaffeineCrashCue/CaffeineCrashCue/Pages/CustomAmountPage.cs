@@ -1,4 +1,5 @@
-﻿using CaffeineCrashProvider;
+﻿using AdMob.CustomRenders;
+using CaffeineCrashProvider;
 using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -42,13 +43,18 @@ namespace CaffeineCrashCue
 			BackgroundImageSource = CueConstants.BackgroundImage;
 
 			Title = "Enter Custom Amount (mg)";
-			Content = new FlexLayout()
+
+			Content = new StackLayout();
+			StackLayout stackContent = (StackLayout)Content;
+
+			FlexLayout flexLayout = new FlexLayout()
 			{
 				Direction = FlexDirection.Column,
 				AlignItems = FlexAlignItems.Center,
-				JustifyContent = FlexJustify.SpaceEvenly
+				JustifyContent = FlexJustify.SpaceEvenly,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
-			FlexLayout flexLayout = (FlexLayout)Content;
 
 			Entry amountEntry = new Entry()
 			{
@@ -162,11 +168,20 @@ namespace CaffeineCrashCue
 				await Navigation.PushAsync(new QuantityPage(coeff, amount, extendedCheck.IsChecked));
 			};
 
+			AdBanner adBanner = new AdBanner()
+			{
+				Size = AdBanner.Sizes.Standardbanner,
+				HeightRequest = 90
+			};
+
 			flexLayout.Children.Add(amountEntry);
 			flexLayout.Children.Add(extendedLayout);
 			flexLayout.Children.Add(amountButton);
 			flexLayout.Children.Add(perOunceButton);
 			flexLayout.Children.Add(perServingButton);
+
+			stackContent.Children.Add(flexLayout);
+			stackContent.Children.Add(adBanner);
 		}
 	}
 }
