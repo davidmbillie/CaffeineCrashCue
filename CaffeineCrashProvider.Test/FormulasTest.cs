@@ -41,6 +41,12 @@ namespace CaffeineCrashProvider
         }
 
         [Fact]
+        public void CalculateCrash_ReturnsIntuitiveValueWithColaCan()
+        {
+            double result = Formulas.CalculateCrash(1, 29);
+            Assert.True(result > 3);
+        }
+        [Fact]
         public void CalculateCoeff_ReturnsIntuitiveValueFromAllConstants()
         {
             double result = Formulas.CalculateCoefficient(CoefficientConstants.alcohol,
