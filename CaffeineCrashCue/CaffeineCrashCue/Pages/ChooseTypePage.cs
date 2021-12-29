@@ -1,4 +1,5 @@
-﻿using CaffeineCrashProvider.Sizes;
+﻿using AdMob.CustomRenders;
+using CaffeineCrashProvider.Sizes;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -54,6 +55,14 @@ namespace CaffeineCrashCue
 				};
 				stackContent.Children.Add(button);
 			}
+
+			AdBanner adBanner = new AdBanner()
+			{
+				Size = AdBanner.Sizes.Standardbanner,
+				HeightRequest = 90
+			};
+
+			stackContent.Children.Add(adBanner);
 
 			scrollView.Content = stackContent;
 		}

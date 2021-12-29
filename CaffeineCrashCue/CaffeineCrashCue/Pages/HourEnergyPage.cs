@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using AdMob.CustomRenders;
+using Xamarin.Forms;
 
 namespace CaffeineCrashCue
 {
@@ -8,13 +9,17 @@ namespace CaffeineCrashCue
 		{
 			BackgroundImageSource = CueConstants.BackgroundImage;
 
-			Content = new FlexLayout
+			Content = new StackLayout();
+			StackLayout stackContent = (StackLayout)Content;
+
+			FlexLayout flexContent = new FlexLayout
 			{
 				Direction = FlexDirection.Column,
 				AlignItems = FlexAlignItems.Center,
-				JustifyContent = FlexJustify.SpaceEvenly
+				JustifyContent = FlexJustify.SpaceEvenly,
+				VerticalOptions = LayoutOptions.FillAndExpand,
+				HorizontalOptions = LayoutOptions.FillAndExpand
 			};
-			FlexLayout flexContent = (FlexLayout)Content;
 
 			Title = "Hour Energy";
 
@@ -50,9 +55,18 @@ namespace CaffeineCrashCue
 				await Navigation.PushAsync(new TimePage(hourStepper.Value));
 			};
 
+			AdBanner adBanner = new AdBanner()
+			{
+				Size = AdBanner.Sizes.Standardbanner,
+				HeightRequest = 90
+			};
+
 			flexContent.Children.Add(hourLabel);
 			flexContent.Children.Add(hourStepper);
 			flexContent.Children.Add(calcButton);
+
+			stackContent.Children.Add(flexContent);
+			stackContent.Children.Add(adBanner);
 		}
 	}
 }

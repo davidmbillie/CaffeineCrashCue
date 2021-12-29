@@ -1,4 +1,5 @@
-﻿using CaffeineCrashProvider;
+﻿using AdMob.CustomRenders;
+using CaffeineCrashProvider;
 using CaffeineCrashProvider.Sizes;
 using CaffeineCrashProvider.Models;
 using System;
@@ -62,7 +63,16 @@ namespace CaffeineCrashCue
 			{
 				await Navigation.PushAsync(new OuncePage(coeff, perOz));
 			};
+
 			stackContent.Children.Add(customButton);
+
+			AdBanner adBanner = new AdBanner()
+			{
+				Size = AdBanner.Sizes.Standardbanner,
+				HeightRequest = 90
+			};
+
+			stackContent.Children.Add(adBanner);
 		}
 	}
 }
