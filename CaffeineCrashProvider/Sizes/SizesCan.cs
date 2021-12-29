@@ -34,7 +34,7 @@ namespace CaffeineCrashProvider.Sizes
 
         public static readonly Dictionary<string, Beverage> R_Bull_Energy_Drink = new Dictionary<string, Beverage>()
         {
-            {"Small", new Beverage(8.4F, 77)},
+            {"Small", new Beverage(8, 77)},
             {"Regular", new Beverage(12, 111)},
             {"Large", new Beverage(16, 148)}
         };
