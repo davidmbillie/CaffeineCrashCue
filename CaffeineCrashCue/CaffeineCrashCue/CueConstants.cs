@@ -8,7 +8,7 @@
         public static int HoursToMs { get { return 3600000; } }
         public static string Description { get { return "Caffeine Crash Cue channel"; } }
         public static string NotifId { get { return "CaffeineCrash"; } }
-        public static string NotifMessage { get { return "Your caffeine crash will occur at about "; } }
+        public static string NotifMessage { get { return "Your crash will occur at about "; } }
         public static string NotifTitle { get { return $"{CueTime} Minute Crash Cue"; } }
         public static int UniqueId { get { return 196418; } }
         public static string EspressoShot { get { return "EspressoShot"; } }
