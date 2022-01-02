@@ -23,7 +23,7 @@ namespace CaffeineCrashProvider.Sizes
             get
             {
                 return new string[] { "Dark", "Medium", "Light", "Iced", "Cold_Brew", "Mocha_Latte_Cappuccino_Etc", "Iced_Mocha_Latte_Cappuccino_Etc",
-                "Chai_Tea", "Iced_Chai_Tea", "Green_Tea_Latte", "Coffee_Frappucino", "Espresso_Frappucino", "Frappucino_Lite", "Green_Tea_Frappucino"};
+                "Chai_Tea", "Iced_Chai_Tea", "Green_Tea_And_Green_Tea_Latte", "Coffee_Frappucino", "Espresso_Frappucino", "Frappucino_Lite", "Green_Tea_Frappucino"};
             }
         }
 
@@ -98,7 +98,7 @@ namespace CaffeineCrashProvider.Sizes
         };
 
         //works for both hot and iced
-        public static readonly Dictionary<string, Beverage> Green_Tea_Latte = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Green_Tea_And_Green_Tea_Latte = new Dictionary<string, Beverage>()
         {
             {"Short/Mug", new Beverage(8, 30)},
             {"Small", new Beverage(12, 55)},
