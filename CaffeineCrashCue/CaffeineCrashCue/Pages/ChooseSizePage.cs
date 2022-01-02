@@ -32,6 +32,19 @@ namespace CaffeineCrashCue
             Beverage firstBev = sizePairs.ElementAt(0).Value;
             perOz = firstBev.CaffeinePerOz;
 
+            if (sizes is SizesSoda)
+            {
+                Label iceNoteLabel = new Label
+                {
+                    BackgroundColor = Color.SaddleBrown,
+                    TextColor = Color.FloralWhite,
+                    VerticalTextAlignment = TextAlignment.Center,
+                    HorizontalTextAlignment = TextAlignment.Center,
+                    Text = "Note: the cup sizes don't factor in ice, so using 0.5 or 0.75 on the next page would be recommended."
+                };
+                stackContent.Children.Add(iceNoteLabel);
+            }
+
             foreach (KeyValuePair<string, Beverage> sizePair in sizePairs)
             {
                 string btnText = $"{sizePair.Key}: {sizePair.Value.Oz} ({sizePair.Value.Caffeine} mg)";
