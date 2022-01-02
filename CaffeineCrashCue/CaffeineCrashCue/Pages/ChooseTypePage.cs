@@ -40,7 +40,7 @@ namespace CaffeineCrashCue
 			}
 			foreach (Button button in buttonHash)
 			{
-				if (button.Text.Contains("Tea") || button.Text.Contains("Energy"))
+				if (button.Text.Contains("Tea") || button.Text.Contains("Energy") ||  button.Text.Contains("Dew"))
 				{
 					button.TextColor = Color.ForestGreen;
 				}
