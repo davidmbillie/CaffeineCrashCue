@@ -35,7 +35,7 @@ namespace CaffeineCrashCue.Droid
         // Simulates background work that happens behind the splash screen
         void SimulateStartup()
         {
-           // await Task.Delay(1000);
+            // await Task.Delay(1000);
             StartActivity(new Intent(Application.Context, typeof(MainActivity)));
         }
     }

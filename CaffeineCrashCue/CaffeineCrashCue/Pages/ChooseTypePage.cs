@@ -6,65 +6,65 @@ using Xamarin.Forms;
 
 namespace CaffeineCrashCue
 {
-	public class ChooseTypePage : ContentPage
-	{
-		public ChooseTypePage(SizesSet sizesSet, double coeff)
-		{
-			BackgroundImageSource = CueConstants.BackgroundImage;
+    public class ChooseTypePage : ContentPage
+    {
+        public ChooseTypePage(SizesSet sizesSet, double coeff)
+        {
+            BackgroundImageSource = CueConstants.BackgroundImage;
 
-			Title = "Choose Type";
-			Content = new ScrollView();
-			ScrollView scrollView = (ScrollView)Content;
+            Title = "Choose Type";
+            Content = new ScrollView();
+            ScrollView scrollView = (ScrollView)Content;
 
-			StackLayout stackContent = new StackLayout();
+            StackLayout stackContent = new StackLayout();
 
-			if (sizesSet.QuantOnly.ContainsKey(CueConstants.EspressoShot))
-			{
-				Button espressoButton = new Button
-				{
-					BackgroundColor = Color.FloralWhite,
-					TextColor = Color.SaddleBrown,
-					Text = "Espresso Shot"
-				};
-				espressoButton.Clicked += async (sender, e) =>
-				{
-					await Navigation.PushAsync(new QuantityPage(coeff, sizesSet.QuantOnly[CueConstants.EspressoShot]));
-				};
-				stackContent.Children.Add(espressoButton);
-			}
+            if (sizesSet.QuantOnly.ContainsKey(CueConstants.EspressoShot))
+            {
+                Button espressoButton = new Button
+                {
+                    BackgroundColor = Color.FloralWhite,
+                    TextColor = Color.SaddleBrown,
+                    Text = "Espresso Shot"
+                };
+                espressoButton.Clicked += async (sender, e) =>
+                {
+                    await Navigation.PushAsync(new QuantityPage(coeff, sizesSet.QuantOnly[CueConstants.EspressoShot]));
+                };
+                stackContent.Children.Add(espressoButton);
+            }
 
-			HashSet<Button> buttonHash = new HashSet<Button>();
-			foreach (string source in sizesSet.Sources)
-			{
-				buttonHash.Add(new Button { Text = source.Replace('_', ' ') });
-			}
-			foreach (Button button in buttonHash)
-			{
-				if (button.Text.Contains("Tea") || button.Text.Contains("Energy") ||  button.Text.Contains("Dew"))
-				{
-					button.TextColor = Color.ForestGreen;
-				}
-				else
-				{
-					button.TextColor = Color.SaddleBrown;
-				}
-				button.BackgroundColor = Color.FloralWhite;
-				button.Clicked += async (sender, e) =>
-				{
-					await Navigation.PushAsync(new ChooseSizePage(sizesSet, button.Text.Replace(' ', '_'), sizesSet.GetType(), coeff));
-				};
-				stackContent.Children.Add(button);
-			}
+            HashSet<Button> buttonHash = new HashSet<Button>();
+            foreach (string source in sizesSet.Sources)
+            {
+                buttonHash.Add(new Button { Text = source.Replace('_', ' ') });
+            }
+            foreach (Button button in buttonHash)
+            {
+                if (button.Text.Contains("Tea") || button.Text.Contains("Energy") || button.Text.Contains("Dew"))
+                {
+                    button.TextColor = Color.ForestGreen;
+                }
+                else
+                {
+                    button.TextColor = Color.SaddleBrown;
+                }
+                button.BackgroundColor = Color.FloralWhite;
+                button.Clicked += async (sender, e) =>
+                {
+                    await Navigation.PushAsync(new ChooseSizePage(sizesSet, button.Text.Replace(' ', '_'), sizesSet.GetType(), coeff));
+                };
+                stackContent.Children.Add(button);
+            }
 
-			AdBanner adBanner = new AdBanner()
-			{
-				Size = AdBanner.Sizes.Standardbanner,
-				HeightRequest = 90
-			};
+            AdBanner adBanner = new AdBanner()
+            {
+                Size = AdBanner.Sizes.Standardbanner,
+                HeightRequest = 90
+            };
 
-			stackContent.Children.Add(adBanner);
+            stackContent.Children.Add(adBanner);
 
-			scrollView.Content = stackContent;
-		}
-	}
+            scrollView.Content = stackContent;
+        }
+    }
 }

@@ -10,13 +10,13 @@ namespace CaffeineCrashProvider.Sizes
         public override Dictionary<string, double> QuantOnly
         {
             get
-			{
+            {
                 return new Dictionary<string, double>()
                 {
                     {SizeConstants.EspressoShot, 75.0 }
                 };
-			}
-		}
+            }
+        }
 
         public override string[] Sources
         {
