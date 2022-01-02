@@ -137,7 +137,7 @@ namespace CaffeineCrashProvider.Sizes
         [Fact]
         public void Green_Tea_LatteSizes_CreateReasonableTimes()
         {
-            foreach (KeyValuePair<string, Beverage> kvp in SizesCoffeehouse.Green_Tea_Latte)
+            foreach (KeyValuePair<string, Beverage> kvp in SizesCoffeehouse.Green_Tea_And_Green_Tea_Latte)
             {
                 double result = Formulas.CalculateCrash(1.0, kvp.Value.Caffeine);
                 Assert.True(result >= 3, kvp.Key + "crash time was too low: " + result.ToString());
