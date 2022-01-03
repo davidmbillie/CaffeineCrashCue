@@ -24,6 +24,9 @@ namespace CaffeineCrashCue.Droid
             var pending = PendingIntent.GetActivity(context, CueConstants.UniqueId, resultIntent, PendingIntentFlags.CancelCurrent);
             resultIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
 
+            //If a longer message is warranted in the future...
+            //Notification.BigTextStyle bigTextStyle = new Notification.BigTextStyle();
+
             var builder = new Notification.Builder(context, CueConstants.NotifId)
                 .SetContentIntent(pending)
                 .SetContentTitle(title)

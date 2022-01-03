@@ -1,7 +1,7 @@
 ﻿namespace CaffeineCrashProvider.Sizes
 {
-	public static class SizeConstants
-	{
-		public const string EspressoShot = "EspressoShot";
-	}
+    public static class SizeConstants
+    {
+        public const string EspressoShot = "EspressoShot";
+    }
 }

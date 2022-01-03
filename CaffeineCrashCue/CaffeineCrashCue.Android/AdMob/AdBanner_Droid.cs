@@ -13,7 +13,7 @@ namespace AdMob.Droid.CustomRenders
 {
     public class AdBanner_Droid : ViewRenderer
     {
-        Context context;
+        internal readonly Context context;
         public AdBanner_Droid(Context _context) : base(_context)
         {
             context = _context;

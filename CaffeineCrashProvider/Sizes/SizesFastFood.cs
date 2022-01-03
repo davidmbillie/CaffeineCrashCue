@@ -15,10 +15,11 @@ namespace CaffeineCrashProvider.Sizes
                 };
             }
         }
-        public override string[] Sources {
+        public override string[] Sources
+        {
             get
-			{
-                return new string[]{ "Regular", "Iced", "Mocha_Latte_Cappuccino_Etc", "Iced_Mocha_Latte_Cappuccino_Etc", "Caramel_Frappe", "Mocha_Frappe" };
+            {
+                return new string[] { "Regular", "Iced", "Mocha_Latte_Cappuccino_Etc", "Iced_Mocha_Latte_Cappuccino_Etc", "Caramel_Frappe", "Mocha_Frappe" };
             }
         }
 
