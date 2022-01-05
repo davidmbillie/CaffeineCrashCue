@@ -45,8 +45,10 @@ namespace AdMob.Droid.CustomRenders
                         adView.AdSize = AdSize.Banner;
                         break;
                 }
-                
+
+                //adView.AdUnitId = CueConstants.TestBannerId;
                 adView.AdUnitId = CueConstants.BannerId;
+
                 var requestbuilder = new AdRequest.Builder();
                 adView.LoadAd(requestbuilder.Build());
                 SetNativeControl(adView);
