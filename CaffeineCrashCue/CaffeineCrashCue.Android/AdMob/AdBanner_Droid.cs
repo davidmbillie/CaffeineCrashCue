@@ -46,8 +46,14 @@ namespace AdMob.Droid.CustomRenders
                         break;
                 }
 
-                //adView.AdUnitId = CueConstants.TestBannerId;
-                adView.AdUnitId = CueConstants.BannerId;
+                if (CueConstants.UseTestAds == true)
+                {
+                    adView.AdUnitId = CueConstants.TestBannerId;
+                }
+                else
+                {
+                    adView.AdUnitId = CueConstants.BannerId;
+                }
 
                 var requestbuilder = new AdRequest.Builder();
                 adView.LoadAd(requestbuilder.Build());

@@ -126,7 +126,9 @@ namespace CaffeineCrashCue
                         return;
                     }
                 }
-                await Navigation.PushAsync(new TimePage(coeff, adjustedAmount, extendedRelease));
+                SetCrashValues(adjustedAmount);
+                SetCrashLabel();
+                //await Navigation.PushAsync(new TimePage(coeff, adjustedAmount, extendedRelease));
             }
         }
 
