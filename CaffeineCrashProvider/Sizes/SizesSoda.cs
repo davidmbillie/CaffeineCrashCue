@@ -18,7 +18,7 @@ namespace CaffeineCrashProvider.Sizes
         {
             get
             {
-                return new string[] { "Cola", "Diet_Cola", "Mtn_Dew", "Mtn_Dew_High_Caffeine", "Diet_Mtn_Dew" };
+                return new string[] { "Cola", "Diet_Cola", "Mtn_Dew", "Diet_Mtn_Dew", "Mtn_Dew_High_Caffeine" };
             }
         }
 
@@ -44,6 +44,16 @@ namespace CaffeineCrashProvider.Sizes
         };
 
         public static readonly Dictionary<string, Beverage> Mtn_Dew = new Dictionary<string, Beverage>()
+        {
+            { "Can/Small", new Beverage(12, 4.5)},
+            { "Small", new Beverage(16, 4.5)},
+            { "Bottle/Medium", new Beverage(20, 4.5)},
+            { "Medium/Large", new Beverage(30, 4.5)},
+            { "Large/X-Large", new Beverage(40, 4.5)},
+            { "X-Large", new Beverage(44, 4.5)}
+        };
+
+        public static readonly Dictionary<string, Beverage> Diet_Mtn_Dew = new Dictionary<string, Beverage>()
         {
             { "Can/Small", new Beverage(12, 4.5)},
             { "Small", new Beverage(16, 4.5)},
