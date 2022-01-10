@@ -24,12 +24,12 @@ namespace CaffeineCrashCue
                 Maximum = 8.0,
                 Minimum = 0.25,
                 Increment = 0.25,
-                BackgroundColor = Color.FloralWhite
             };
 
             Label quantLabel = new Label
             {
                 Text = quantStepper.Value.ToString(),
+                TextColor = Color.Black,
                 FontSize = 48.0,
                 FontAttributes = FontAttributes.Bold
             };
@@ -37,7 +37,8 @@ namespace CaffeineCrashCue
             Label amountLabel = new Label
             {
                 Text = $"x {caffeineAmount} mg",
-                FontSize = 24.0
+                TextColor = Color.Black,
+                FontSize = 24.0,
             };
 
             quantStepper.ValueChanged += (sender, e) =>

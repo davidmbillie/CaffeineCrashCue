@@ -39,6 +39,7 @@ namespace CaffeineCrashCue
             Label ounceLabel = new Label()
             {
                 Text = $"oz. x{Environment.NewLine}{amount.ToString("0.##")} mg",
+                TextColor = Color.Black,
                 FontSize = 24,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center

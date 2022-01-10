@@ -78,13 +78,14 @@ namespace CaffeineCrashCue
             Label extendedLabel = new Label()
             {
                 Text = "Extended Release",
+                TextColor = Color.Black,
                 FontSize = 16,
                 VerticalTextAlignment = TextAlignment.Center
             };
 
             CheckBox extendedCheck = new CheckBox()
             {
-                Color = Color.SaddleBrown,
+                Color = Color.Black,
                 IsChecked = DefaultExtended
             };
 

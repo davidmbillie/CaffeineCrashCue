@@ -28,13 +28,13 @@ namespace CaffeineCrashCue
                 Value = 5.0,
                 Maximum = 8.0,
                 Minimum = 0.5,
-                Increment = 0.5,
-                BackgroundColor = Color.FloralWhite
+                Increment = 0.5
             };
 
             Label hourLabel = new Label
             {
                 Text = hourStepper.Value.ToString(),
+                TextColor = Color.Black,
                 FontSize = 48.0,
                 FontAttributes = FontAttributes.Bold
             };
