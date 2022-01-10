@@ -10,8 +10,8 @@ namespace CaffeineCrashCue
     public partial class TimePage : ContentPage
     {
         //fields for main ctor values for recalculations
+        private double amount = 0;
         private readonly double coeff = 0;
-        private readonly double amount = 0;
         private readonly bool extendedRelease = false;
 
         private readonly string crashTimeDescriptor = $"Your estimated crash time is: {Environment.NewLine}";
@@ -126,8 +126,19 @@ namespace CaffeineCrashCue
                         return;
                     }
                 }
-                SetCrashValues(adjustedAmount);
+
+                amount = adjustedAmount;
+                double crashTime = Formulas.CalculateCrash(coeff, amount);
+
+                if (extendedRelease)
+                {
+                    crashTime *= 2;
+                }
+
+                SetCrashValues(crashTime);
                 SetCrashLabel();
+
+                //reloading the page may have not been the most performant option
                 //await Navigation.PushAsync(new TimePage(coeff, adjustedAmount, extendedRelease));
             }
         }
