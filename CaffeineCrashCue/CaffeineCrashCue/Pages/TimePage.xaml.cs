@@ -107,6 +107,7 @@ namespace CaffeineCrashCue
                 DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, updatedCrashTimeText);
 
                 Preferences.Set(CueConstants.CrashTimePrefKey, updatedCrashTimeText);
+                Preferences.Set(CueConstants.CrashCueLongKey, crashCueMillis);
 
                 decayProvider.SetDecayVaules(amount, crashTimeMillis, DependencyService.Get<ICrashAlarm>().GetCurrentTimeMillis());
             }

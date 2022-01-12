@@ -16,6 +16,7 @@
         //constants for pref keys used in more than one class
         public static string CoeffPrefKey { get { return "F_coeff"; } }
         public static string CrashTimePrefKey { get { return "L_crashTime"; } }
+        public static string CrashCueLongKey {  get { return "L_crashCueLong";  } }
         public static string ExtendedReleaseKey { get { return "A_extended"; } }
         public static string BackgroundImage { get { return "drawable/caffBack.png"; } }
 
