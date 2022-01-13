@@ -97,7 +97,7 @@ namespace CaffeineCrashCue
             double offsetMinutes = OffsetStepper.Value;
             string updatedCrashTimeText = crashDateTime.AddMinutes(offsetMinutes).ToShortTimeString();
 
-            bool setNotif = await DisplayAlert("Crash Cue", "Set notification " + CueConstants.CueTime.ToString() + " minutes before " + updatedCrashTimeText, "OK", "Cancel");
+            bool setNotif = await DisplayAlert("Crash Cue", "Set notification " + CueConstants.CueTime.ToString() + " minutes before " + updatedCrashTimeText + "?", "OK", "Cancel");
             if (setNotif)
             {
                 crashTimeMillis += offsetMinutes * CueConstants.MinToMs;
