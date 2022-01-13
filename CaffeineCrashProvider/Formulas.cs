@@ -7,9 +7,10 @@ namespace CaffeineCrashProvider
         public static double CalculateCrash(double coefficient, double amount)
         {
             double crashTime = coefficient * Math.Log(amount, 2.875);
-            if (crashTime < 3)
+            if (crashTime < 0)
             {
-                return 3;
+                //a double can store negative infinity from the log(0), but I'd rather not pass that around
+                return 0;
             }
             else if (crashTime > 6)
             {
