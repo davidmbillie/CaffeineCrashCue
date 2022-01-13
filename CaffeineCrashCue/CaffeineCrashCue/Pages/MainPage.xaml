@@ -141,7 +141,7 @@
                  Color="Black" />
         <Button Grid.Row="4"
                 Grid.Column="2"
-                Text="Reset"
+                Text="Reset Cue"
                 TextColor="White"
                 HorizontalOptions="Fill"
                 VerticalOptions="Fill"
