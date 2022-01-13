@@ -117,9 +117,9 @@ namespace CaffeineCrashCue
                 SetDefaults(amountText, extendedCheck.IsChecked);
 
                 double amount = Convert.ToDouble(amountText);
-                if (amountText == "999")
+                if (amountText == "998")
                 {
-                    //using "999" for notification testing
+                    //using "998" for notification testing
                     await Navigation.PushAsync(new TimePage());
                 }
                 else
