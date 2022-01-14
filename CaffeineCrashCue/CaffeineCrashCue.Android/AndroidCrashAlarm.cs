@@ -28,31 +28,33 @@ namespace CaffeineCrashCue.Droid
             alarmIntent.PutExtra("message", CueConstants.NotifMessage + cueText);
             alarmIntent.PutExtra("Id", CueConstants.UniqueId);
 
-            bool alreadyExists = (PendingIntent.GetBroadcast(context, CueConstants.UniqueId, alarmIntent, PendingIntentFlags.NoCreate) != null);
+            //bool alreadyExists = (PendingIntent.GetBroadcast(context, CueConstants.UniqueId, alarmIntent, PendingIntentFlags.NoCreate) != null);
 
             PendingIntent pendingIntent = PendingIntent.GetBroadcast(context, CueConstants.UniqueId, alarmIntent, PendingIntentFlags.UpdateCurrent);
             AlarmManager alarmManager = (AlarmManager)context.GetSystemService(Context.AlarmService);
 
-            if (alreadyExists)
-            {
-                alarmManager.Cancel(pendingIntent);
-            }
+            alarmManager.SetAlarmClock(new AlarmManager.AlarmClockInfo(crashCueMillis, pendingIntent), pendingIntent);
 
-            if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.M)
-            {
-                if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Kitkat)
-                {
-                    alarmManager.SetExact(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
-                }
-                else
-                {
-                    alarmManager.Set(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
-                }
-            }
-            else
-            {
-                alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
-            }
+            //if (alreadyExists)
+            //{
+            //    alarmManager.Cancel(pendingIntent);
+            //}
+
+            //if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.M)
+            //{
+            //    if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Kitkat)
+            //    {
+            //        alarmManager.SetExact(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
+            //    }
+            //    else
+            //    {
+            //        alarmManager.Set(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
+            //    }
+            //}
+            //else
+            //{
+                //alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
+            //}
         }
 
         public long GenerateCrashCueMillis(double crashTimeMillis)

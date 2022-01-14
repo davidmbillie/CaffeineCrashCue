@@ -6,12 +6,13 @@ namespace CaffeineCrashProvider
     {
         public static double CalculateCrash(double coefficient, double amount)
         {
-            double crashTime = coefficient * Math.Log(amount, 2.875);
-            if (crashTime < 3)
+            if (amount < 1)
             {
-                return 3;
+                //we don't want Math.Log to output negative infinity
+                amount = 1;
             }
-            else if (crashTime > 6)
+            double crashTime = coefficient * Math.Log(amount, 2.875);
+            if (crashTime > 6)
             {
                 return 6;
             }

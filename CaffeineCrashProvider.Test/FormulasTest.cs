@@ -13,6 +13,13 @@ namespace CaffeineCrashProvider
         }
 
         [Fact]
+        public void CalculateCrash_DoesNotCrash_WithZeroAmount()
+        {
+            double result = Formulas.CalculateCrash(1, 0);
+            Assert.Equal(0, result);
+        }
+
+        [Fact]
         public void CalculateCrash_ReturnsIntuitiveValueWithHighCoeff()
         {
             double result = Formulas.CalculateCrash(1.34, 80);
@@ -33,19 +40,6 @@ namespace CaffeineCrashProvider
             Assert.Equal(6, result);
         }
 
-        [Fact]
-        public void CalculateCrash_ReturnsMin3()
-        {
-            double result = Formulas.CalculateCrash(0.25, 16);
-            Assert.Equal(3, result);
-        }
-
-        [Fact]
-        public void CalculateCrash_ReturnsIntuitiveValueWithColaCan()
-        {
-            double result = Formulas.CalculateCrash(1, 29);
-            Assert.True(result > 3);
-        }
         [Fact]
         public void CalculateCoeff_ReturnsIntuitiveValueFromAllConstants()
         {

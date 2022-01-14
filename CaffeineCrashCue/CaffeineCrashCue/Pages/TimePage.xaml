@@ -14,6 +14,7 @@
             <Label x:Name="CrashLabel"
                Text="Your estimated crash time is: "
                FontSize="Title"
+               TextColor="Black"
                FontAttributes="Bold"
                HorizontalTextAlignment="Center"/>
 
@@ -31,15 +32,16 @@
 
             <StackLayout>
                 <Label x:Name="OffsetLabel"
-               Text="Add/Subtract: 0 minutes"
-               FontSize="Medium"/>
+                    Text="Add/Subtract: 0 minutes"
+                    TextColor="Black"
+                    FontSize="Medium"/>
                 <Stepper x:Name="OffsetStepper"
-                 Maximum="60"
-                 Minimum="-60"
-                 Increment="5"
-                 Value="0"
-                 HorizontalOptions="Center"
-                 ValueChanged="OffsetStepper_ValueChanged"/>
+                    Maximum="60"
+                    Minimum="-60"
+                    Increment="5"
+                    Value="0"
+                    HorizontalOptions="Center"
+                    ValueChanged="OffsetStepper_ValueChanged"/>
             </StackLayout>
 
             <Button Text="Set Notification"

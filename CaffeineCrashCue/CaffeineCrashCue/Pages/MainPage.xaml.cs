@@ -72,6 +72,26 @@ namespace CaffeineCrashCue
             await Navigation.PushAsync(new ConfigPage());
         }
 
+        private async void ResetClicked(object sender, EventArgs e)
+		{
+            string updatedCrashTimeText = Preferences.Get(CueConstants.CrashTimePrefKey, "");
+            long crashCueMillis = Preferences.Get(CueConstants.CrashCueLongKey, 0L);
+
+            if (updatedCrashTimeText == "")
+			{
+                await DisplayAlert("Crash Cue", "No Crash Cue data found for a reset", "OK");
+			}
+            else
+			{
+                bool setNotif = await DisplayAlert("Crash Cue", "Reset notification " + CueConstants.CueTime.ToString() + " minutes before " + updatedCrashTimeText
+                    + "? This is for when something like a phone restart cancels the notification.", "OK", "Cancel");
+                if (setNotif)
+				{
+                    DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, updatedCrashTimeText);
+                }
+            }
+        }
+
         private async void TestClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new TimePage());
