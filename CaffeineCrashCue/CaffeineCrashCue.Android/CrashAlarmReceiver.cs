@@ -21,7 +21,7 @@ namespace CaffeineCrashCue.Droid
             var title = intent.GetStringExtra("title");
 
             var resultIntent = new Intent(context, typeof(SplashActivity));
-            var pending = PendingIntent.GetActivity(context, CueConstants.UniqueId, resultIntent, PendingIntentFlags.UpdateCurrent);
+            var pending = PendingIntent.GetActivity(context, CueConstants.UniqueId, resultIntent, PendingIntentFlags.CancelCurrent);
             resultIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
 
             //If a longer message is warranted in the future...
@@ -37,7 +37,6 @@ namespace CaffeineCrashCue.Droid
                 .SetAutoCancel(true);
             //TODO: SetWhen/SetShowWhen could be revisited for showing timestamps, but they currently aren't functional
 
-            builder.SetContentIntent(pending);
             var notification = builder.Build();
             var manager = NotificationManager.FromContext(context);
             manager.Notify(CueConstants.UniqueId, notification);
