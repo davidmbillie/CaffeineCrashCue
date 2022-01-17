@@ -5,6 +5,7 @@
         //amount of minutes to warn before the crash happens
         public static int CueTime { get { return 20; } }
         public static int MinToMs { get { return 60000; } }
+        public static int CueTimeMs { get { return CueTime * MinToMs; } }
         public static int HoursToMs { get { return 3600000; } }
         public static string Description { get { return "Caffeine Crash Cue channel"; } }
         public static string NotifId { get { return "CaffeineCrash"; } }
@@ -18,6 +19,7 @@
         public static string CrashTimePrefKey { get { return "L_crashTime"; } }
         public static string CrashCueLongKey {  get { return "L_crashCueLong";  } }
         public static string ExtendedReleaseKey { get { return "A_extended"; } }
+        public static string AlarmStarted { get { return "AlarmStarted"; } }
         public static string BackgroundImage { get { return "drawable/caffBack.png"; } }
 
         //ads

@@ -1,4 +1,5 @@
 ﻿using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -22,6 +23,7 @@ namespace CaffeineCrashCue
         protected override void OnStart()
         {
             // Handle when your app starts
+            RefreshAlarmIfNotFinished();
         }
 
         protected override void OnSleep()
@@ -32,6 +34,17 @@ namespace CaffeineCrashCue
         protected override void OnResume()
         {
             // Handle when your app resumes
+            RefreshAlarmIfNotFinished();
+        }
+
+        private void RefreshAlarmIfNotFinished()
+        {
+            if (Preferences.Get(CueConstants.AlarmStarted, false))
+            {
+                long crashCueMillis = Preferences.Get(CueConstants.CrashCueLongKey, 0L);
+                string updatedCrashTimeText = Preferences.Get(CueConstants.CrashTimePrefKey, "");
+                DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, updatedCrashTimeText);
+            }
         }
 
         public bool DoBack

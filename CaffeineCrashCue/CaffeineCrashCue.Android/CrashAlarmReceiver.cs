@@ -10,6 +10,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
+using Xamarin.Essentials;
+
 namespace CaffeineCrashCue.Droid
 {
     [BroadcastReceiver]
@@ -40,6 +42,8 @@ namespace CaffeineCrashCue.Droid
             var notification = builder.Build();
             var manager = NotificationManager.FromContext(context);
             manager.Notify(CueConstants.UniqueId, notification);
+
+            Preferences.Set(CueConstants.AlarmStarted, false);
         }
     }
 }
