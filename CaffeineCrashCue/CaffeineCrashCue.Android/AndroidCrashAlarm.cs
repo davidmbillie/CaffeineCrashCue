@@ -12,6 +12,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
+using Xamarin.Essentials;
+
 using CaffeineCrashCue.Droid;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AndroidCrashAlarm))]
@@ -28,12 +30,14 @@ namespace CaffeineCrashCue.Droid
             alarmIntent.PutExtra("message", CueConstants.NotifMessage + cueText);
             alarmIntent.PutExtra("Id", CueConstants.UniqueId);
 
-            //bool alreadyExists = (PendingIntent.GetBroadcast(context, CueConstants.UniqueId, alarmIntent, PendingIntentFlags.NoCreate) != null);
+            //alarmIntent.SetAction(Settings.ActionIgnoreBatteryOptimizationSettings);
 
             PendingIntent pendingIntent = PendingIntent.GetBroadcast(context, CueConstants.UniqueId, alarmIntent, PendingIntentFlags.UpdateCurrent);
             AlarmManager alarmManager = (AlarmManager)context.GetSystemService(Context.AlarmService);
 
             alarmManager.SetAlarmClock(new AlarmManager.AlarmClockInfo(crashCueMillis, pendingIntent), pendingIntent);
+
+            Preferences.Set(CueConstants.AlarmStarted, true);
 
             //if (alreadyExists)
             //{
@@ -53,15 +57,14 @@ namespace CaffeineCrashCue.Droid
             //}
             //else
             //{
-                //alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
+            //    alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
             //}
         }
 
         public long GenerateCrashCueMillis(double crashTimeMillis)
         {
             long crashLong = Convert.ToInt64(crashTimeMillis);
-            long cueTimeMillis = CueConstants.CueTime * CueConstants.MinToMs;
-            return Java.Lang.JavaSystem.CurrentTimeMillis() + crashLong - cueTimeMillis;
+            return Java.Lang.JavaSystem.CurrentTimeMillis() + crashLong - CueConstants.CueTimeMs;
         }
 
         public long GetCurrentTimeMillis()
