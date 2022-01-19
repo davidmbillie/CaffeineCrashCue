@@ -5,7 +5,8 @@ namespace CaffeineCrashCue
     {
         bool IgnoreBatteryAlreadySet();
         void IgnoreBatteryOptimizations();
-        bool ExactAlarmAlreadySet();
-        void ScheduleExactAlarm();
+        bool CanSetExactAlarmPermission();
+        bool ExactAlarmPermissionAlreadySet();
+        void RequestScheduleExactAlarm();
     }
 }

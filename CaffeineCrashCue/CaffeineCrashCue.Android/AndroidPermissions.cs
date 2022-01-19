@@ -38,7 +38,6 @@ namespace CaffeineCrashCue.Droid
 
             Intent batteryIntent = new Intent();
             batteryIntent.SetFlags(ActivityFlags.NewTask);
-
             batteryIntent.SetAction(Settings.ActionIgnoreBatteryOptimizationSettings);
 
             //batteryIntent.SetAction(Settings.ActionRequestIgnoreBatteryOptimizations);
@@ -47,14 +46,27 @@ namespace CaffeineCrashCue.Droid
             context.StartActivity(batteryIntent);
         }
 
-        public bool ExactAlarmAlreadySet()
+        public bool CanSetExactAlarmPermission()
         {
-            throw new NotImplementedException();
+            return Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.S;
         }
 
-        public void ScheduleExactAlarm()
+        public bool ExactAlarmPermissionAlreadySet()
         {
-            throw new NotImplementedException();
+            Context context = Android.App.Application.Context;
+            AlarmManager alarmManager = (AlarmManager)context.GetSystemService(Context.AlarmService);
+            return alarmManager.CanScheduleExactAlarms();
+        }
+
+        public void RequestScheduleExactAlarm()
+        {
+            Context context = Android.App.Application.Context;
+
+            Intent scheduleIntent = new Intent();
+            scheduleIntent.SetFlags(ActivityFlags.NewTask);
+            scheduleIntent.SetAction(Settings.ActionRequestScheduleExactAlarm);
+
+            context.StartActivity(scheduleIntent);
         }
     }
 }
