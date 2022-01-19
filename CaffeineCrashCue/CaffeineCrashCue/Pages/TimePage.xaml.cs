@@ -144,6 +144,11 @@ namespace CaffeineCrashCue
             }
         }
 
+        private async void PermissionClicked(object o, EventArgs e)
+        {
+            await Navigation.PushAsync(new PermissionsPage());
+        }
+        
         private async void Home_Clicked(object o, EventArgs e)
         {
             await Navigation.PopToRootAsync();
