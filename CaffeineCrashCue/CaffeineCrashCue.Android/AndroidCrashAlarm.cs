@@ -30,19 +30,12 @@ namespace CaffeineCrashCue.Droid
             alarmIntent.PutExtra("message", CueConstants.NotifMessage + cueText);
             alarmIntent.PutExtra("Id", CueConstants.UniqueId);
 
-            //alarmIntent.SetAction(Settings.ActionIgnoreBatteryOptimizationSettings);
-
             PendingIntent pendingIntent = PendingIntent.GetBroadcast(context, CueConstants.UniqueId, alarmIntent, PendingIntentFlags.UpdateCurrent);
             AlarmManager alarmManager = (AlarmManager)context.GetSystemService(Context.AlarmService);
 
             alarmManager.SetAlarmClock(new AlarmManager.AlarmClockInfo(crashCueMillis, pendingIntent), pendingIntent);
 
             Preferences.Set(CueConstants.AlarmStarted, true);
-
-            //if (alreadyExists)
-            //{
-            //    alarmManager.Cancel(pendingIntent);
-            //}
 
             //if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.M)
             //{
