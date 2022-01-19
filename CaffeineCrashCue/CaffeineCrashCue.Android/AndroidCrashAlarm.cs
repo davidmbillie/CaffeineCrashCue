@@ -30,7 +30,7 @@ namespace CaffeineCrashCue.Droid
             alarmIntent.PutExtra("message", CueConstants.NotifMessage + cueText);
             alarmIntent.PutExtra("Id", CueConstants.UniqueId);
 
-            PendingIntent pendingIntent = PendingIntent.GetBroadcast(context, CueConstants.UniqueId, alarmIntent, PendingIntentFlags.UpdateCurrent);
+            PendingIntent pendingIntent = PendingIntent.GetBroadcast(context, CueConstants.UniqueId, alarmIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Immutable);
             AlarmManager alarmManager = (AlarmManager)context.GetSystemService(Context.AlarmService);
 
             alarmManager.SetAlarmClock(new AlarmManager.AlarmClockInfo(crashCueMillis, pendingIntent), pendingIntent);
