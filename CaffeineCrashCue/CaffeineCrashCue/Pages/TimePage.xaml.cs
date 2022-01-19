@@ -97,6 +97,14 @@ namespace CaffeineCrashCue
             double offsetMinutes = OffsetStepper.Value;
             string updatedCrashTimeText = crashDateTime.AddMinutes(offsetMinutes).ToShortTimeString();
 
+            IPermissions permissions = DependencyService.Get<IPermissions>();
+            if (permissions.CanSetExactAlarmPermission() && !permissions.ExactAlarmPermissionAlreadySet())
+            {
+                await DisplayAlert("Crash Cue", "Insufficient permission for setting this notification - " +
+                    "please click 'Permissions' and set the 'Exact Alarm' permission.", "OK");
+                return;
+            }
+
             bool setNotif = await DisplayAlert("Crash Cue", "Set notification " + CueConstants.CueTime.ToString() + " minutes before " + updatedCrashTimeText + "?", "OK", "Cancel");
             if (setNotif)
             {
@@ -144,6 +152,11 @@ namespace CaffeineCrashCue
             }
         }
 
+        private async void PermissionClicked(object o, EventArgs e)
+        {
+            await Navigation.PushAsync(new PermissionsPage());
+        }
+        
         private async void Home_Clicked(object o, EventArgs e)
         {
             await Navigation.PopToRootAsync();

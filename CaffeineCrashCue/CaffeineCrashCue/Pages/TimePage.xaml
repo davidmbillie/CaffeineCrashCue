@@ -49,6 +49,11 @@
                 TextColor="SaddleBrown"
                 Clicked="Notification_Clicked"/>
 
+            <Button Text="Request Permissions"
+                BackgroundColor="FloralWhite"
+                TextColor="SaddleBrown"
+                Clicked="PermissionClicked"/>
+
             <Button Text="Home"
                 BackgroundColor="FloralWhite"
                 TextColor="SaddleBrown"
