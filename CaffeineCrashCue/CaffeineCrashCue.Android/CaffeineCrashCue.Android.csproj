@@ -86,6 +86,7 @@
   <ItemGroup>
     <Compile Include="AdMob\AdBanner_Droid.cs" />
     <Compile Include="AndroidCrashAlarm.cs" />
+    <Compile Include="AndroidPermissions.cs" />
     <Compile Include="CrashAlarmReceiver.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
