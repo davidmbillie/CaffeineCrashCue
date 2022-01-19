@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using AdMob.CustomRenders;
+using System;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -14,7 +12,7 @@ namespace CaffeineCrashCue
         {
             BackgroundImageSource = CueConstants.BackgroundImage;
 
-            Title = "Request Permissions";
+            Title = "Review Permissions";
 
             Content = new StackLayout();
             StackLayout stackContent = (StackLayout)Content;
@@ -25,20 +23,27 @@ namespace CaffeineCrashCue
                 AlignItems = FlexAlignItems.Center,
                 JustifyContent = FlexJustify.SpaceEvenly,
                 VerticalOptions = LayoutOptions.FillAndExpand,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
             };
 
             Label permissionsLabel = new Label
             {
-                Text = "Please review the following permissions to ensure that the notification is able to be set.",
+                Text = "Please review the following permissions to ensure that the notification is able to be received properly",
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
-                //Text = "New battery optimizations can cause scheduled notifications to be lost. " +
-                //"The following permissions are highly recommended for the notifications to be displayed, " +
-                //"but device-specific settings may still need to be set. " +
-                //"Regardless, resuming or re-opening the app will automatically refresh the scheduling of the notification.",
                 TextColor = Color.Black,
                 FontSize = 20.0,
+                FontAttributes = FontAttributes.Bold
+            };
+
+            Label exactAlarmsLabel = new Label
+            {
+                Text = "Necessary for Android 12.0+ (should have been automatically set)",
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                TextColor = Color.Black,
+                FontSize = 16.0,
+                FontAttributes = FontAttributes.Bold
             };
 
             Button exactAlarmsButton = new Button
@@ -53,6 +58,26 @@ namespace CaffeineCrashCue
                 await ExactAlarmsClicked(sender, e);
             };
 
+            Label batteryLabel = new Label
+            {
+                Text = "Recommended in the case of battery optimizations eating notifications",
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                TextColor = Color.Black,
+                FontSize = 16.0,
+                FontAttributes = FontAttributes.Bold
+            };
+
+            Label batteryInstructionsLabel = new Label
+            {
+                Text = "Press button, go to 'All apps', find 'Caffeine Crash Cue', and set to 'Don't optimize'",
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                TextColor = Color.Black,
+                FontSize = 14.0,
+                FontAttributes = FontAttributes.Italic
+            };
+
             Button batteryButton = new Button
             {
                 BackgroundColor = Color.FloralWhite,
@@ -65,11 +90,54 @@ namespace CaffeineCrashCue
                 await BatteryClicked(sender, e);
             };
 
+            Label notesLabel = new Label
+            {
+                Text = "Notes",
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                TextColor = Color.Black,
+                FontSize = 18.0,
+                FontAttributes = FontAttributes.Bold
+            };
+
+            Label manuNoteLabel = new Label
+            {
+                Text = "- Some manufacturers like Samsung may have additional power settings that may need to be addressed.",
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                TextColor = Color.Black,
+                FontSize = 16.0,
+            };
+
+            Label notifLabel = new Label
+            {
+                Text = "- Resuming or reopening the app will automatically make sure the notification is still scheduled, " +
+                "even in cases of the phone restarting.",
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                TextColor = Color.Black,
+                FontSize = 16.0
+            };
+
             flexLayout.Children.Add(permissionsLabel);
+            flexLayout.Children.Add(exactAlarmsLabel);
             flexLayout.Children.Add(exactAlarmsButton);
+            flexLayout.Children.Add(batteryLabel);
             flexLayout.Children.Add(batteryButton);
+            flexLayout.Children.Add(batteryInstructionsLabel);
+            flexLayout.Children.Add(notesLabel);
+            flexLayout.Children.Add(manuNoteLabel);
+            flexLayout.Children.Add(notifLabel);
+
+            AdBanner adBanner = new AdBanner()
+            {
+                Size = AdBanner.Sizes.Standardbanner,
+                HeightRequest = 90
+            };
+
 
             stackContent.Children.Add(flexLayout);
+            stackContent.Children.Add(adBanner);
         }
 
         public async Task BatteryClicked(object sender, EventArgs e)
