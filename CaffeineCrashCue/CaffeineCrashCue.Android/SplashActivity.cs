@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace CaffeineCrashCue.Droid
 {
-    [Activity(Label = "@string/app_name", Icon = "@drawable/caffIcon", Theme = "@style/MyTheme.Splash", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Icon = "@drawable/caffIcon", Theme = "@style/MyTheme.Splash", MainLauncher = true, ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]
     public class SplashActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         public override void OnCreate(Bundle savedInstanceState, PersistableBundle persistentState)
