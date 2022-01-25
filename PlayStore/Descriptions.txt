@@ -1,0 +1,27 @@
+Privacy policy: https://pages.flycricket.io/caffeine-crash-cue/privacy.html
+
+Calculate an estimated caffeine crash time and be notified 20 minutes beforehand
+
+Note: The intended purpose of this app is mostly for time management - other apps may be better suited for health purposes.
+
+Caffeine Crash Cue allows users to calculate an estimated caffeine crash time from a source and quantity of caffeine, along with personal factors that can affect metabolism. The provided sources include common types of coffee, tea, and energy drinks, as well as a page that allows custom inputs. The last page provides the user with the calculated time, as well as a button that can set a notification 20 minutes beforehand. Once the notification is set, the crash time will be shown on the first page of the app.
+
+Personal usage of this app has included:
+
+- Not consuming caffeine that will result in a crash during a meeting or appointment
+- Scheduling some down-time around the estimated crash time
+- Second-guessing if I should have a certain caffeinated beverage late in the evening
+- Separating caffeine crashes from tiredness, fatigue or stress
+- Reminding myself of the last time I consumed caffeine
+
+Notes about the notification:
+
+- Newer phones come with newer forms of battery optimizations that may delay or cancel notifications. With my personal phone, this has not only affected this app, but also messaging apps like Discord.
+- To help this issue, I have provided a "Permissions" page linked from the time page that will take you to the "Battery optimizations" settings. From there, you can find "Caffeine Crash Cue" in "All apps" and set it to "Don't optimize."
+- Android 12.0+ also requires a "Set Exact Alarm" permission that should be automatically set; regardless, it can be reset if needed from the same "Permissions" page.
+- As a safeguard, the app will automatically make sure the notification is still alive just be resuming or reopening the app, even if your phone needed to restart for a separate reason.
+
+Other features of the time page:
+
+- You may recalculate the crash time with the remaining caffeine in your system once the notification is set. This will also help when you are gradually consuming a beverage.
+- You can also offset the crash time in increments of 5 minutes before setting the notification. This can be useful in cases when you consumed caffeine previously but did not input it, or where you foresee yourself finishing a beverage slightly in the future. It can also help if your estimated crash time is consistently off by a certain amount of time.

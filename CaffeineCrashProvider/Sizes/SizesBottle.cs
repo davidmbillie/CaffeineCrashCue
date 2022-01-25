@@ -38,7 +38,8 @@ namespace CaffeineCrashProvider.Sizes
 
         public static readonly Dictionary<string, Beverage> Energy = new Dictionary<string, Beverage>()
         {
-            {"Hydro Energy", new Beverage(25, 188)},
+            {"Hydro Energy Small", new Beverage(20, 148)},
+            {"Hydro Energy", new Beverage(25.4F, 188)}
         };
     }
 }
