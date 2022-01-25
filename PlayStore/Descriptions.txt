@@ -1,3 +1,5 @@
+Privacy policy: https://pages.flycricket.io/caffeine-crash-cue/privacy.html
+
 Calculate an estimated caffeine crash time and be notified 20 minutes beforehand
 
 Note: The intended purpose of this app is mostly for time management - other apps may be better suited for health purposes.
