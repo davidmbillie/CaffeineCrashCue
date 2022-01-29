@@ -24,6 +24,7 @@ namespace CaffeineCrashCue
         {
             // Handle when your app starts
             RefreshAlarmIfNotFinished();
+            DeleteRepeatingAlarm();
         }
 
         protected override void OnSleep()
@@ -35,15 +36,25 @@ namespace CaffeineCrashCue
         {
             // Handle when your app resumes
             RefreshAlarmIfNotFinished();
+            DeleteRepeatingAlarm();
         }
 
         private void RefreshAlarmIfNotFinished()
         {
-            if (Preferences.Get(CueConstants.AlarmStarted, false))
+            if (Preferences.Get(CueConstants.AlarmStarted, false) == true)
             {
                 long crashCueMillis = Preferences.Get(CueConstants.CrashCueLongKey, 0L);
                 string updatedCrashTimeText = Preferences.Get(CueConstants.CrashTimePrefKey, "");
                 DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, updatedCrashTimeText);
+            }
+        }
+
+        private void DeleteRepeatingAlarm()
+        {
+            if (Preferences.Get(CueConstants.RepeatStarted, false) == true)
+            {
+                DependencyService.Get<ICrashAlarm>().DeleteAlarm();
+                Preferences.Set(CueConstants.RepeatStarted, false);
             }
         }
 

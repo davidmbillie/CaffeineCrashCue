@@ -93,6 +93,7 @@
     <Compile Include="AndroidPermissions.cs" />
     <Compile Include="CrashAlarmReceiver.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="NotificationReceiver.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SplashActivity.cs" />
