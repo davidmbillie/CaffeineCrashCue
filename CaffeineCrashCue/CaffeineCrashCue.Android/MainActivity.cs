@@ -54,7 +54,7 @@ namespace CaffeineCrashCue.Droid
                 return;
             }
 
-            var channel = new NotificationChannel(CueConstants.NotifId, CueConstants.NotifId, NotificationImportance.Max)
+            var channel = new NotificationChannel(CueConstants.NotifId, CueConstants.NotifId, NotificationImportance.High)
             {
                 Description = CueConstants.Description
             };
