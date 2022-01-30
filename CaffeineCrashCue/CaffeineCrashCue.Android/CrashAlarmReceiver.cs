@@ -14,7 +14,7 @@ using Xamarin.Essentials;
 
 namespace CaffeineCrashCue.Droid
 {
-    [BroadcastReceiver]
+    [BroadcastReceiver(Name = "com.davidmbillie.CaffeineCrashCue")]
     public class CrashAlarmReceiver : BroadcastReceiver
     {
         public override void OnReceive(Context context, Intent intent)
