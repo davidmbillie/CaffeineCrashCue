@@ -21,7 +21,7 @@ namespace CaffeineCrashCue.Droid
 {
     public class AndroidCrashAlarm : ICrashAlarm
     {
-        public void SetAlarm(long crashCueMillis, string cueText, bool setPref = true)
+        public void SetAlarm(long crashCueMillis, string cueText)
         {
             Context context = Android.App.Application.Context;
 
@@ -33,19 +33,25 @@ namespace CaffeineCrashCue.Droid
             PendingIntent pendingIntent = PendingIntent.GetBroadcast(context, CueConstants.UniqueId, alarmIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Immutable);
             AlarmManager alarmManager = (AlarmManager)context.GetSystemService(Context.AlarmService);
 
-            //alarmManager.SetRepeating(AlarmType.RtcWakeup, crashCueMillis, 60000, pendingIntent);
             alarmManager.SetAlarmClock(new AlarmManager.AlarmClockInfo(crashCueMillis, pendingIntent), pendingIntent);
 
-            Preferences.Set(CueConstants.AlarmStarted, setPref);
-        }
+            Preferences.Set(CueConstants.AlarmStarted, true);
 
-        public void DeleteAlarm()
-        {
-            Context context = Android.App.Application.Context;
-            Intent alarmIntent = new Intent(context, typeof(CrashAlarmReceiver));
-            PendingIntent sender = PendingIntent.GetBroadcast(context, CueConstants.UniqueId, alarmIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Immutable);
-            AlarmManager alarmManager = (AlarmManager)context.GetSystemService(Context.AlarmService);
-            alarmManager.Cancel(sender);
+            //if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.M)
+            //{
+            //    if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Kitkat)
+            //    {
+            //        alarmManager.SetExact(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
+            //    }
+            //    else
+            //    {
+            //        alarmManager.Set(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
+            //    }
+            //}
+            //else
+            //{
+            //    alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
+            //}
         }
 
         public long GenerateCrashCueMillis(double crashTimeMillis)
@@ -58,21 +64,5 @@ namespace CaffeineCrashCue.Droid
         {
             return Java.Lang.JavaSystem.CurrentTimeMillis();
         }
-
-        //if (Build.VERSION.SdkInt < Android.OS.BuildVersionCodes.M)
-        //{
-        //    if (Build.VERSION.SdkInt >= Android.OS.BuildVersionCodes.Kitkat)
-        //    {
-        //        alarmManager.SetExact(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
-        //    }
-        //    else
-        //    {
-        //        alarmManager.Set(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
-        //    }
-        //}
-        //else
-        //{
-        //    alarmManager.SetExactAndAllowWhileIdle(AlarmType.RtcWakeup, crashCueMillis, pendingIntent);
-        //}
     }
 }

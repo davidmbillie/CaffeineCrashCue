@@ -2,7 +2,7 @@ Privacy policy: https://pages.flycricket.io/caffeine-crash-cue/privacy.html
 
 Calculate an estimated caffeine crash time and be notified 20 minutes beforehand
 
-Note: The intended purpose of this app is mostly time management - other apps may be better suited for health purposes.
+Note: The intended purpose of this app is mostly for time management - other apps may be better suited for health purposes.
 
 Caffeine Crash Cue allows users to calculate an estimated caffeine crash time from a source and quantity of caffeine, along with personal factors that can affect metabolism. The provided sources include common types of coffee, tea, and energy drinks, as well as a page that allows custom inputs. The last page provides the user with the calculated time, as well as a button that can set a notification 20 minutes beforehand. Once the notification is set, the crash time will be shown on the first page of the app.
 
