@@ -36,6 +36,7 @@ namespace CaffeineCrashCue.Droid
                 .SetContentText(message)
                 .SetWhen(Java.Lang.JavaSystem.CurrentTimeMillis())
                 .SetShowWhen(true)
+                .SetCategory(Notification.CategoryAlarm) //CATEGORY_ALARM
                 .SetAutoCancel(true);
             //TODO: SetWhen/SetShowWhen could be revisited for showing timestamps, but they currently aren't functional
 
