@@ -61,6 +61,7 @@ namespace CaffeineCrashProvider.Sizes
 
         public static readonly Dictionary<string, Beverage> Iced = new Dictionary<string, Beverage>()
         {
+            {"Short/Mug", new Beverage(8, 80)},
             {"Small", new Beverage(12, 120)},
             {"Medium", new Beverage(16, 165)},
             {"Large", new Beverage(24, 235)},
@@ -69,6 +70,7 @@ namespace CaffeineCrashProvider.Sizes
 
         public static readonly Dictionary<string, Beverage> Cold_Brew = new Dictionary<string, Beverage>()
         {
+            {"Short/Mug", new Beverage(8, 100)},
             {"Small", new Beverage(12, 150)},
             {"Medium", new Beverage(16, 200)},
             {"Large", new Beverage(24, 300)},
@@ -85,6 +87,7 @@ namespace CaffeineCrashProvider.Sizes
 
         public static readonly Dictionary<string, Beverage> Iced_Mocha_Latte_Cappuccino_Etc = new Dictionary<string, Beverage>()
         {
+            {"Short/Mug", new Beverage(8, 75)},
             {"Small", new Beverage(12, 75)},
             {"Medium", new Beverage(16, 150)},
             {"Large", new Beverage(24, 225) }
