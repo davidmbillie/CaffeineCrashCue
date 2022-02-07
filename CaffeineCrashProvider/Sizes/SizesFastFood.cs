@@ -25,6 +25,7 @@ namespace CaffeineCrashProvider.Sizes
 
         public static readonly Dictionary<string, Beverage> Regular = new Dictionary<string, Beverage>()
         {
+            {"Short/Mug", new Beverage(8, 73)},
             {"Small", new Beverage(12, 109)},
             {"Medium", new Beverage(16, 145)},
             {"Large", new Beverage(21, 185)}
@@ -32,6 +33,7 @@ namespace CaffeineCrashProvider.Sizes
 
         public static readonly Dictionary<string, Beverage> Iced = new Dictionary<string, Beverage>()
         {
+            {"Short/Mug", new Beverage(8, 67)},
             {"Small", new Beverage(16, 133)},
             {"Medium", new Beverage(21, 200)},
             {"Large", new Beverage(32, 320)}
