@@ -128,15 +128,15 @@ namespace CaffeineCrashCue
             flexLayout.Children.Add(manuNoteLabel);
             flexLayout.Children.Add(notifLabel);
 
-            AdBanner adBanner = new AdBanner()
-            {
-                Size = AdBanner.Sizes.Standardbanner,
-                HeightRequest = 90
-            };
+            //AdBanner adBanner = new AdBanner()
+            //{
+            //    Size = AdBanner.Sizes.Standardbanner,
+            //    HeightRequest = 90
+            //};
 
 
             stackContent.Children.Add(flexLayout);
-            stackContent.Children.Add(adBanner);
+            //stackContent.Children.Add(adBanner);
         }
 
         public async Task BatteryClicked(object sender, EventArgs e)
