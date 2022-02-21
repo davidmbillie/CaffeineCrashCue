@@ -43,7 +43,7 @@ namespace CaffeineCrashCue
             {
                 long crashCueMillis = Preferences.Get(CueConstants.CrashCueLongKey, 0L);
                 string updatedCrashTimeText = Preferences.Get(CueConstants.CrashTimePrefKey, "");
-                DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, updatedCrashTimeText);
+                DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, updatedCrashTimeText, CueConstants.UniqueId);
             }
         }
 

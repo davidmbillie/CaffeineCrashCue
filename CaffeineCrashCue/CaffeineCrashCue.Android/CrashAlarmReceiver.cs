@@ -21,28 +21,28 @@ namespace CaffeineCrashCue.Droid
         {
             var message = intent.GetStringExtra("message");
             var title = intent.GetStringExtra("title");
+            int uniqueId = intent.GetIntExtra("Id", CueConstants.UniqueId);
 
-            var resultIntent = new Intent(context, typeof(SplashActivity));
-            var pending = PendingIntent.GetActivity(context, CueConstants.UniqueId, resultIntent, PendingIntentFlags.CancelCurrent | PendingIntentFlags.Immutable);
-            resultIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
+            //var resultIntent = new Intent(context, typeof(SplashActivity));
+            //resultIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
+            //var pending = PendingIntent.GetActivity(context, uniqueId, resultIntent, PendingIntentFlags.CancelCurrent | PendingIntentFlags.Immutable);
 
             //If a longer message is warranted in the future...
             //Notification.BigTextStyle bigTextStyle = new Notification.BigTextStyle();
 
             var builder = new Notification.Builder(context, CueConstants.NotifId)
-                .SetContentIntent(pending)
+                //.SetContentIntent(pending)
                 .SetContentTitle(title)
                 .SetSmallIcon(Resource.Drawable.coffee)
                 .SetContentText(message)
                 .SetWhen(Java.Lang.JavaSystem.CurrentTimeMillis())
                 .SetShowWhen(true)
-                .SetCategory(Notification.CategoryAlarm) //CATEGORY_ALARM
                 .SetAutoCancel(true);
             //TODO: SetWhen/SetShowWhen could be revisited for showing timestamps, but they currently aren't functional
 
             var notification = builder.Build();
             var manager = NotificationManager.FromContext(context);
-            manager.Notify(CueConstants.UniqueId, notification);
+            manager.Notify(uniqueId, notification);
 
             Preferences.Set(CueConstants.AlarmStarted, false);
         }
