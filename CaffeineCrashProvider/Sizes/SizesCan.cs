@@ -18,18 +18,15 @@ namespace CaffeineCrashProvider.Sizes
         {
             get
             {
-                return new string[] { "Coffee", "R_Bull_Energy_Drink", "Energy_Drink",
+                return new string[] {"Energy_Drink", "R_Bull_Energy_Drink", "Coffee",
                     "Fruit_And_Veg_Energy_Drink", "Workout_Energy_Drink", "Kickstart_And_Game_Fuel_Energy", "Rise_Energy"};
             }
         }
 
-        public static readonly Dictionary<string, Beverage> Coffee = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Energy_Drink = new Dictionary<string, Beverage>()
         {
-            {"Black", new Beverage(8, 140)},
-            {"Cold_Brew", new Beverage(10, 155)},
-            {"Doubleshot", new Beverage(7, 110)},
-            {"Doubleshot_Energy", new Beverage(7, 145)},
-            {"Tripleshot", new Beverage(15, 225)}
+            {"Regular", new Beverage(16, 160)},
+            {"Large", new Beverage(24, 240)}
         };
 
         public static readonly Dictionary<string, Beverage> R_Bull_Energy_Drink = new Dictionary<string, Beverage>()
@@ -39,10 +36,13 @@ namespace CaffeineCrashProvider.Sizes
             {"Large", new Beverage(16, 148)}
         };
 
-        public static readonly Dictionary<string, Beverage> Energy_Drink = new Dictionary<string, Beverage>()
+        public static readonly Dictionary<string, Beverage> Coffee = new Dictionary<string, Beverage>()
         {
-            {"Regular", new Beverage(16, 160)},
-            {"Large", new Beverage(24, 240)}
+            {"Black", new Beverage(8, 140)},
+            {"Cold_Brew", new Beverage(10, 155)},
+            {"Doubleshot", new Beverage(7, 110)},
+            {"Doubleshot_Energy", new Beverage(7, 145)},
+            {"Tripleshot", new Beverage(15, 225)}
         };
 
         public static readonly Dictionary<string, Beverage> Fruit_And_Veg_Energy_Drink = new Dictionary<string, Beverage>()
