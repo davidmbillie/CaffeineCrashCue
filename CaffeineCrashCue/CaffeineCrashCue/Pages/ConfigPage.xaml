@@ -99,9 +99,9 @@
                     Grid.Column="1"
                     VerticalOptions="Center"
                     Clicked = "SaveClicked"/>
-        <ads:AdBanner Size="Standardbanner"
+        <!--<ads:AdBanner Size="Standardbanner"
                       HeightRequest="90"
                       Grid.Row="9"
-                      Grid.ColumnSpan="2"/>
+                      Grid.ColumnSpan="2"/>-->
     </Grid>
 </ContentPage>

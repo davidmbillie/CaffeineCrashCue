@@ -21,16 +21,16 @@ namespace CaffeineCrashCue.Droid
 {
     public class AndroidCrashAlarm : ICrashAlarm
     {
-        public void SetAlarm(long crashCueMillis, string cueText)
+        public void SetAlarm(long crashCueMillis, string cueText, int uniqueId)
         {
             Context context = Android.App.Application.Context;
 
             Intent alarmIntent = new Intent(context, typeof(CrashAlarmReceiver));
             alarmIntent.PutExtra("title", CueConstants.NotifTitle);
             alarmIntent.PutExtra("message", CueConstants.NotifMessage + cueText);
-            alarmIntent.PutExtra("Id", CueConstants.UniqueId);
+            alarmIntent.PutExtra("Id", uniqueId);
 
-            PendingIntent pendingIntent = PendingIntent.GetBroadcast(context, CueConstants.UniqueId, alarmIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Immutable);
+            PendingIntent pendingIntent = PendingIntent.GetBroadcast(context, uniqueId, alarmIntent, PendingIntentFlags.UpdateCurrent | PendingIntentFlags.Immutable);
             AlarmManager alarmManager = (AlarmManager)context.GetSystemService(Context.AlarmService);
 
             alarmManager.SetAlarmClock(new AlarmManager.AlarmClockInfo(crashCueMillis, pendingIntent), pendingIntent);
