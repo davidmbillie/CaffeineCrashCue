@@ -92,7 +92,7 @@ namespace CaffeineCrashCue
 
         public void SetDecayVaules(double amount, double crashTime, long currentTime)
         {
-            decayRate = (amount / 2) / crashTime;
+            decayRate = amount / crashTime;
             oldAmount = amount;
             halfLife = crashTime;
             startTime = currentTime;
