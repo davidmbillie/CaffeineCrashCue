@@ -55,18 +55,19 @@ namespace CaffeineCrashCue
                 await Navigation.PushAsync(new TimePage(hourStepper.Value));
             };
 
-            //AdBanner adBanner = new AdBanner()
-            //{
-            //    Size = AdBanner.Sizes.Standardbanner,
-            //    HeightRequest = 90
-            //};
-
             flexContent.Children.Add(hourLabel);
             flexContent.Children.Add(hourStepper);
             flexContent.Children.Add(calcButton);
 
             stackContent.Children.Add(flexContent);
-            //stackContent.Children.Add(adBanner);
+
+            AdBanner adBanner = new AdBanner()
+            {
+                Size = AdBanner.Sizes.Standardbanner,
+                HeightRequest = 90
+            };
+
+            stackContent.Children.Add(adBanner);
         }
     }
 }
