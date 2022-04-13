@@ -113,6 +113,8 @@ namespace CaffeineCrashCue
                 //Generate the cue time by subtracting the cue constant from the crash time, then adding it to the Java.Lang.JavaSystem.CurrentTimeMillis() 
                 long crashCueMillis = DependencyService.Get<ICrashAlarm>().GenerateCrashCueMillis(crashTimeMillis);
                 DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis, updatedCrashTimeText, CueConstants.UniqueId);
+                //set a backup alarm 1 minute later
+                DependencyService.Get<ICrashAlarm>().SetAlarm(crashCueMillis + 60000, updatedCrashTimeText, CueConstants.UniqueId + 1);
 
                 Preferences.Set(CueConstants.CrashTimePrefKey, updatedCrashTimeText);
                 Preferences.Set(CueConstants.CrashCueLongKey, crashCueMillis);
