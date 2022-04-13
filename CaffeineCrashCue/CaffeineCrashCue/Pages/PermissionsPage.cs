@@ -111,7 +111,7 @@ namespace CaffeineCrashCue
 
             Label notifLabel = new Label
             {
-                Text = "- Resuming or reopening the app will automatically make sure the notification is still scheduled.",
+                Text = "- Reopening the app will automatically make sure the notification is still scheduled.",
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
                 TextColor = Color.Black,
