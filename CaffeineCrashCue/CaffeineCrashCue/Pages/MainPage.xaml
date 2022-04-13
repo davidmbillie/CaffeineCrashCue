@@ -30,6 +30,8 @@
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                BackgroundColor="Transparent"
+               BorderColor="Black"
+               BorderWidth="0.5"
                Clicked="PersonalizeClicked"/>
         <BoxView Grid.Row="1" 
             Color="#E09762" />
@@ -40,6 +42,8 @@
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                BackgroundColor="Transparent"
+               BorderColor="Black"
+               BorderWidth="0.5"
                Clicked="CoffeeClicked"/>
         <BoxView Grid.Row="1"  
                 Grid.Column="1"
@@ -51,6 +55,8 @@
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                BackgroundColor="Transparent"
+               BorderColor="Black"
+               BorderWidth="0.5"
                Clicked="FastFoodClicked"/>
         <BoxView Grid.Row="1" 
                 Grid.Column="2"
@@ -62,6 +68,8 @@
                HorizontalOptions="Fill"
                VerticalOptions="Fill" 
                BackgroundColor="Transparent"
+               BorderColor="Black"
+               BorderWidth="0.5"
                Clicked="DonutClicked"/>
         <BoxView Grid.Row="2"
                  Color="#3A2E2E" />
@@ -71,6 +79,8 @@
                HorizontalOptions="Fill"
                VerticalOptions="Fill" 
                BackgroundColor="Transparent"
+               BorderColor="Black"
+               BorderWidth="0.5"
                Clicked="BottleClicked"/>
         <BoxView Grid.Row="2"
                  Grid.Column="1"
@@ -82,6 +92,8 @@
                HorizontalOptions="Fill"
                VerticalOptions="Fill" 
                BackgroundColor="Transparent"
+               BorderColor="Black"
+               BorderWidth="0.5"
                Clicked="CanClicked"/>
         <BoxView Grid.Row="2"
                  Grid.Column="2"
@@ -93,6 +105,8 @@
                HorizontalOptions="Fill"
                VerticalOptions="Fill"
                BackgroundColor="Transparent"
+               BorderColor="Black"
+               BorderWidth="0.5"
                Clicked="InstantClicked"/>
         <BoxView Grid.Row="3"
                  Color="#FD5E53" />
@@ -102,6 +116,8 @@
                 HorizontalOptions="Fill"
                 VerticalOptions="Fill"
                 BackgroundColor="Transparent"
+                BorderColor="Black"
+                BorderWidth="0.5"
                 Clicked="HourEnergyClicked"/>
         <BoxView Grid.Row="3"
                  Grid.Column="1"
@@ -113,6 +129,8 @@
                HorizontalOptions="Fill"
                VerticalOptions="Fill" 
                BackgroundColor="Transparent"
+               BorderColor="Black"
+               BorderWidth="0.5"
                Clicked="CustomAmountClicked"/>
         <BoxView Grid.Row="3"
                  Grid.Column="2"
@@ -124,6 +142,8 @@
                 HorizontalOptions="Fill"
                 VerticalOptions="Fill"
                 BackgroundColor="Transparent"
+                BorderColor="Black"
+                BorderWidth="0.5"
                 Clicked="SodaClicked"/>
         <BoxView Grid.Row="4"
                  Grid.ColumnSpan="3"
@@ -137,6 +157,14 @@
                HorizontalOptions="FillAndExpand"
                VerticalOptions="FillAndExpand"
                x:Name="lblLatestTime" />
+        <Button Grid.Row="4"
+               Grid.ColumnSpan="3"
+               BackgroundColor="Transparent"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="FillAndExpand"
+               BorderColor="Black"
+               BorderWidth="0.5"
+               x:Name="btnLatestTime" />
         <!--<BoxView Grid.Row="4"
                  Grid.Column="2"
                  Color="Black" />
