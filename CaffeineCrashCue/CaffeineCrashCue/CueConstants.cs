@@ -26,6 +26,6 @@
         public static string BannerId { get { return "ca-app-pub-7820129744124687/7434620049"; } }
         public static string AppId { get { return "ca-app-pub-7820129744124687~7256857770"; } }
         public static string TestBannerId { get { return "ca-app-pub-3940256099942544/6300978111"; } }
-        public static bool UseTestAds { get { return true; } }
+        public static bool UseTestAds { get { return false; } }
     }
 }

@@ -78,14 +78,7 @@ namespace CaffeineCrashCue
             };
 
             stackContent.Children.Add(customButton);
-
-            //AdBanner adBanner = new AdBanner()
-            //{
-            //    Size = AdBanner.Sizes.Standardbanner,
-            //    HeightRequest = 90
-            //};
-
-            //stackContent.Children.Add(adBanner);
+            stackContent.AddAdBanner();
         }
     }
 }

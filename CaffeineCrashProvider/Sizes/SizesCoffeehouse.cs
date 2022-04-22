@@ -22,7 +22,7 @@ namespace CaffeineCrashProvider.Sizes
         {
             get
             {
-                return new string[] { "Standard", "Dark", "Medium", "Light", "Iced", "Cold_Brew", "Mocha_Latte_Cappuccino_Etc", "Iced_Mocha_Latte_Cappuccino_Etc",
+                return new string[] { "Standard", "Dark", "Medium", "Light", "Iced", "Cold_Brew", "Frozen_Cold_Brew", "Mocha_Latte_Cappuccino_Etc", "Iced_Mocha_Latte_Cappuccino_Etc",
                 "Chai_Tea", "Iced_Chai_Tea", "Green_Tea_And_Green_Tea_Latte", "Coffee_Frappucino", "Espresso_Frappucino", "Frappucino_Lite", "Green_Tea_Frappucino"};
             }
         }
@@ -75,6 +75,11 @@ namespace CaffeineCrashProvider.Sizes
             {"Medium", new Beverage(16, 200)},
             {"Large", new Beverage(24, 300)},
             {"Extra_Large", new Beverage(31, 330) }
+        };
+
+        public static readonly Dictionary<string, Beverage> Frozen_Cold_Brew = new Dictionary<string, Beverage>()
+        {
+            {"Regular", new Beverage(16, 144)}
         };
 
         public static readonly Dictionary<string, Beverage> Mocha_Latte_Cappuccino_Etc = new Dictionary<string, Beverage>()

@@ -9,7 +9,7 @@ namespace AdMob.CustomRenders
         public Sizes Size { get; set; }
         public AdBanner()
         {
-            this.BackgroundColor = Color.Accent;
+            this.BackgroundColor = Color.Transparent;
         }
     }
 }

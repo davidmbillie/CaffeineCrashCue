@@ -34,7 +34,6 @@ namespace CaffeineCrashCue
         protected override void OnResume()
         {
             // Handle when your app resumes
-            RefreshAlarmIfNotFinished();
         }
 
         private void RefreshAlarmIfNotFinished()
