@@ -5,6 +5,15 @@
              x:Class="CaffeineCrashCue.TimePage"
              Title="Crash Cue">
     <StackLayout>
+        <Button Text="Permissions"
+                BackgroundColor="FloralWhite"
+                TextColor="SaddleBrown"
+                VerticalOptions="End"
+                HorizontalOptions="End"
+                BorderColor="SaddleBrown"
+                BorderWidth="0.5"
+                Clicked="PermissionClicked"/>
+        
         <FlexLayout Direction="Column"
                 AlignItems="Center"
                 JustifyContent="SpaceEvenly"
@@ -48,11 +57,6 @@
                 BackgroundColor="FloralWhite"
                 TextColor="SaddleBrown"
                 Clicked="Notification_Clicked"/>
-
-            <Button Text="Request Permissions"
-                BackgroundColor="FloralWhite"
-                TextColor="SaddleBrown"
-                Clicked="PermissionClicked"/>
 
             <Button Text="Home"
                 BackgroundColor="FloralWhite"
