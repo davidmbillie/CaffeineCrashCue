@@ -12,7 +12,7 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Label Text="Alcohol"
+        <Label Text="I've consumed Alcohol recently or regularly"
                    TextColor="Black"
                    VerticalOptions="Center" />
         <Switch x:Name="alcoholSwitch"
@@ -20,7 +20,7 @@
                     VerticalOptions="Center"
                     ThumbColor="SaddleBrown"
                     Toggled="Alc_Toggled"/>
-        <Label Text="Birth Control"
+        <Label Text="I take Birth Control"
                    Grid.Row="1"
                    TextColor="Black"
                    VerticalOptions="Center" />
@@ -30,7 +30,7 @@
                     VerticalOptions="Center"
                     ThumbColor="SaddleBrown"
                     Toggled="BC_Toggled"/>
-        <Label Text="Exercise"
+        <Label Text="I've Exercised recently or regularly"
                    Grid.Row="2"
                    TextColor="Black"
                    VerticalOptions="Center" />
@@ -40,7 +40,7 @@
                     VerticalOptions="Center"
                     ThumbColor="SaddleBrown"
                     Toggled="Ex_Toggled"/>
-        <Label Text="Grapefruit"
+        <Label Text="I've consumed Grapefruit recently"
                    Grid.Row="3"
                    TextColor="Black"
                    VerticalOptions="Center" />
@@ -50,7 +50,7 @@
                     VerticalOptions="Center"
                     ThumbColor="SaddleBrown"
                     Toggled="GFJ_Toggled"/>
-        <Label Text="Pregnant"
+        <Label Text="I am Pregnant"
                    Grid.Row="4"
                    TextColor="Black"
                    VerticalOptions="Center" />
@@ -60,7 +60,7 @@
                     VerticalOptions="Center"
                     ThumbColor="SaddleBrown"
                     Toggled="Preg_Toggled"/>
-        <Label Text="Nicotine"
+        <Label Text="I've consumed Nicotine recently or regularly"
                    Grid.Row="5"
                    TextColor="Black"
                    VerticalOptions="Center" />
@@ -70,7 +70,7 @@
                     VerticalOptions="Center"
                     ThumbColor="SaddleBrown"
                     Toggled="Smoke_Toggled"/>
-        <Label Text="Vegetables and Grilled Chicken Diet"
+        <Label Text="I have a diet high in Vegetables and Grilled Chicken"
                    Grid.Row="6"
                    TextColor="Black"
                    VerticalOptions="Center" />
@@ -80,7 +80,8 @@
                     VerticalOptions="Center"
                     ThumbColor="SaddleBrown"
                     Toggled="VGC_Toggled"/>
-        <Label Text="Weight (lbs)"
+        <Label x:Name="weightLabel"
+                   Text="Weight (lbs)&#10;Switch to kg:"
                    Grid.Row="7"
                    TextColor="Black"
                    VerticalOptions="Center" />
@@ -93,6 +94,12 @@
                     MaxLength="3"
                     VerticalOptions="Center"
                     TextChanged="Weight_Changed"/>
+        <Switch x:Name="weightUnitSwitch"
+                    Grid.Row="8"
+                    VerticalOptions="Center"
+                    HorizontalOptions="StartAndExpand"
+                    ThumbColor="SaddleBrown"
+                    Toggled="WeightUnit_Toggled"/>
         <Button x:Name="saveButton"
                     Text="Save"
                     Grid.Row="8"
