@@ -12,6 +12,7 @@ namespace CaffeineCrashProvider.Models
             Assert.Equal("12 Oz.", subject.Oz);
             Assert.Equal(48, subject.Caffeine);
             Assert.Equal(4, subject.CaffeinePerOz);
+            //Update test w/ caffeine per ml
         }
 
         [Fact]

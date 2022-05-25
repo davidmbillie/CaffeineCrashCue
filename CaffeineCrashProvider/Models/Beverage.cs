@@ -1,4 +1,4 @@
-﻿
+﻿using CaffeineCrashProvider.Sizes;
 using System;
 
 namespace CaffeineCrashProvider.Models
@@ -6,8 +6,10 @@ namespace CaffeineCrashProvider.Models
     public class Beverage
     {
         public string Oz { get; }
+        public string Ml { get; }
         public int Caffeine { get; }
         public double CaffeinePerOz { get; }
+        public double CaffeinePerMl { get; }
 
         /// <summary>
         /// Constructor using total caffeine amount as an integer
@@ -17,8 +19,10 @@ namespace CaffeineCrashProvider.Models
         public Beverage(float ounces, int caffeine)
         {
             Oz = $"{ounces} Oz.";
+            Ml = $"{ounces * SizeConstants.OzToMl} Ml";
             Caffeine = caffeine;
             CaffeinePerOz = (double)caffeine / ounces;
+            CaffeinePerMl = CaffeinePerOz * SizeConstants.OzToMl;
         }
 
         /// <summary>
@@ -29,8 +33,10 @@ namespace CaffeineCrashProvider.Models
         public Beverage(float ounces, double caffeinePerOz)
         {
             Oz = $"{ounces} Oz.";
+            Ml = $"{ounces * SizeConstants.OzToMl} Ml";
             Caffeine = (int)Math.Round(caffeinePerOz * ounces);
             CaffeinePerOz = caffeinePerOz;
+            CaffeinePerMl = CaffeinePerOz * SizeConstants.OzToMl;
         }
     }
 }

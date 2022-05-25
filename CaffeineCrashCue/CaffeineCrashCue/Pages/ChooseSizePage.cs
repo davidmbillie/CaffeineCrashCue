@@ -15,6 +15,8 @@ namespace CaffeineCrashCue
     {
         private readonly Dictionary<string, Beverage> beverageMappings;
         private readonly double perOz;
+        private readonly double perMl;
+
         public ChooseSizePage(SizesSet sizes, string source, Type caffeineType, double coeff)
         {
             BackgroundImageSource = CueConstants.BackgroundImage;
@@ -31,6 +33,7 @@ namespace CaffeineCrashCue
             Dictionary<string, Beverage> sizePairs = (Dictionary<string, Beverage>)sizeInfo.GetValue(sizes);
             Beverage firstBev = sizePairs.ElementAt(0).Value;
             perOz = firstBev.CaffeinePerOz;
+            perMl = firstBev.CaffeinePerMl;
 
             if (sizes is SizesSoda)
             {
@@ -47,7 +50,7 @@ namespace CaffeineCrashCue
 
             foreach (KeyValuePair<string, Beverage> sizePair in sizePairs)
             {
-                string btnText = $"{sizePair.Key}: {sizePair.Value.Oz} ({sizePair.Value.Caffeine} mg)";
+                string btnText = $"{sizePair.Key}: {sizePair.Value.Oz}/{sizePair.Value.Ml} ({sizePair.Value.Caffeine} mg)";
                 btnText = btnText.Replace('_', ' ');
                 sizeButtons.Add(new Button { Text = btnText });
                 beverageMappings.Add(btnText, sizePair.Value);
@@ -65,19 +68,32 @@ namespace CaffeineCrashCue
                 stackContent.Children.Add(button);
             }
 
-            Button customButton = new Button()
+            Button customOzButton = new Button()
             {
-                Text = "Custom Size",
+                Text = "Custom Size (Oz.)",
                 BackgroundColor = Color.FloralWhite,
                 TextColor = Color.SaddleBrown
             };
 
-            customButton.Clicked += async (sender, e) =>
+            customOzButton.Clicked += async (sender, e) =>
             {
                 await Navigation.PushAsync(new OuncePage(coeff, perOz));
             };
 
-            stackContent.Children.Add(customButton);
+            Button customMlButton = new Button()
+            {
+                Text = "Custom Size (Ml)",
+                BackgroundColor = Color.FloralWhite,
+                TextColor= Color.SaddleBrown
+            };
+
+            customMlButton.Clicked += async (sender, e) =>
+            {
+                await Navigation.PushAsync(new MilliliterPage(coeff, perMl));
+            };
+
+            stackContent.Children.Add(customOzButton);
+            stackContent.Children.Add(customMlButton);
             stackContent.AddAdBanner();
         }
     }

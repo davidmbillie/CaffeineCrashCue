@@ -1,17 +1,18 @@
 ﻿using CaffeineCrashProvider;
+using CaffeineCrashProvider.Sizes;
 using System;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace CaffeineCrashCue
 {
-    public class OuncePage : ContentPage
-    {
-        public OuncePage(double coeff, double amount, bool extendedRelease = false)
-        {
+	public class MilliliterPage : ContentPage
+	{
+		public MilliliterPage(double coeff, double amount, bool extendedRelease = false)
+		{
             BackgroundImageSource = CueConstants.BackgroundImage;
 
-            Title = "Enter Ounces";
+            Title = "Enter Milliliters";
 
             Content = new StackLayout();
             StackLayout stackContent = (StackLayout)Content;
@@ -25,9 +26,9 @@ namespace CaffeineCrashCue
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
 
-            Entry ounceEntry = new Entry()
+            Entry mlEntry = new Entry()
             {
-                Text = Preferences.Get("a_defaultOz", "6"),
+                Text = Preferences.Get("a_defaultMl", "200"),
                 Keyboard = Keyboard.Numeric,
                 MaxLength = 5,
                 FontSize = 48,
@@ -35,59 +36,59 @@ namespace CaffeineCrashCue
                 WidthRequest = 140
             };
 
-            Label ounceLabel = new Label()
+            Label mlLabel = new Label()
             {
-                Text = $"oz. x{Environment.NewLine}{amount.ToString("0.##")} mg",
+                Text = $"ml x{Environment.NewLine}{amount.ToString("0.##")} mg",
                 TextColor = Color.Black,
                 FontSize = 24,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center
             };
 
-            StackLayout ounceLayout = new StackLayout
+            StackLayout mlLayout = new StackLayout
             {
                 Orientation = StackOrientation.Horizontal,
                 Children =
                 {
-                    ounceEntry,
-                    ounceLabel
+                    mlEntry,
+                    mlLabel
                 }
             };
 
-            ounceEntry.TextChanged += (sender, e) =>
+            mlEntry.TextChanged += (sender, e) =>
             {
                 if (e.NewTextValue.IndexOf('.') != e.NewTextValue.LastIndexOf('.'))
                 {
-                    ounceEntry.Text = e.OldTextValue;
+                    mlEntry.Text = e.OldTextValue;
                 }
-                ounceEntry.Text = e.NewTextValue.ToNumericString();
+                mlEntry.Text = e.NewTextValue.ToNumericString();
             };
 
-            Button ounceButton = new Button()
+            Button mlButton = new Button()
             {
                 Text = "Calculate Crash Time",
                 BackgroundColor = Color.FloralWhite,
                 TextColor = Color.SaddleBrown
             };
 
-            ounceButton.Clicked += async (sender, e) =>
+            mlButton.Clicked += async (sender, e) =>
             {
-                string ounceText = ounceEntry.Text;
-                if (string.IsNullOrWhiteSpace(ounceText))
+                string mlText = mlEntry.Text;
+                if (string.IsNullOrWhiteSpace(mlText))
                 {
-                    ounceText = Preferences.Get("a_defaultOz", "6");
+                    mlText = Preferences.Get("a_defaultMl", "200");
                 }
-                Preferences.Set("a_defaultOz", ounceText);
-                double ounces = Convert.ToDouble(ounceText);
-                double totalAmount = amount * ounces;
+                Preferences.Set("a_defaultMl", mlText);
+                double mls = Convert.ToDouble(mlText);
+                double totalAmount = amount * mls / SizeConstants.OzToMl;
                 await Navigation.PushAsync(new TimePage(coeff, totalAmount, extendedRelease));
             };
 
-            flexLayout.Children.Add(ounceLayout);
-            flexLayout.Children.Add(ounceButton);
+            flexLayout.Children.Add(mlLayout);
+            flexLayout.Children.Add(mlButton);
 
             stackContent.Children.Add(flexLayout);
             stackContent.AddAdBanner();
         }
-    }
+	}
 }
