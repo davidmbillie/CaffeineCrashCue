@@ -38,7 +38,7 @@ namespace CaffeineCrashCue
 
             Label mlLabel = new Label()
             {
-                Text = $"ml x{Environment.NewLine}{amount.ToString("0.##")} mg",
+                Text = $"ml x{Environment.NewLine}{amount.ToString("0.##")} mg/ml",
                 TextColor = Color.Black,
                 FontSize = 24,
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -80,7 +80,7 @@ namespace CaffeineCrashCue
                 }
                 Preferences.Set("a_defaultMl", mlText);
                 double mls = Convert.ToDouble(mlText);
-                double totalAmount = amount * mls / SizeConstants.OzToMl;
+                double totalAmount = amount * mls;
                 await Navigation.PushAsync(new TimePage(coeff, totalAmount, extendedRelease));
             };
 

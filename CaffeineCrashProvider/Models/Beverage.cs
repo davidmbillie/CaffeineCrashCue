@@ -22,7 +22,7 @@ namespace CaffeineCrashProvider.Models
             Ml = $"{Math.Round(ounces * SizeConstants.OzToMl)} Ml";
             Caffeine = caffeine;
             CaffeinePerOz = (double)caffeine / ounces;
-            CaffeinePerMl = CaffeinePerOz * SizeConstants.OzToMl;
+            CaffeinePerMl = CaffeinePerOz / SizeConstants.OzToMl;
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace CaffeineCrashProvider.Models
             Ml = $"{ounces * SizeConstants.OzToMl} Ml";
             Caffeine = (int)Math.Round(caffeinePerOz * ounces);
             CaffeinePerOz = caffeinePerOz;
-            CaffeinePerMl = CaffeinePerOz * SizeConstants.OzToMl;
+            CaffeinePerMl = CaffeinePerOz / SizeConstants.OzToMl;
         }
     }
 }
