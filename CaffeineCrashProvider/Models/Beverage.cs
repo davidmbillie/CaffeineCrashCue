@@ -19,7 +19,7 @@ namespace CaffeineCrashProvider.Models
         public Beverage(float ounces, int caffeine)
         {
             Oz = $"{ounces} Oz";
-            Ml = $"{ounces * SizeConstants.OzToMl} Ml";
+            Ml = $"{Math.Round(ounces * SizeConstants.OzToMl)} Ml";
             Caffeine = caffeine;
             CaffeinePerOz = (double)caffeine / ounces;
             CaffeinePerMl = CaffeinePerOz * SizeConstants.OzToMl;
