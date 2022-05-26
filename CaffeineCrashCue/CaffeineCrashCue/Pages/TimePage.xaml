@@ -64,8 +64,8 @@
                 Clicked="Home_Clicked"/>
         </FlexLayout>
 
-        <!--<ads:AdBanner Size="Standardbanner"
-                      HeightRequest="90"/>-->
+        <ads:AdBanner Size="Standardbanner"
+                      HeightRequest="90"/>
         
     </StackLayout>
 </ContentPage>

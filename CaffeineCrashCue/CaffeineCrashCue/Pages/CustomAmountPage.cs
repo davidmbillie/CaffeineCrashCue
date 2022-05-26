@@ -149,6 +149,26 @@ namespace CaffeineCrashCue
                 await Navigation.PushAsync(new OuncePage(coeff, amount, extendedCheck.IsChecked));
             };
 
+            Button perMlButton = new Button()
+            {
+                Text = "Per Milliliter",
+                Background = Color.FloralWhite,
+                TextColor = Color.SaddleBrown
+            };
+
+            perMlButton.Clicked += async (sender, e) =>
+            {
+                string amountText = amountEntry.Text;
+                if (string.IsNullOrWhiteSpace(amountText))
+                {
+                    amountText = DefaultAmount;
+                }
+
+                SetDefaults(amountText, extendedCheck.IsChecked);
+                double amount = Convert.ToDouble(amountText);
+                await Navigation.PushAsync(new MilliliterPage(coeff, amount, extendedCheck.IsChecked));
+            };
+
             Button perServingButton = new Button()
             {
                 Text = "Per Serving",
@@ -173,6 +193,7 @@ namespace CaffeineCrashCue
             flexLayout.Children.Add(extendedLayout);
             flexLayout.Children.Add(amountButton);
             flexLayout.Children.Add(perOunceButton);
+            flexLayout.Children.Add(perMlButton);
             flexLayout.Children.Add(perServingButton);
 
             stackContent.Children.Add(flexLayout);

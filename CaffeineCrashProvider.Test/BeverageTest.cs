@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 
 namespace CaffeineCrashProvider.Models
 {
@@ -9,9 +10,10 @@ namespace CaffeineCrashProvider.Models
         {
             Beverage subject = new Beverage(12, 48);
 
-            Assert.Equal("12 Oz.", subject.Oz);
+            Assert.Equal("12 Oz", subject.Oz);
             Assert.Equal(48, subject.Caffeine);
             Assert.Equal(4, subject.CaffeinePerOz);
+            Assert.Equal(0.14, Math.Round(subject.CaffeinePerMl, 2));
         }
 
         [Fact]
@@ -19,9 +21,10 @@ namespace CaffeineCrashProvider.Models
         {
             Beverage subject = new Beverage(12, 4.0);
 
-            Assert.Equal("12 Oz.", subject.Oz);
+            Assert.Equal("12 Oz", subject.Oz);
             Assert.Equal(48, subject.Caffeine);
             Assert.Equal(4, subject.CaffeinePerOz);
+            Assert.Equal(0.14, Math.Round(subject.CaffeinePerMl, 2));
         }
     }
 }
