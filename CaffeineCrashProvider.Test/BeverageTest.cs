@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 
 namespace CaffeineCrashProvider.Models
 {
@@ -12,7 +13,7 @@ namespace CaffeineCrashProvider.Models
             Assert.Equal("12 Oz", subject.Oz);
             Assert.Equal(48, subject.Caffeine);
             Assert.Equal(4, subject.CaffeinePerOz);
-            //Update test w/ caffeine per ml
+            Assert.Equal(0.14, Math.Round(subject.CaffeinePerMl, 2));
         }
 
         [Fact]
@@ -23,6 +24,7 @@ namespace CaffeineCrashProvider.Models
             Assert.Equal("12 Oz", subject.Oz);
             Assert.Equal(48, subject.Caffeine);
             Assert.Equal(4, subject.CaffeinePerOz);
+            Assert.Equal(0.14, Math.Round(subject.CaffeinePerMl, 2));
         }
     }
 }
