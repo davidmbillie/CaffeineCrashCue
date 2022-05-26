@@ -193,6 +193,7 @@ namespace CaffeineCrashCue
             flexLayout.Children.Add(extendedLayout);
             flexLayout.Children.Add(amountButton);
             flexLayout.Children.Add(perOunceButton);
+            flexLayout.Children.Add(perMlButton);
             flexLayout.Children.Add(perServingButton);
 
             stackContent.Children.Add(flexLayout);
