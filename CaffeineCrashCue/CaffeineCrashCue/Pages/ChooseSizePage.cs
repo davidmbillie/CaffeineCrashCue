@@ -70,7 +70,7 @@ namespace CaffeineCrashCue
 
             Button customOzButton = new Button()
             {
-                Text = "Custom Size (Oz.)",
+                Text = "Custom Size (Oz)",
                 BackgroundColor = Color.FloralWhite,
                 TextColor = Color.SaddleBrown
             };

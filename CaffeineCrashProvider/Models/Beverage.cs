@@ -18,7 +18,7 @@ namespace CaffeineCrashProvider.Models
         /// <param name="caffeine"></param>
         public Beverage(float ounces, int caffeine)
         {
-            Oz = $"{ounces} Oz.";
+            Oz = $"{ounces} Oz";
             Ml = $"{ounces * SizeConstants.OzToMl} Ml";
             Caffeine = caffeine;
             CaffeinePerOz = (double)caffeine / ounces;
@@ -32,7 +32,7 @@ namespace CaffeineCrashProvider.Models
         /// <param name="caffeinePerOz"></param>
         public Beverage(float ounces, double caffeinePerOz)
         {
-            Oz = $"{ounces} Oz.";
+            Oz = $"{ounces} Oz";
             Ml = $"{ounces * SizeConstants.OzToMl} Ml";
             Caffeine = (int)Math.Round(caffeinePerOz * ounces);
             CaffeinePerOz = caffeinePerOz;
