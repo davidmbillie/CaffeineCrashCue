@@ -31,7 +31,6 @@ pipeline {
             //junit '**/test/results/*.xml'
 	        junit '**/TestResults/*.xml'
             cobertura coberturaReportFile: '**/test/coverage/*.xml'
-            codometer programName: 'program', projectName: 'project', teamName: 'team', version: '4.8', channel: 'Discovery', tags: [OS: "Windows", R: 8.31447]
             cleanWs()
 	    }
 	}
