@@ -1,8 +1,7 @@
 name: Build and Unit Test
 
 on:
-  push:
-    branches: [ master ]
+  push
   pull_request:
     branches: [ master ]
 
