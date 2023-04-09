@@ -1,4 +1,4 @@
-name: .NET Build/Test
+name: Build and Unit Test
 
 on:
   push:
@@ -26,5 +26,7 @@ jobs:
       run: dotnet build -c ExcludePlatforms --no-restore
     - name: Build Android
       run: msbuild ./CaffeineCrashCue/CaffeineCrashCue.Android/CaffeineCrashCue.Android.csproj /t:PackageForAndroid /p:Configuration=Debug
+    - name: Create and Sign APK
+      run: msbuild ./CaffeineCrashCue/CaffeineCrashCue.Android/CaffeineCrashCue.Android.csproj /t:SignAndroidPackage /p:Configuration=Release
     - name: Test
       run: dotnet test -c ExcludePlatforms --no-build --verbosity normal
