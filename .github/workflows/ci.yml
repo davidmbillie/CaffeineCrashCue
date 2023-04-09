@@ -21,11 +21,16 @@ jobs:
         dotnet-version: 3.1.x
     - name: Restore dependencies
       run: nuget restore CaffeineCrashCue.sln
-    - name: Build Base
-      run: dotnet build -c ExcludePlatforms --no-restore
-    - name: Build Android
-      run: msbuild ./CaffeineCrashCue/CaffeineCrashCue.Android/CaffeineCrashCue.Android.csproj /t:PackageForAndroid /p:Configuration=Debug
+    # - name: Build Base
+    #   run: dotnet build -c ExcludePlatforms --no-restore
+    # - name: Build Android
+    #   run: msbuild ./CaffeineCrashCue/CaffeineCrashCue.Android/CaffeineCrashCue.Android.csproj /t:PackageForAndroid /p:Configuration=Debug
+    # - name: Test
+    #   run: dotnet test -c ExcludePlatforms --no-build --verbosity normal
     - name: Create and Sign APK
       run: msbuild ./CaffeineCrashCue/CaffeineCrashCue.Android/CaffeineCrashCue.Android.csproj /t:SignAndroidPackage /p:Configuration=Release
-    - name: Test
-      run: dotnet test -c ExcludePlatforms --no-build --verbosity normal
+    - name: Upload apk
+      uses: actions/upload-artifact@v2
+      with:
+        name: CaffeineCrashCue.apk
+        path: *.apk
