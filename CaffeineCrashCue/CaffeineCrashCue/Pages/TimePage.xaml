@@ -6,6 +6,7 @@
              Title="Crash Cue">
     <StackLayout>
         <Button Text="Permissions"
+                AutomationId="btnPermissions"
                 BackgroundColor="FloralWhite"
                 TextColor="SaddleBrown"
                 VerticalOptions="End"
@@ -28,6 +29,7 @@
                HorizontalTextAlignment="Center"/>
 
             <Button x:Name="btnRecalc"
+                AutomationId="btnRecalc"
                 Text="Recalculate with remaining caffeine"
                 BackgroundColor="FloralWhite"
                 TextColor="SaddleBrown"

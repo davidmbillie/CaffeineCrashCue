@@ -25,6 +25,7 @@ namespace CaffeineCrashCue
 
             Stepper hourStepper = new Stepper
             {
+                AutomationId = "stepHour",
                 Value = 5.0,
                 Maximum = 8.0,
                 Minimum = 0.5,
@@ -46,6 +47,7 @@ namespace CaffeineCrashCue
 
             Button calcButton = new Button
             {
+                AutomationId = "btnCalc",
                 Text = "Set Crash Time",
                 BackgroundColor = Color.FloralWhite,
                 TextColor = Color.SaddleBrown

@@ -25,6 +25,7 @@
         <BoxView Grid.ColumnSpan="3"
                  Color="SaddleBrown" />
         <Button Grid.ColumnSpan="3"
+               AutomationId="btnPersonalize"
                Text="Personal Settings"
                TextColor="FloralWhite"
                HorizontalOptions="Fill"
@@ -36,7 +37,8 @@
         <BoxView Grid.Row="1" 
             Color="#E09762" />
         <!--TextColor="#00704A"-->
-        <Button Grid.Row="1" 
+        <Button Grid.Row="1"
+               AutomationId="btnCoffee"
                Text="Coffee/Tea"
                TextColor="Black"
                HorizontalOptions="Fill"
@@ -50,6 +52,7 @@
                  Color="#DA291C" />
         <Button Grid.Row="1"
                 Grid.Column="1"
+               AutomationId="btnFastFood"
                Text="Fast Food Coffee"
                TextColor="#FFC72C"
                HorizontalOptions="Fill"
@@ -63,6 +66,7 @@
                  Color="White" />
         <Button Grid.Row="1"
                 Grid.Column="2"
+               AutomationId="btnCoffee"
                Text="Donut Coffee/Tea"
                TextColor="#FF671F"
                HorizontalOptions="Fill"
@@ -74,6 +78,7 @@
         <BoxView Grid.Row="2"
                  Color="#3A2E2E" />
         <Button Grid.Row="2"
+               AutomationId="btnBottled"
                Text="Bottled Coffee/Energy"
                TextColor="#7ACAF4"
                HorizontalOptions="Fill"
@@ -87,6 +92,7 @@
                  Color="Black" />
         <Button Grid.Row="2"
                Grid.Column="1"
+               AutomationId="btnCanned"
                Text="Canned Energy"
                TextColor="Lime"
                HorizontalOptions="Fill"
@@ -100,6 +106,7 @@
                  Color="#CC0247" />
         <Button Grid.Row="2"
                Grid.Column="2"
+               AutomationId="btnInstant"
                Text="Instant Coffee"
                TextColor="White"
                HorizontalOptions="Fill"
@@ -111,6 +118,7 @@
         <BoxView Grid.Row="3"
                  Color="#FD5E53" />
         <Button Grid.Row="3"
+                AutomationId="btnHour"
                 Text="Hour Energy"
                 TextColor="Black"
                 HorizontalOptions="Fill"

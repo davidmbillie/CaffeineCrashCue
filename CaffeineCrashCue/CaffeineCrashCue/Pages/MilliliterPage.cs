@@ -28,6 +28,7 @@ namespace CaffeineCrashCue
 
             Entry mlEntry = new Entry()
             {
+                AutomationId = "txtMl",
                 Text = Preferences.Get("a_defaultMl", "200"),
                 Keyboard = Keyboard.Numeric,
                 MaxLength = 5,
@@ -66,6 +67,7 @@ namespace CaffeineCrashCue
 
             Button mlButton = new Button()
             {
+                AutomationId = "btnCalcCrash",
                 Text = "Calculate Crash Time",
                 BackgroundColor = Color.FloralWhite,
                 TextColor = Color.SaddleBrown

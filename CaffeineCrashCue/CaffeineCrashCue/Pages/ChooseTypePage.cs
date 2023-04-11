@@ -22,6 +22,7 @@ namespace CaffeineCrashCue
             {
                 Button espressoButton = new Button
                 {
+                    AutomationId = "btnEspresso",
                     BackgroundColor = Color.FloralWhite,
                     TextColor = Color.SaddleBrown,
                     Text = "Espresso Shot"
