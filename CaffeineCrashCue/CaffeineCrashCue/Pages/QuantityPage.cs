@@ -25,6 +25,7 @@ namespace CaffeineCrashCue
 
             Stepper quantStepper = new Stepper
             {
+                AutomationId = "stepQuant",
                 Value = 1.0,
                 Maximum = 8.0,
                 Minimum = 0.25,
@@ -53,10 +54,12 @@ namespace CaffeineCrashCue
 
             Button calcButton = new Button
             {
+                AutomationId = "btnCalc",
                 Text = "Calculate Crash Time",
                 BackgroundColor = Color.FloralWhite,
                 TextColor = Color.SaddleBrown
             };
+
             calcButton.Clicked += async (sender, e) =>
             {
                 await Navigation.PushAsync(new TimePage(coeff, caffeineAmount * quantStepper.Value, extendedRelease));

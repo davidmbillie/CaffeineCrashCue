@@ -58,6 +58,7 @@ namespace CaffeineCrashCue
 
             Entry amountEntry = new Entry()
             {
+                AutomationId = "txtAmount",
                 Text = DefaultAmount,
                 Keyboard = Keyboard.Numeric,
                 MaxLength = 5,
@@ -85,6 +86,7 @@ namespace CaffeineCrashCue
 
             CheckBox extendedCheck = new CheckBox()
             {
+                AutomationId = "chkExtended",
                 Color = Color.Black,
                 IsChecked = DefaultExtended
             };
@@ -101,6 +103,7 @@ namespace CaffeineCrashCue
 
             Button amountButton = new Button()
             {
+                AutomationId = "btnTotal",
                 Text = "Total",
                 BackgroundColor = Color.FloralWhite,
                 TextColor = Color.SaddleBrown
@@ -130,6 +133,7 @@ namespace CaffeineCrashCue
 
             Button perOunceButton = new Button()
             {
+                AutomationId = "btnOz",
                 Text = "Per Ounce",
                 BackgroundColor = Color.FloralWhite,
                 TextColor = Color.SaddleBrown
@@ -151,6 +155,7 @@ namespace CaffeineCrashCue
 
             Button perMlButton = new Button()
             {
+                AutomationId = "btnMl",
                 Text = "Per Milliliter",
                 Background = Color.FloralWhite,
                 TextColor = Color.SaddleBrown
@@ -171,6 +176,7 @@ namespace CaffeineCrashCue
 
             Button perServingButton = new Button()
             {
+                AutomationId = "btnServing",
                 Text = "Per Serving",
                 BackgroundColor = Color.FloralWhite,
                 TextColor = Color.SaddleBrown

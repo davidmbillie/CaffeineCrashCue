@@ -27,6 +27,7 @@ namespace CaffeineCrashCue
 
             Entry ounceEntry = new Entry()
             {
+                AutomationId = "txtOz",
                 Text = Preferences.Get("a_defaultOz", "6"),
                 Keyboard = Keyboard.Numeric,
                 MaxLength = 5,
@@ -65,6 +66,7 @@ namespace CaffeineCrashCue
 
             Button ounceButton = new Button()
             {
+                AutomationId = "btnOz",
                 Text = "Calculate Crash Time",
                 BackgroundColor = Color.FloralWhite,
                 TextColor = Color.SaddleBrown
