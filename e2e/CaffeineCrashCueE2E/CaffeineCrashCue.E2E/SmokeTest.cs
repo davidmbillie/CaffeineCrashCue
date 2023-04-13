@@ -1,10 +1,3 @@
-using System;
-using NUnit.Framework;
-using NUnit.Framework.Interfaces;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Appium;
-using OpenQA.Selenium.Appium.Android;
-using OpenQA.Selenium.Appium.Enums;
 
 namespace CaffeineCrashCue.E2E
 {
@@ -14,7 +7,6 @@ namespace CaffeineCrashCue.E2E
     public class SmokeTest : LocalFixture
     {
         [Test]
-        [Category("Android")]
         [Category("SmokeTest")]
 
         public void App_SetsCrashNotification()
@@ -23,6 +15,7 @@ namespace CaffeineCrashCue.E2E
             MainActivity main = new MainActivity(Driver);            
             CustomAmountPage customPage = main.GoToCustomPage();
 
+            //Set the hard-coded dummy value for setting a notification in 30 seconds
             customPage.SetCustomAmount(999);
             TimePage timePage = customPage.ClickTotal();
 
@@ -32,6 +25,23 @@ namespace CaffeineCrashCue.E2E
             //Wait the expected ~30 seconds for the notification to be set
             Thread.Sleep(35000);
             Assert.True(timePage.ReceivedCrashNotification());
+        }
+
+        [Test]
+        [Category("SmokeTest")]
+
+        public void CrashLabel_ContainsTimeStamp()
+        {
+            Thread.Sleep(2000);
+            MainActivity main = new MainActivity(Driver);
+            ChooseTypePage typePage = main.ClickCoffeeButton();
+            ChooseSizePage sizePage = typePage.ClickFirstChoice();
+            QuantityPage quantityPage = sizePage.ClickFirstChoice();
+            TimePage timePage = quantityPage.CalculateCrash();
+            string labelText = timePage.GetCrashLabelText();
+
+            // Check that a time was calculated and set
+            Assert.True(labelText.Contains("AM") || labelText.Contains("PM"));
         }
     }
 }
