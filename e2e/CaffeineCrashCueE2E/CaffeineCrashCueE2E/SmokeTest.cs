@@ -11,13 +11,13 @@ namespace CaffeineCrashCueE2E
     [TestFixture]
     [Parallelizable]
 
-    public class AndroidGetStarted : SauceFixture
+    public class SmokeTest : LocalFixture
     {
         [Test]
         [Category("Android")]
         [Category("SmokeTest")]
 
-        public void ShouldOpenNativeAndroidApp()
+        public void ShouldOpenApp()
         {
             var size = Driver.Manage().Window.Size;
             Assert.That(size.Height, Is.Not.EqualTo(0));

@@ -16,9 +16,6 @@ namespace CaffeineCrashCueE2E
     [TestFixture]
     public class SauceFixture
     {
-        //protected string SauceUser { get; private set; }
-        //protected string SauceAccessKey { get; private set; }
-
         protected AndroidDriver<AndroidElement> Driver { get; private set; }
 
         private string sauceUri;
@@ -28,17 +25,6 @@ namespace CaffeineCrashCueE2E
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
-            //IWebHostBuilder builder = new WebHostBuilder()
-            //    .ConfigureAppConfiguration((hostingContext, config) =>
-            //    {
-            //        config.SetBasePath(hostingContext.HostingEnvironment.ContentRootPath);
-            //        config.AddEnvironmentVariables();
-            //        config.AddUserSecrets<BaseFixture>();
-            //    }
-            //);
-
-            //IServiceProvider provider = null;
-
             IConfigurationBuilder configBuilder = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", true)
                 .AddEnvironmentVariables()
