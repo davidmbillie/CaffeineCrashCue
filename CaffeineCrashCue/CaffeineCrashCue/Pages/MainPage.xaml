@@ -132,6 +132,7 @@
                  Color="Beige" />
         <Button Grid.Row="3"
                 Grid.Column="1"
+               AutomationId="btnCustom"
                Text="Custom Amount"
                TextColor="Black"
                HorizontalOptions="Fill"

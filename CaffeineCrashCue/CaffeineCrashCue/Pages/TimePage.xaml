@@ -22,6 +22,7 @@
                 HorizontalOptions="FillAndExpand">
 
             <Label x:Name="CrashLabel"
+               AutomationId="lblCrash"
                Text="Your estimated crash time is: "
                FontSize="Title"
                TextColor="Black"
@@ -56,11 +57,13 @@
             </StackLayout>
 
             <Button Text="Set Notification"
+                AutomationId="btnNotif"
                 BackgroundColor="FloralWhite"
                 TextColor="SaddleBrown"
                 Clicked="Notification_Clicked"/>
 
             <Button Text="Home"
+                AutomationId="btnHome"
                 BackgroundColor="FloralWhite"
                 TextColor="SaddleBrown"
                 Clicked="Home_Clicked"/>
