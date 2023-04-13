@@ -39,8 +39,11 @@ namespace CaffeineCrashCue
             {
                 buttonHash.Add(new Button { Text = source.Replace('_', ' ') });
             }
+
+            int x = 1;
             foreach (Button button in buttonHash)
             {
+                button.AutomationId = $"choice{x}";
                 if (button.Text.Contains("Tea") || button.Text.Contains("Energy") || button.Text.Contains("Dew"))
                 {
                     button.TextColor = Color.ForestGreen;
@@ -55,6 +58,7 @@ namespace CaffeineCrashCue
                     await Navigation.PushAsync(new ChooseSizePage(sizesSet, button.Text.Replace(' ', '_'), sizesSet.GetType(), coeff));
                 };
                 stackContent.Children.Add(button);
+                x++;
             }
 
             stackContent.AddAdBanner();

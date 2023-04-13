@@ -56,8 +56,10 @@ namespace CaffeineCrashCue
                 beverageMappings.Add(btnText, sizePair.Value);
             }
 
+            int x = 1;
             foreach (Button button in sizeButtons)
             {
+                button.AutomationId = $"choice{x}";
                 button.BackgroundColor = Color.FloralWhite;
                 button.TextColor = Color.SaddleBrown;
                 button.Clicked += async (sender, e) =>
@@ -66,6 +68,7 @@ namespace CaffeineCrashCue
                     await Navigation.PushAsync(new QuantityPage(coeff, caffeineAmount));
                 };
                 stackContent.Children.Add(button);
+                x++;
             }
 
             Button customOzButton = new Button()

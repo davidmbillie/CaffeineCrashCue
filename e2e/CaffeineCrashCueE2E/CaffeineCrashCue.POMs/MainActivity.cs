@@ -1,17 +1,17 @@
-﻿namespace CaffeineCrashCue.POMs
+﻿
+namespace CaffeineCrashCue.POMs
 {
-    public class MainActivity
+    public class MainActivity : CaffeinePage
     {
-        private AndroidDriver<AndroidElement> _driver;
         private AndroidElement CoffeeButton => _driver.FindElementByAccessibilityId("btnCoffee");
         private AndroidElement CustomButton => _driver.FindElementByAccessibilityId("btnCustom");
 
-        public MainActivity(AndroidDriver<AndroidElement> driver)
+        public MainActivity(AndroidDriver<AndroidElement> driver) : base(driver)
         {
-            _driver = driver;
+
         }
 
-        public ChooseTypePage GoToTypePage()
+        public ChooseTypePage ClickCoffeeButton()
         {
             CoffeeButton.Click();
             return new ChooseTypePage(_driver);

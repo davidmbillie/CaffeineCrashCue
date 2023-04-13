@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace CaffeineCrashCue.POMs
 {
-    public class ChooseTypePage
+    public class ChooseTypePage : CaffeinePage
     {
-        AndroidDriver<AndroidElement> _driver;
-
-        public ChooseTypePage(AndroidDriver<AndroidElement> driver)
+        private AndroidElement FirstChoice => _driver.FindElementByAccessibilityId("choice1");
+        public ChooseTypePage(AndroidDriver<AndroidElement> driver) : base(driver)
         {
-            _driver = driver;
+
+        }
+
+        public ChooseSizePage ClickFirstChoice()
+        {
+            FirstChoice.Click();
+            return new ChooseSizePage(_driver);
         }
     }
 }

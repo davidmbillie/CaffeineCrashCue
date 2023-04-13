@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace CaffeineCrashCue.POMs
 {
-    public class TimePage
+    public class TimePage : CaffeinePage
     {
-        private AndroidDriver<AndroidElement> _driver;
         private AndroidElement NotficationButton => _driver.FindElementByAccessibilityId("btnNotif");
         private ReadOnlyCollection<AndroidElement> Notifications => _driver.FindElementsById("android:id/title");
+        private AndroidElement CrashLabel => _driver.FindElementByAccessibilityId("lblCrash");
 
-        public TimePage(AndroidDriver<AndroidElement> driver)
+        public TimePage(AndroidDriver<AndroidElement> driver) : base(driver)
         {
-            _driver = driver;
+
         }
 
         public void SetNotification()
@@ -42,6 +36,11 @@ namespace CaffeineCrashCue.POMs
             }
             _driver.PressKeyCode(AndroidKeyCode.Back);
             return false;
+        }
+
+        public string GetCrashLabelText()
+        {
+            return CrashLabel.Text;
         }
     }
 }
