@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+	<RunConfiguration>
+		<EnvironmentVariables>
+			<IS_SAUCE>false</IS_SAUCE>
+			<DEVICE_NAME>Google Pixel 5</DEVICE_NAME>
+			<PLATFORM_VERSION>11.0</PLATFORM_VERSION>
+		</EnvironmentVariables>
+	</RunConfiguration>
+</RunSettings>

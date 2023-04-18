@@ -39,8 +39,8 @@ namespace CaffeineCrashCue.E2E
 
             if (isSauce)
             {
-                string sauceUser = config.GetRequiredSection("SAUCE_USERNAME").Value ?? throw new ArgumentNullException("SAUCE_USERNAME env var is missing");
-                string sauceAccessKey = config.GetRequiredSection("SAUCE_ACCESS_KEY").Value ?? throw new ArgumentNullException("SAUCE_ACCESS_KEY env var is missing");
+                string sauceUser = config.GetRequiredSection("SAUCE_USERNAME").Value ?? throw new ArgumentNullException("SAUCE_USERNAME env var is missing - check secrets");
+                string sauceAccessKey = config.GetRequiredSection("SAUCE_ACCESS_KEY").Value ?? throw new ArgumentNullException("SAUCE_ACCESS_KEY env var is missing - check secrets");
                 appiumUri = $"https://{sauceUser}:{sauceAccessKey}{sauceUsWestDomain}";
             }
             else
@@ -48,8 +48,8 @@ namespace CaffeineCrashCue.E2E
                 appiumUri = "http://localhost:4723/wd/hub";
             }
 
-            deviceName = config.GetRequiredSection("DEVICE_NAME").Value ?? throw new ArgumentNullException("DEVICE_NAME env var is missing");
-            platformVersion = config.GetRequiredSection("PLATFORM_VERSION").Value ?? throw new ArgumentNullException("PLATFORM_VERSION env var is missing");
+            deviceName = config.GetRequiredSection("DEVICE_NAME").Value ?? throw new ArgumentNullException("DEVICE_NAME env var is missing - check runsettings");
+            platformVersion = config.GetRequiredSection("PLATFORM_VERSION").Value ?? throw new ArgumentNullException("PLATFORM_VERSION env var is missing - check runsettings");
 
         }
 
