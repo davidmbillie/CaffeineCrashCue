@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+	<RunConfiguration>
+		<EnvironmentVariables>
+			<IS_SAUCE>true</IS_SAUCE>
+			<DEVICE_NAME>Google Pixel 3a XL GoogleAPI Emulator</DEVICE_NAME>
+			<PLATFORM_VERSION>10.0</PLATFORM_VERSION>
+		</EnvironmentVariables>
+	</RunConfiguration>
+</RunSettings>

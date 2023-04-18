@@ -6,5 +6,4 @@ https://play.google.com/store/apps/details?id=com.davidmbillie.CaffeineCrashCue
 
 ## Appium Tests
 
-This repo also provides an example of using Appium with C#. The fixtures contain smoke tests for verifying that a crash time was calculated and that a notification was properly set. One fixture can be run locally, and the other will be run during CI via Github Actions and SauceLabs.
-They can be found [in the e2e folder](./e2e/CaffeineCrashCueE2E) along with a separate project for POMs.
+This repo also provides an example of using Appium with C#. The fixture contain smoke tests for verifying that a crash time was calculated and that a notification was properly set. The tests are able to run on either a local Appium server or Sauce Labs depending on the configuration of certain environment variables. The test projects as well as more information about them can be found in [in the e2e folder](./e2e/CaffeineCrashCueE2E).

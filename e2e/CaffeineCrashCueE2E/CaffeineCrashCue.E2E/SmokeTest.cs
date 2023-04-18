@@ -2,9 +2,7 @@
 namespace CaffeineCrashCue.E2E
 {
     [TestFixture]
-    [Parallelizable]
-
-    public class SmokeTest : LocalFixture
+    public class SmokeTest : BaseFixture
     {
         [Test]
         [Category("SmokeTest")]
