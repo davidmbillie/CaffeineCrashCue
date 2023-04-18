@@ -1,0 +1,48 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set default Xamarin SDK versions
+      run: |
+        $VM_ASSETS/select-xamarin-sdk-v2.sh --mono=6.12.0 --android=12.0
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+    - name: Restore dependencies
+      run: nuget restore CaffeineCrashCue.sln
+    - name: Build Base
+      run: dotnet build -c ExcludePlatforms --no-restore
+    - name: Build Android
+      run: msbuild ./CaffeineCrashCue/CaffeineCrashCue.Android/CaffeineCrashCue.Android.csproj /t:PackageForAndroid /p:Configuration=Debug
+    - name: Unit Test
+      run: dotnet test -c ExcludePlatforms --no-build --verbosity normal
+    - name: Build E2E Tests
+      run: dotnet build ./e2e/CaffeineCrashCueE2E/CaffeineCrashCueE2E.sln
+    - name: Run Android 10 Smoke Tests
+      env:
+        IS_SAUCE: true
+        DEVICE_NAME: "Google Pixel 3a XL GoogleAPI Emulator"
+        PLATFORM_VERSION: "10.0"
+        SAUCE_USER: ${{ secrets.SAUCE_USERNAME }}
+        SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+      run: dotnet test ./e2e/CaffeineCrashCueE2E/CaffeineCrashCueE2E/CaffeineCrashCue.E2E.csproj -c Release
+    - name: Run Android 12 Smoke Tests
+      env:
+        IS_SAUCE: true
+        DEVICE_NAME: "Google Pixel 6 GoogleAPI Emulator"
+        PLATFORM_VERSION: "12.0"
+        SAUCE_USER: ${{ secrets.SAUCE_USERNAME }}
+        SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+      run: dotnet test ./e2e/CaffeineCrashCueE2E/CaffeineCrashCueE2E/CaffeineCrashCue.E2E.csproj -c Release
