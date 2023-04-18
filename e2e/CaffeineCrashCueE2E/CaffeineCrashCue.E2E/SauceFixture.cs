@@ -46,9 +46,9 @@ namespace CaffeineCrashCue.E2E
             // capabilities.AddAdditionalCapability(MobileCapabilityType.AppiumVersion, "1.19.1");
             capabilities.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
             capabilities.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "11.0");
+            capabilities.AddAdditionalCapability(AndroidMobileCapabilityType.AppPackage, "com.davidmbillie.CaffeineCrashCue");
             capabilities.AddAdditionalCapability(AndroidMobileCapabilityType.AppActivity, "crc645da8613883ab8f9f.SplashActivity");
-            // appWaitActivity is highly recommended in most cases
-            capabilities.AddAdditionalCapability("appWaitActivity", "crc645da8613883ab8f9f.SplashActivity");
+            // capabilities.AddAdditionalCapability("appWaitActivity", "crc645da8613883ab8f9f.SplashActivity");
             capabilities.AddAdditionalCapability("appWaitDuration", 50000);
             capabilities.AddAdditionalCapability("name", TestContext.CurrentContext.Test.Name);
             capabilities.AddAdditionalCapability("newCommandTimeout", 320);
@@ -56,11 +56,7 @@ namespace CaffeineCrashCue.E2E
             capabilities.AddAdditionalCapability("app",
                 "storage:filename=com.davidmbillie.CaffeineCrashCue.apk");
 
-            //capabilities.AddAdditionalCapability("app",
-            //"storage:662a99c8-0f11-49ac-aa01-b168cdd348c3");
-
-            //60 seconds default for the connection timeout
-            //Driver = new AndroidDriver<AndroidElement>(new Uri(sauceUri), capabilities, TimeSpan.FromSeconds(180));
+            //60 seconds is the default for the connection timeout
             Driver = new AndroidDriver<AndroidElement>(new Uri(sauceUri), capabilities, TimeSpan.FromSeconds(320));
         }
 
