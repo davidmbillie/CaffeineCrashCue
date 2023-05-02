@@ -1,5 +1,7 @@
 ﻿using AdMob.CustomRenders;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Layouts;
 
 namespace CaffeineCrashCue
 {
@@ -35,7 +37,7 @@ namespace CaffeineCrashCue
             Label quantLabel = new Label
             {
                 Text = quantStepper.Value.ToString(),
-                TextColor = Color.Black,
+                TextColor = Colors.Black,
                 FontSize = 48.0,
                 FontAttributes = FontAttributes.Bold
             };
@@ -43,7 +45,7 @@ namespace CaffeineCrashCue
             Label amountLabel = new Label
             {
                 Text = $"x {caffeineAmount} mg",
-                TextColor = Color.Black,
+                TextColor = Colors.Black,
                 FontSize = 24.0,
             };
 
@@ -56,8 +58,8 @@ namespace CaffeineCrashCue
             {
                 AutomationId = "btnCalc",
                 Text = "Calculate Crash Time",
-                BackgroundColor = Color.FloralWhite,
-                TextColor = Color.SaddleBrown
+                BackgroundColor = Colors.FloralWhite,
+                TextColor = Colors.SaddleBrown
             };
 
             calcButton.Clicked += async (sender, e) =>

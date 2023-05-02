@@ -1,8 +1,9 @@
 ﻿using AdMob.CustomRenders;
 using System;
 using System.Threading.Tasks;
-
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Layouts;
 
 namespace CaffeineCrashCue
 {
@@ -31,7 +32,7 @@ namespace CaffeineCrashCue
                 Text = "Please review the following permissions to ensure that the notification is able to be received properly",
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black,
+                TextColor = Colors.Black,
                 FontSize = 20.0,
                 FontAttributes = FontAttributes.Bold
             };
@@ -41,15 +42,15 @@ namespace CaffeineCrashCue
                 Text = "Necessary for Android 12.0+ (should have been automatically set)",
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black,
+                TextColor = Colors.Black,
                 FontSize = 16.0,
                 FontAttributes = FontAttributes.Bold
             };
 
             Button exactAlarmsButton = new Button
             {
-                BackgroundColor = Color.FloralWhite,
-                TextColor = Color.SaddleBrown,
+                BackgroundColor = Colors.FloralWhite,
+                TextColor = Colors.SaddleBrown,
                 Text = "Set Exact Alarms"
             };
 
@@ -63,7 +64,7 @@ namespace CaffeineCrashCue
                 Text = "Recommended in the case of battery optimizations eating notifications",
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black,
+                TextColor = Colors.Black,
                 FontSize = 16.0,
                 FontAttributes = FontAttributes.Bold
             };
@@ -73,15 +74,15 @@ namespace CaffeineCrashCue
                 Text = "Press button, go to 'All apps', find 'Caffeine Crash Cue', and set to 'Don't optimize'",
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black,
+                TextColor = Colors.Black,
                 FontSize = 14.0,
                 FontAttributes = FontAttributes.Italic
             };
 
             Button batteryButton = new Button
             {
-                BackgroundColor = Color.FloralWhite,
-                TextColor = Color.SaddleBrown,
+                BackgroundColor = Colors.FloralWhite,
+                TextColor = Colors.SaddleBrown,
                 Text = "Ignore Battery Optimizations"
             };
 
@@ -95,7 +96,7 @@ namespace CaffeineCrashCue
                 Text = "Notes",
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black,
+                TextColor = Colors.Black,
                 FontSize = 18.0,
                 FontAttributes = FontAttributes.Bold
             };
@@ -105,7 +106,7 @@ namespace CaffeineCrashCue
                 Text = "- Some manufacturers like Samsung may have additional power settings that may need to be addressed.",
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black,
+                TextColor = Colors.Black,
                 FontSize = 16.0,
             };
 
@@ -114,7 +115,7 @@ namespace CaffeineCrashCue
                 Text = "- Reopening the app will automatically make sure the notification is still scheduled.",
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
-                TextColor = Color.Black,
+                TextColor = Colors.Black,
                 FontSize = 16.0
             };
 

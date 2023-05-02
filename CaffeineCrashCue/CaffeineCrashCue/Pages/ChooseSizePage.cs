@@ -6,8 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace CaffeineCrashCue
 {
@@ -39,8 +39,8 @@ namespace CaffeineCrashCue
             {
                 Label iceNoteLabel = new Label
                 {
-                    BackgroundColor = Color.SaddleBrown,
-                    TextColor = Color.FloralWhite,
+                    BackgroundColor = Colors.SaddleBrown,
+                    TextColor = Colors.FloralWhite,
                     VerticalTextAlignment = TextAlignment.Center,
                     HorizontalTextAlignment = TextAlignment.Center,
                     Text = "Note: the cup sizes don't factor in ice, so using 0.5 or 0.75 on the next page would be recommended."
@@ -60,8 +60,8 @@ namespace CaffeineCrashCue
             foreach (Button button in sizeButtons)
             {
                 button.AutomationId = $"choice{x}";
-                button.BackgroundColor = Color.FloralWhite;
-                button.TextColor = Color.SaddleBrown;
+                button.BackgroundColor = Colors.FloralWhite;
+                button.TextColor = Colors.SaddleBrown;
                 button.Clicked += async (sender, e) =>
                 {
                     double caffeineAmount = Convert.ToDouble(beverageMappings[button.Text].Caffeine);
@@ -74,8 +74,8 @@ namespace CaffeineCrashCue
             Button customOzButton = new Button()
             {
                 Text = "Custom Size (Oz)",
-                BackgroundColor = Color.FloralWhite,
-                TextColor = Color.SaddleBrown
+                BackgroundColor = Colors.FloralWhite,
+                TextColor = Colors.SaddleBrown
             };
 
             customOzButton.Clicked += async (sender, e) =>
@@ -86,8 +86,8 @@ namespace CaffeineCrashCue
             Button customMlButton = new Button()
             {
                 Text = "Custom Size (Ml)",
-                BackgroundColor = Color.FloralWhite,
-                TextColor= Color.SaddleBrown
+                BackgroundColor = Colors.FloralWhite,
+                TextColor= Colors.SaddleBrown
             };
 
             customMlButton.Clicked += async (sender, e) =>

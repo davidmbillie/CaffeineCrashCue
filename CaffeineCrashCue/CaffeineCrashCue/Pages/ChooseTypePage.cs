@@ -1,8 +1,8 @@
 ﻿using AdMob.CustomRenders;
 using CaffeineCrashProvider.Sizes;
 using System.Collections.Generic;
-
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace CaffeineCrashCue
 {
@@ -23,8 +23,8 @@ namespace CaffeineCrashCue
                 Button espressoButton = new Button
                 {
                     AutomationId = "btnEspresso",
-                    BackgroundColor = Color.FloralWhite,
-                    TextColor = Color.SaddleBrown,
+                    BackgroundColor = Colors.FloralWhite,
+                    TextColor = Colors.SaddleBrown,
                     Text = "Espresso Shot"
                 };
                 espressoButton.Clicked += async (sender, e) =>
@@ -46,13 +46,13 @@ namespace CaffeineCrashCue
                 button.AutomationId = $"choice{x}";
                 if (button.Text.Contains("Tea") || button.Text.Contains("Energy") || button.Text.Contains("Dew"))
                 {
-                    button.TextColor = Color.ForestGreen;
+                    button.TextColor = Colors.ForestGreen;
                 }
                 else
                 {
-                    button.TextColor = Color.SaddleBrown;
+                    button.TextColor = Colors.SaddleBrown;
                 }
-                button.BackgroundColor = Color.FloralWhite;
+                button.BackgroundColor = Colors.FloralWhite;
                 button.Clicked += async (sender, e) =>
                 {
                     await Navigation.PushAsync(new ChooseSizePage(sizesSet, button.Text.Replace(' ', '_'), sizesSet.GetType(), coeff));

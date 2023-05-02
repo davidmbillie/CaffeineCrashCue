@@ -1,8 +1,9 @@
 ﻿using CaffeineCrashProvider;
 using CaffeineCrashProvider.Sizes;
 using System;
-using Xamarin.Essentials;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Layouts;
 
 namespace CaffeineCrashCue
 {
@@ -40,7 +41,7 @@ namespace CaffeineCrashCue
             Label mlLabel = new Label()
             {
                 Text = $"ml x{Environment.NewLine}{amount.ToString("0.##")} mg/ml",
-                TextColor = Color.Black,
+                TextColor = Colors.Black,
                 FontSize = 24,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center
@@ -69,8 +70,8 @@ namespace CaffeineCrashCue
             {
                 AutomationId = "btnCalcCrash",
                 Text = "Calculate Crash Time",
-                BackgroundColor = Color.FloralWhite,
-                TextColor = Color.SaddleBrown
+                BackgroundColor = Colors.FloralWhite,
+                TextColor = Colors.SaddleBrown
             };
 
             mlButton.Clicked += async (sender, e) =>

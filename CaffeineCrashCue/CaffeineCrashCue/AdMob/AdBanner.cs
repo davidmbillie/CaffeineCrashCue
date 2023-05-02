@@ -1,5 +1,6 @@
 ﻿using System;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace AdMob.CustomRenders
 {
@@ -9,7 +10,7 @@ namespace AdMob.CustomRenders
         public Sizes Size { get; set; }
         public AdBanner()
         {
-            this.BackgroundColor = Color.Transparent;
+            this.BackgroundColor = Colors.Transparent;
         }
     }
 }

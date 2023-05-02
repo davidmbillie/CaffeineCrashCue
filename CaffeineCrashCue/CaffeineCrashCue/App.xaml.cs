@@ -1,7 +1,6 @@
 ﻿using System;
-using Xamarin.Essentials;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace CaffeineCrashCue
@@ -14,9 +13,9 @@ namespace CaffeineCrashCue
 
             MainPage = new NavigationPage(new MainPage())
             {
-                BarBackgroundColor = Color.FloralWhite,
+                BarBackgroundColor = Colors.FloralWhite,
                 //BarBackground = Brush.Transparent,
-                BarTextColor = Color.SaddleBrown
+                BarTextColor = Colors.SaddleBrown
             };
         }
 

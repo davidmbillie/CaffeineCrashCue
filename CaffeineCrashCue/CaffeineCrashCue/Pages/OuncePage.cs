@@ -1,7 +1,7 @@
 ﻿using CaffeineCrashProvider;
 using System;
-using Xamarin.Essentials;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace CaffeineCrashCue
 {
@@ -39,7 +39,7 @@ namespace CaffeineCrashCue
             Label ounceLabel = new Label()
             {
                 Text = $"oz x{Environment.NewLine}{amount.ToString("0.##")} mg/oz",
-                TextColor = Color.Black,
+                TextColor = Colors.Black,
                 FontSize = 24,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center
@@ -68,8 +68,8 @@ namespace CaffeineCrashCue
             {
                 AutomationId = "btnOz",
                 Text = "Calculate Crash Time",
-                BackgroundColor = Color.FloralWhite,
-                TextColor = Color.SaddleBrown
+                BackgroundColor = Colors.FloralWhite,
+                TextColor = Colors.SaddleBrown
             };
 
             ounceButton.Clicked += async (sender, e) =>

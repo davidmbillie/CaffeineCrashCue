@@ -1,8 +1,8 @@
 ﻿using AdMob.CustomRenders;
 using CaffeineCrashProvider;
 using System;
-using Xamarin.Essentials;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 
 namespace CaffeineCrashCue
 {

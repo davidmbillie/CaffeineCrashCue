@@ -1,8 +1,9 @@
 ﻿using AdMob.CustomRenders;
 using CaffeineCrashProvider;
 using System;
-using Xamarin.Essentials;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Layouts;
 
 namespace CaffeineCrashCue
 {
@@ -79,7 +80,7 @@ namespace CaffeineCrashCue
             Label extendedLabel = new Label()
             {
                 Text = "Extended Release",
-                TextColor = Color.Black,
+                TextColor = Colors.Black,
                 FontSize = 16,
                 VerticalTextAlignment = TextAlignment.Center
             };
@@ -87,7 +88,7 @@ namespace CaffeineCrashCue
             CheckBox extendedCheck = new CheckBox()
             {
                 AutomationId = "chkExtended",
-                Color = Color.Black,
+                Color = Colors.Black,
                 IsChecked = DefaultExtended
             };
 
@@ -105,8 +106,8 @@ namespace CaffeineCrashCue
             {
                 AutomationId = "btnTotal",
                 Text = "Total",
-                BackgroundColor = Color.FloralWhite,
-                TextColor = Color.SaddleBrown
+                BackgroundColor = Colors.FloralWhite,
+                TextColor = Colors.SaddleBrown
             };
 
             amountButton.Clicked += async (sender, e) =>
@@ -135,8 +136,8 @@ namespace CaffeineCrashCue
             {
                 AutomationId = "btnOz",
                 Text = "Per Ounce",
-                BackgroundColor = Color.FloralWhite,
-                TextColor = Color.SaddleBrown
+                BackgroundColor = Colors.FloralWhite,
+                TextColor = Colors.SaddleBrown
             };
 
 
@@ -157,8 +158,8 @@ namespace CaffeineCrashCue
             {
                 AutomationId = "btnMl",
                 Text = "Per Milliliter",
-                Background = Color.FloralWhite,
-                TextColor = Color.SaddleBrown
+                Background = Colors.FloralWhite,
+                TextColor = Colors.SaddleBrown
             };
 
             perMlButton.Clicked += async (sender, e) =>
@@ -178,8 +179,8 @@ namespace CaffeineCrashCue
             {
                 AutomationId = "btnServing",
                 Text = "Per Serving",
-                BackgroundColor = Color.FloralWhite,
-                TextColor = Color.SaddleBrown
+                BackgroundColor = Colors.FloralWhite,
+                TextColor = Colors.SaddleBrown
             };
 
             perServingButton.Clicked += async (sender, e) =>
