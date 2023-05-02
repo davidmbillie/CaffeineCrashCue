@@ -1,13 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-
+    <TargetFramework>net7.0</TargetFramework>
     <IsPackable>false</IsPackable>
-
     <Configurations>Debug;Release;ExcludePlatforms</Configurations>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="coverlet.msbuild" Version="2.8.1">
       <PrivateAssets>all</PrivateAssets>
@@ -21,11 +17,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\CaffeineCrashCue\CaffeineCrashCue\CaffeineCrashCue.csproj" />
   </ItemGroup>
-
 </Project>
