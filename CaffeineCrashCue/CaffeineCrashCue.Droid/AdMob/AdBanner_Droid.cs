@@ -4,9 +4,12 @@ using AdMob.Droid.CustomRenders;
 using Android.Content;
 using Android.Gms.Ads;
 using CaffeineCrashCue;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
 using System;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Android;
+using Microsoft.Maui.Controls.Platform;
 
 [assembly: ExportRenderer(typeof(AdBanner), typeof(AdBanner_Droid))]
 namespace AdMob.Droid.CustomRenders

@@ -12,21 +12,21 @@ using CaffeineCrashCue;
 namespace CaffeineCrashCue.Droid
 {
     [Activity(Label = "@string/app_name", Icon = "@drawable/caffIcon", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation, ScreenOrientation = ScreenOrientation.Portrait)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : MauiAppCompatActivity
     {
         App app;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
+            //TabLayoutResource = Resource.Layout.Tabbar;
+            //ToolbarResource = Resource.Layout.Toolbar;
 
             MobileAds.Initialize(ApplicationContext);
 
             base.OnCreate(savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            //global::Xamarin.Form.Forms.Init(this, savedInstanceState);
             app = new App();
-            LoadApplication(app);
+            //LoadApplication(app);
             CreateNotificationChannel();
         }
 

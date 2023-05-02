@@ -13,11 +13,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-using Xamarin.Essentials;
-
 using CaffeineCrashCue.Droid;
 
-[assembly: Xamarin.Forms.Dependency(typeof(AndroidPermissions))]
+[assembly: Dependency(typeof(AndroidPermissions))]
 namespace CaffeineCrashCue.Droid
 {
     public class AndroidPermissions : IPermissions
