@@ -1,8 +1,8 @@
 ﻿using CaffeineCrashProvider;
 using System;
-using Xamarin.Essentials;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Layouts;
 
 namespace CaffeineCrashCue
 {
@@ -35,8 +35,8 @@ namespace CaffeineCrashCue
             weightUnitSwitch.IsToggled = Preferences.Get("F_weightUnit", false);
             weightEntry.Text = Preferences.Get("F_weight", "150");
 
-            saveButton.BackgroundColor = Color.FloralWhite;
-            saveButton.TextColor = Color.SaddleBrown;
+            saveButton.BackgroundColor = Colors.FloralWhite;
+            saveButton.TextColor = Colors.SaddleBrown;
         }
 
         private void Alc_Toggled(object sender, ToggledEventArgs e)

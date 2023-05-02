@@ -12,11 +12,9 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-using Xamarin.Essentials;
-
 using CaffeineCrashCue.Droid;
 
-[assembly: Xamarin.Forms.Dependency(typeof(AndroidCrashAlarm))]
+[assembly: Dependency(typeof(AndroidCrashAlarm))]
 namespace CaffeineCrashCue.Droid
 {
     public class AndroidCrashAlarm : ICrashAlarm

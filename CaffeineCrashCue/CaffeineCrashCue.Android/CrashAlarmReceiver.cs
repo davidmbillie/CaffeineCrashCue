@@ -10,8 +10,6 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-using Xamarin.Essentials;
-
 namespace CaffeineCrashCue.Droid
 {
     [BroadcastReceiver(Name = "com.davidmbillie.CaffeineCrashCue")]

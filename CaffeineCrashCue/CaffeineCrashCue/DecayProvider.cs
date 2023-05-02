@@ -1,5 +1,4 @@
-﻿using Xamarin.Essentials;
-
+﻿
 namespace CaffeineCrashCue
 {
     public sealed class DecayProvider
