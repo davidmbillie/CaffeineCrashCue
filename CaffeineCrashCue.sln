@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaffeineCrashProvider.Test"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaffeineCrashCue", "CaffeineCrashCue\CaffeineCrashCue\CaffeineCrashCue.csproj", "{A44831F8-BD94-4F78-A92D-01E37D0FAB82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaffeineCrashCue.Android", "CaffeineCrashCue\CaffeineCrashCue.Android\CaffeineCrashCue.Android.csproj", "{307D1A49-D911-410D-86F1-E1F2008E52AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaffeineCrashCue.Droid", "CaffeineCrashCue\CaffeineCrashCue.Droid\CaffeineCrashCue.Droid.csproj", "{307D1A49-D911-410D-86F1-E1F2008E52AB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9AEC5D6E-E5CF-4A11-846B-8AEF93EFE497}"
 	ProjectSection(SolutionItems) = preProject

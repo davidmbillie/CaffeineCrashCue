@@ -37,7 +37,7 @@ namespace CaffeineCrashCue.Droid
         void SimulateStartup()
         {
             // await Task.Delay(1000);
-            StartActivity(new Intent(Application.Context, typeof(MainActivity)));
+            //StartActivity(new Intent(Application.Context, typeof(MainActivity)));
         }
     }
 }
