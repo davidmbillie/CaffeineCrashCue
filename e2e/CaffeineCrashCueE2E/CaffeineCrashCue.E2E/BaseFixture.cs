@@ -65,7 +65,7 @@ namespace CaffeineCrashCue.E2E
             if (isSauce)
             {
                 capabilities.AddAdditionalCapability("app",
-                    "storage:filename=com.davidmbillie.CaffeineCrashCue.aab");
+                    "storage:filename=com.davidmbillie.CaffeineCrashCue.apk");
             }
 
             //60 seconds is the default for the connection timeout
