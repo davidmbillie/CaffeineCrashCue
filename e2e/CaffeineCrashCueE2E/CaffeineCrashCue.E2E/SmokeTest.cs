@@ -9,7 +9,7 @@ namespace CaffeineCrashCue.E2E
 
         public void App_SetsCrashNotification()
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(4000);
             MainActivity main = new MainActivity(Driver);            
             CustomAmountPage customPage = main.GoToCustomPage();
 
@@ -30,7 +30,7 @@ namespace CaffeineCrashCue.E2E
 
         public void CrashLabel_ContainsTimeStamp()
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(4000);
             MainActivity main = new MainActivity(Driver);
             ChooseTypePage typePage = main.ClickCoffeeButton();
             ChooseSizePage sizePage = typePage.ClickFirstChoice();
