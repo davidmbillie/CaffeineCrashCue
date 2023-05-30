@@ -368,3 +368,5 @@ MigrationBackup/
 *keyInfo
 *.sarif
 *.clef
+*.keystore
+*.pem
