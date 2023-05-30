@@ -23,10 +23,14 @@ jobs:
     - name: Restore dependencies
       run: nuget restore CaffeineCrashCue.sln
     - name: Build Base
-      run: dotnet build -c ExcludePlatforms --no-restore
-    # This step currently isn't needed in ci, but I'll keep it for reference
-    # - name: Build Android
-    #   run: msbuild ./CaffeineCrashCue/CaffeineCrashCue.Android/CaffeineCrashCue.Android.csproj /t:PackageForAndroid /p:Configuration=Debug
+      run: msbuild /p:Configuration=ExcludePlatforms
+    - name: Build Android
+      run: msbuild ./CaffeineCrashCue/CaffeineCrashCue.Android/CaffeineCrashCue.Android.csproj /t:PackageForAndroid /p:Configuration=Release
+    - name: Upload App
+      run: ./upload_app.sh
+      env:
+        SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+        SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }} 
     - name: Unit Test
       run: dotnet test -c ExcludePlatforms --no-build --verbosity normal
     - name: Build E2E Tests
