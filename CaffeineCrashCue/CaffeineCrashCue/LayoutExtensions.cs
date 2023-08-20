@@ -10,13 +10,13 @@ namespace CaffeineCrashCue
     {
         public static void AddAdBanner(this StackLayout stackLayout)
         {
-            AdBanner adBanner = new AdBanner()
-            {
-                Size = AdBanner.Sizes.Standardbanner,
-                HeightRequest = 90
-            };
+            //AdBanner adBanner = new AdBanner()
+            //{
+            //    Size = AdBanner.Sizes.Standardbanner,
+            //    HeightRequest = 90
+            //};
 
-            stackLayout.Children.Add(adBanner);
+            //stackLayout.Children.Add(adBanner);
         }
     }
 }
