@@ -29,6 +29,9 @@ namespace CaffeineCrashCue.E2E
 
             IConfigurationRoot config = configBuilder.Build();
 
+            string testClass = TestContext.CurrentContext.Test.ClassName;
+
+
             isSauce = config.GetValue<bool>("IS_SAUCE");
 
             if (isSauce)
@@ -68,7 +71,7 @@ namespace CaffeineCrashCue.E2E
                     "storage:filename=com.davidmbillie.CaffeineCrashCue.aab");
             }
 
-            //60 seconds is the default for the connection timeout
+            //60 seconds is the default for the command timeout
             Driver = new AndroidDriver<AndroidElement>(new Uri(appiumUri), capabilities, TimeSpan.FromSeconds(320));
         }
 
