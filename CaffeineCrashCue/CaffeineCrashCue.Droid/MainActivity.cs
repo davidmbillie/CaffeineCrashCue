@@ -2,7 +2,6 @@
 
 using Android.App;
 using Android.Content.PM;
-using Android.Gms.Ads;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
@@ -21,7 +20,7 @@ namespace CaffeineCrashCue.Droid
             //TabLayoutResource = Resource.Layout.Tabbar;
             //ToolbarResource = Resource.Layout.Toolbar;
 
-            MobileAds.Initialize(ApplicationContext);
+            // MobileAds.Initialize(ApplicationContext);
 
             base.OnCreate(savedInstanceState);
             //global::Xamarin.Form.Forms.Init(this, savedInstanceState);
